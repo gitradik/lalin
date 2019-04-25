@@ -1,0 +1,44 @@
+@import "../../utils/dataStyle.module"
+
+.stock
+
+  .container
+    margin-top: 40px
+    position: relative
+
+    .img
+      position: relative
+      display: flex
+      max-height: 330px
+
+      img
+        height: auto
+        max-width: 250px
+        transform: translateX(5%) rotateZ(-10deg)
+        cursor: pointer
+        transition: .2s
+        box-shadow: $boxShadowLight
+
+        &:hover
+          transition: .2s
+          box-shadow: $boxShadowMiddle
+
+        &:last-child
+          transform: translateX(-5%) rotateZ(-10deg)
+
+    .text
+      position: absolute
+      background-color: rgba(255, 40, 237, .15)
+      right: 0
+      bottom: 100px
+      text-align: center
+      font-family: 'Marck Script', cursive
+      color: white
+      font-size: 30px
+      text-shadow: $textShadow
+      z-index: 25
+      box-shadow: $boxShadowLight
+
+
+@import "./media"
+

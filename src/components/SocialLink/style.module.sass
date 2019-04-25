@@ -1,0 +1,47 @@
+.main
+  display: inline-block
+  position: relative
+
+  .title
+    position: absolute
+    top: -33px
+    left: 50%
+    transform: translateX(-50%)
+    border-radius: 4px
+    background: white
+    padding: 3px 10px
+
+    span
+      font-family: 'Marck Script', cursive
+      font-size: 18px
+      color: black
+      position: relative
+
+      &:before
+        position: absolute
+        content: ''
+        bottom: -5px
+        left: 50%
+        transform: translateX(-50%) rotateZ(50deg)
+        height: 15px
+        z-index: -1
+        width: 15px
+        background: white
+
+  .titleScroll
+    top: auto
+    bottom: -33px
+
+    span
+
+      &:before
+        bottom: auto
+        top: -5px
+
+  .link
+    cursor: pointer
+    padding: 5px 10px
+    font-size: 24px
+
+    i
+      text-shadow: 1px 1px 1px rgba(0,0,0,.5)

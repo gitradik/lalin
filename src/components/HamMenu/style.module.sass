@@ -1,0 +1,128 @@
+@import "../../utils/dataStyle.module"
+$backHamContainer: linear-gradient(to bottom, #ffe6ff, #ffb3ff)
+$backHamMenu: linear-gradient(to left bottom,  #ffe6ff, #ffb3ff)
+$boxShadow: 0 2px 4px 0 rgba(0,0,0,0.4)
+
+.hamMenu
+  display: block
+  position: fixed
+  z-index: 999
+  width: 100%
+  padding-bottom: 0
+
+  .subMain
+    position: relative
+    transition: .2s
+    margin-right: 40px
+    margin-left: 40px
+
+    .hamContainer
+      position: relative
+      z-index: 91
+      background: $backHamContainer
+      height: 50px
+      display: flex
+      align-items: center
+      justify-content: space-between
+      border-radius: 4px
+      box-shadow: $boxShadow
+      transition: .2s
+      margin-top: 40px
+
+      .numTel
+        color: white
+        text-shadow: $textShadow
+        font-family: 'Marck Script', cursive
+        font-size: 24px
+
+      .ham
+        position: relative
+        z-index: 909
+        background: none
+        border: none
+        cursor: pointer
+        padding: 5px 7px
+        margin-left: 10px
+        width: 35px
+
+        i
+          color: white
+          text-shadow: 1px 1px 1px rgba(0,0,0,.4)
+          transition: .2s
+          font-size: 20px
+
+      .hamHidded
+
+        i
+          transition: .2s
+          font-size: 24px
+
+      .socialLinks
+        padding: 0 17px
+
+    .list
+      padding-bottom: 15px
+      padding-top: 20px
+      position: absolute
+      max-height: 220px
+      top: 45px
+      left: 0
+      border-radius: 4px
+      overflow: hidden
+      display: flex
+      z-index: 90
+      max-width: 320px
+      flex-direction: column
+      background: $backHamMenu
+      box-shadow: $boxShadow
+      transition: .6s
+      width: 100%
+
+      .linkContainer
+        display: inline-block
+
+        .link
+          font-family: 'Marck Script', cursive
+          font-size: 24px
+          color: white
+          padding: 10px
+          padding-left: 0
+          text-shadow: 1px 1px 1px rgba(0,0,0,.3)
+          margin-left: 10px
+          position: relative
+          display: inline-block
+
+          &:before
+            position: absolute
+            content: ''
+            bottom: 5px
+            left: 0
+            height: 2px
+            border-radius: 4px
+            background-color: rgba(255,255,255,.7)
+            transition: .2s
+            width: 0
+
+          &:hover
+
+            &:before
+              transition: .2s
+              width: 100%
+
+
+    .listHidden
+      transition: .2s
+      width: 0
+
+  .subMainScroll
+    transition: .2s
+    margin: 0
+
+    .hamContainer
+      transition: .2s
+      margin-top: 0
+      border-radius: 0
+
+@import "./media"
+
+

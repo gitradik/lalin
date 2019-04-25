@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Playfair+Display:400,400i,700,700i,900,900i&subset=cyrillic')
+@import "../../utils/dataStyle.module"
+
+.main
+
+  .container
+    margin-top: 20px
+    //border: 8px solid black
+    padding: 30px
+    background: linear-gradient(to bottom, rgba(255, 153, 255, .6), rgba(255,255,255,.5))
+    //box-shadow: $boxShadowMiddle
+    position: relative
+
+    .bord
+      position: absolute
+      height: 8px
+      background-color: black
+      top: auto
+      right: -20px
+      left: 0
+      bottom: 2px
+      transform: skewY(-1deg)
+      box-shadow: $boxShadowLight
+
+      &:last-child
+        top: 2px
+        bottom: auto
+        left: -20px
+        right: 0
+        margin-bottom: 50px
+        transform: skewY(1deg)
+
+    .title
+      text-align: center
+      font-family: 'Amatic SC', cursive
+      color: white
+      font-weight: 600
+      font-size: 36px
+      text-shadow: $tsTitleContactForm
+
+    .inputs
+      position: relative
+      width: 100%
+      padding: 20px 0
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+
+      .inputContainer
+        display: block
+        margin: 5px 0
+
+        .submitBtn
+          font-family: 'Amatic SC', cursive
+          background: white
+          border: none
+          color: #858585
+          font-size: 24px
+          min-width: 200px
+          padding: 10px 0
+
+        .activeSubmit
+          transition: .2s
+          color: black
+          box-shadow: $bsInput
+
+        input
+          font-family: 'Amatic SC', cursive
+          font-size: 24px
+          min-width: 250px
+          letter-spacing: -1px
+          padding: 10px
+          border: 1px solid transparent
+          transition: .2s
+          box-shadow: $bsInput
+
+          &:focus
+            transition: .2s
+            box-shadow: $bsInputFocus
+
+          &::placeholder
+            font-family: 'Amatic SC', cursive
+            letter-spacing: -1px
+            font-size: 24px
+
+@import "./media"
