@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/lalin/static/css/main.584f321a.chunk.css",
+    "main.js": "/lalin/static/js/main.5791b14b.chunk.js",
+    "main.js.map": "/lalin/static/js/main.5791b14b.chunk.js.map",
+    "runtime~main.js": "/lalin/static/js/runtime~main.909a04ef.js",
+    "runtime~main.js.map": "/lalin/static/js/runtime~main.909a04ef.js.map",
+    "static/js/2.b41502e9.chunk.js": "/lalin/static/js/2.b41502e9.chunk.js",
+    "static/js/2.b41502e9.chunk.js.map": "/lalin/static/js/2.b41502e9.chunk.js.map",
+    "index.html": "/lalin/index.html",
+    "precache-manifest.63ea2fa249f1f5fd63c1b8904b9a19af.js": "/lalin/precache-manifest.63ea2fa249f1f5fd63c1b8904b9a19af.js",
+    "service-worker.js": "/lalin/service-worker.js",
+    "static/css/main.584f321a.chunk.css.map": "/lalin/static/css/main.584f321a.chunk.css.map",
+    "static/media/logo.svg": "/lalin/static/media/logo.5d5d9eef.svg"
+  }
+}
