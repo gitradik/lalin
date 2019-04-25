@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/lalin/static/css/main.3a5c5276.chunk.css",
-    "main.js": "/lalin/static/js/main.778a017d.chunk.js",
-    "main.js.map": "/lalin/static/js/main.778a017d.chunk.js.map",
+    "main.js": "/lalin/static/js/main.281755b2.chunk.js",
+    "main.js.map": "/lalin/static/js/main.281755b2.chunk.js.map",
     "runtime~main.js": "/lalin/static/js/runtime~main.909a04ef.js",
     "runtime~main.js.map": "/lalin/static/js/runtime~main.909a04ef.js.map",
     "static/js/2.e050c74f.chunk.js": "/lalin/static/js/2.e050c74f.chunk.js",
     "static/js/2.e050c74f.chunk.js.map": "/lalin/static/js/2.e050c74f.chunk.js.map",
     "index.html": "/lalin/index.html",
-    "precache-manifest.1a61bb051313653dcbcfb230506a47b3.js": "/lalin/precache-manifest.1a61bb051313653dcbcfb230506a47b3.js",
+    "precache-manifest.de5cd55515ab7a165cdbe7620635a2b0.js": "/lalin/precache-manifest.de5cd55515ab7a165cdbe7620635a2b0.js",
     "service-worker.js": "/lalin/service-worker.js",
     "static/css/main.3a5c5276.chunk.css.map": "/lalin/static/css/main.3a5c5276.chunk.css.map",
     "static/media/logo.svg": "/lalin/static/media/logo.5d5d9eef.svg"
