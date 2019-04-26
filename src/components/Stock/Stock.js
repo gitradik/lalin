@@ -4,7 +4,7 @@ import dataContent from '../../utils/dataContent';
 import Modal from 'react-responsive-modal';
 import Slider from "react-slick";
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import '../../utils/slick/slickStiles.sass';
+import '../../utils/slick/slickStyles.sass';
 import {modalStyle} from '../../utils/modalStyle';
 import {slickSettings} from '../../utils/slick/slickSettings';
 

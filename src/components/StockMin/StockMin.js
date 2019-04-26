@@ -1,10 +1,11 @@
 import React from 'react';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import styles from './style.module.sass';
 import PropTypes from 'prop-types';
 import {modalStyle} from "../../utils/modalStyle";
 import Slider from "react-slick/lib";
 import {slickSettings} from "../../utils/slick/slickSettings";
-import '../../utils/slick/slickStiles.sass';
+import '../../utils/slick/slickStyles.sass';
 import Modal from "react-responsive-modal";
 import ContactForm from "../ContactForm/ContactForm";
 
@@ -14,12 +15,13 @@ class StockMin extends React.Component {
         this.state = {
             isOpenPhoto: false,
             isOpenForm: false,
+            titleForm: ''
         }
     }
 
-    onClickForm = () => {
-        this.setState({isOpenForm: true});
-    };
+    onClickForm(value) {
+        this.setState({isOpenForm: true, titleForm: value});
+    }
 
     onClickImg = () => {
         this.setState({isOpenPhoto: true});
@@ -31,7 +33,7 @@ class StockMin extends React.Component {
 
     renderSize() {
         const {sizes} = this.props;
-        return sizes.map((el, i) => <span key={i + "g"}>{el}</span>)
+        return sizes.map((el, i, arr) => <span key={i}>{el + (i !== arr.length && ",")}</span>)
     }
 
     renderImagesForSlider() {
@@ -43,24 +45,32 @@ class StockMin extends React.Component {
         );
     }
 
-    render() {
-        const {isOpenPhoto, isOpenForm} = this.state;
-        const {mainImage, name, discount, price} = this.props;
-        return (
-            <>
-            <Modal
+    renderModals() {
+        const {isOpenPhoto, isOpenForm, titleForm} = this.state;
+        if(isOpenForm) {
+            return <Modal
+                closeIconSize={38} styles={modalStyle} open={isOpenForm} onClose={this.closeModal} centered>
+                <div className={styles.contactForm}>
+                    <ContactForm
+                        title={titleForm}
+                        location="Promotions"/>
+                </div>
+            </Modal>;
+        } else if(isOpenPhoto) {
+            return <Modal
                 closeIconSize={38} styles={modalStyle} open={isOpenPhoto} onClose={this.closeModal} centered>
                 <Slider {...slickSettings}>
                     {this.renderImagesForSlider()}
                 </Slider>
-            </Modal>
-            <Modal
-                closeIconSize={38} styles={modalStyle} open={isOpenForm} onClose={this.closeModal} centered>
-                <div className={styles.contactForm}>
-                    <ContactForm location="stocks"/>
-                </div>
-            </Modal>
-            <div className={styles.stockMin}>
+            </Modal>;
+        }
+    }
+
+    render() {
+        const {mainImage, name, discount, price} = this.props;
+        return (
+            <>{this.renderModals()}
+            <div className={styles.stockMin} onClick={this.onClickImg}>
                 <div className={styles.container}>
                     <div className={styles.box}>
                         <div className={styles.imgBox}>
@@ -69,16 +79,22 @@ class StockMin extends React.Component {
                         <div className={styles.descr}>
                             <h5 className={styles.name}>{name}</h5>
                             <div className={styles.sizes}>
+                                <span>Размеры: </span>
                                 {this.renderSize()}
                             </div>
                             <div className={styles.price}>
                                 <span className={styles.old}><strike>{price}</strike></span>
-                                <span className={styles.new}>{price - (price * discount)}</span>
+                                <span className={styles.new}>{price - (price * (discount / 100))}</span>
                             </div>
                         </div>
-                        <div className={styles.discount}>{discount + "%"}</div>
-                        <button onClick={this.onClickImg}>Фото</button>
-                        <button onClick={this.onClickForm}>Заказать</button>
+                        <div className={styles.discount}>
+                            <img src={require('../../public/images/sale.png')} alt="discount"/>
+                            <span>{discount + "%"}</span>
+                        </div>
+                        <div className={styles.buttons}>
+                            <button onClick={this.onClickImg}>Фото</button>
+                            <button onClick={() => this.onClickForm(name)}>Заказать</button>
+                        </div>
                     </div>
                 </div>
             </div>

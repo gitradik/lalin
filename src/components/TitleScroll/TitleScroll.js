@@ -22,7 +22,9 @@ class TitleScroll extends React.Component {
                     </div>
                     <div className={styles.content}>
                         <Stock />
-                        <ContactForm location="first-scroll"/>
+                        <ContactForm
+                            title={dataContent.titleContactForm}
+                            location="first-scroll"/>
                     </div>
                 </div>
             </div>

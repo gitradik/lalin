@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './style.module.sass';
-import dataContent from '../../utils/dataContent';
 import InputMask from 'react-input-mask';
 import {isValidPhone} from '../../utils/validationForm';
 import PropTypes from 'prop-types';
@@ -54,7 +53,7 @@ class ContactForm extends React.Component {
                 <div className={styles.container}>
                     <div className={styles.bord}/>
                     <div className={styles.title}>
-                        {dataContent.titleContactForm}
+                        {this.props.title}
                     </div>
                     <div className={styles.inputs}>
                         <div className={styles.inputContainer} style={{paddingRight: "10px"}}>
@@ -87,11 +86,13 @@ class ContactForm extends React.Component {
 }
 
 ContactForm.propTypes = {
-    location: PropTypes.string
+    location: PropTypes.string,
+    title: PropTypes.object,
 };
 
 ContactForm.defaultProps = {
-    location: 'hz'
+    location: '',
+    title: ''
 };
 
 export default ContactForm;

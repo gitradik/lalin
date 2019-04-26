@@ -1,26 +1,41 @@
 @import "../../utils/dataStyle.module"
 
 .stockMin
+  font-family: 'Amatic SC', cursive
+  cursor: pointer
   margin: 30px 0
+  padding: 5px
+  background: rgba(255,255,255,1)
+  position: relative
+  border-radius: 4px
+  transition: .2s
+  box-shadow: $boxShadowLight
+
+  &:hover
+    transition: .2s
+    box-shadow: $boxShadowMiddle
 
   .container
 
     .box
-      position: relative
 
-      &:hover
-        transition: .2s
-        box-shadow: $boxShadowLight
+      .buttons
 
       .imgBox
 
         img
           height: auto
-          max-width: 150px
+          max-width: 230px
+          box-shadow: 0 0 2px 1px #F2AECC
 
       .descr
+        padding-top: 10px
 
         .name
+          text-align: center
+          color: #ffb3ff
+          text-shadow: $textShadow
+          text-transform: capitalize
 
         .sizes
 
@@ -35,14 +50,27 @@
 
       .discount
         position: absolute
-        top: 0
-        right: 0
-        height: 70px
-        width: 70px
-        background-color: red
-        color: white
-        font-family: 'Amatic SC', cursive
-        font-weight: 600
+        top: -20px
+        right: -20px
+        background: linear-gradient(to top, #ffb3ff, #ff54b0)
+        border-radius: 100%
+        height: 80px
+        width: 80px
+        padding: 3px
+        display: flex
+        justify-content: center
+        align-items: center
+        box-shadow: $boxShadowLight
+
+        span
+          color: white
+          font-size: 32px
+          font-weight: 700
+
+        img
+          height: auto
+          max-width: 50px
+
 
 
 .contactForm
