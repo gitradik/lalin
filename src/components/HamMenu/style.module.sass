@@ -1,5 +1,6 @@
 @import "../../utils/dataStyle.module"
 $backHamContainer: linear-gradient(to bottom, #ffe6ff, #ffb3ff)
+$backHamContainerScroll: linear-gradient(to bottom, rgba(255, 230, 255, .8), rgba(255, 179, 255, .8))
 $backHamMenu: linear-gradient(to left bottom,  #ffe6ff, #ffb3ff)
 $boxShadow: 0 2px 4px 0 rgba(0,0,0,0.4)
 
@@ -19,7 +20,6 @@ $boxShadow: 0 2px 4px 0 rgba(0,0,0,0.4)
     .hamContainer
       position: relative
       z-index: 91
-      background: $backHamContainer
       height: 50px
       display: flex
       align-items: center
@@ -28,6 +28,7 @@ $boxShadow: 0 2px 4px 0 rgba(0,0,0,0.4)
       box-shadow: $boxShadow
       transition: .2s
       margin-top: 40px
+      background: $backHamContainer
 
       .numTel
         color: white
@@ -64,8 +65,7 @@ $boxShadow: 0 2px 4px 0 rgba(0,0,0,0.4)
       padding-bottom: 15px
       padding-top: 20px
       position: absolute
-      max-height: 220px
-      top: 45px
+      top: 50px
       left: 0
       border-radius: 4px
       overflow: hidden
@@ -95,7 +95,7 @@ $boxShadow: 0 2px 4px 0 rgba(0,0,0,0.4)
           &:before
             position: absolute
             content: ''
-            bottom: 5px
+            bottom: 10px
             left: 0
             height: 2px
             border-radius: 4px
@@ -120,6 +120,7 @@ $boxShadow: 0 2px 4px 0 rgba(0,0,0,0.4)
 
     .hamContainer
       transition: .2s
+      background: $backHamContainerScroll
       margin-top: 0
       border-radius: 0
 

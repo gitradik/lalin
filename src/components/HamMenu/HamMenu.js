@@ -68,8 +68,7 @@ class HamMenu extends React.Component {
                     >
                         <i className="fas fa-bars"/>
                     </button>
-                    {this.renderNumberTel()
-                    }
+                    {this.renderNumberTel()}
                     <div className={styles.socialLinks}>
                        <Viber />
                        <Telegram />

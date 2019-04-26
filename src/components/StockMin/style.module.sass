@@ -1,0 +1,53 @@
+@import "../../utils/dataStyle.module"
+
+.stockMin
+  margin: 30px 0
+
+  .container
+
+    .box
+      position: relative
+
+      &:hover
+        transition: .2s
+        box-shadow: $boxShadowLight
+
+      .imgBox
+
+        img
+          height: auto
+          max-width: 150px
+
+      .descr
+
+        .name
+
+        .sizes
+
+          span
+            margin: 0 3px
+
+        .price
+
+          .old
+
+          .new
+
+      .discount
+        position: absolute
+        top: 0
+        right: 0
+        height: 70px
+        width: 70px
+        background-color: red
+        color: white
+        font-family: 'Amatic SC', cursive
+        font-weight: 600
+
+
+.contactForm
+  width: 100%
+  height: 100%
+  display: flex
+  align-items: center
+  justify-content: center

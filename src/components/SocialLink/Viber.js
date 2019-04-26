@@ -43,7 +43,7 @@ class Viber extends React.Component {
                    onMouseOver={this.viewTitle}
                    onMouseLeave={this.hiddenTitle}
                 >
-                    <i className={viber.classIcon} style={{color: 'white'}}/>
+                    <i className={viber.classIcon} style={{color: !isViewTitle ? 'white' : viber.color}}/>
                 </a>
             </div>
         );

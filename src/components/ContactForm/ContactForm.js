@@ -50,7 +50,7 @@ class ContactForm extends React.Component {
     render() {
         const {name, phone, isValidName, isValidPhone} = this.state;
         return (
-            <div className={styles.main}>
+            <div className={styles.contactForm}>
                 <div className={styles.container}>
                     <div className={styles.bord}/>
                     <div className={styles.title}>

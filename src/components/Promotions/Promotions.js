@@ -1,17 +1,41 @@
 import React from 'react';
-import styles from './style.module.sass';
 import dataContent from '../../utils/dataContent';
+import {Container, Row, Col} from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import StockMin from "../StockMin/StockMin";
+import styles from './style.module.sass';
+import {dataPromotions} from '../../utils/dataPromotions';
 
 class Promotions extends React.Component {
+
+    renderStockMins() {
+        return dataPromotions.map((el, i) =>
+            <Col key={i} className="d-flex justify-content-center" md={4}>
+                <StockMin
+                    name={el.name}
+                    mainImage={el.mainImage}
+                    discount={el.discount}
+                    sizes={el.sizes}
+                    price={el.price}
+                    images={el.images}
+                />
+            </Col>
+        )
+    }
+
     render() {
         return (
             <div id={dataContent.links[0].to} className={styles.promotions}>
                 <div className={styles.container}>
-                    <div className={styles.bord}/>
-                    <div className={styles.flower}/>
-                    <div className={styles.flower2}/>
-                    <div className={styles.flower3}/>
-                    <div className={styles.flower4}/>
+                    <h2>Акции этой недели</h2>
+                    <div className={styles.bordPink}/>
+                    <div className={styles.boxes}>
+                        <Container>
+                            <Row className="justify-content-center">
+                                {this.renderStockMins()}
+                            </Row>
+                        </Container>
+                    </div>
                 </div>
             </div>
         );

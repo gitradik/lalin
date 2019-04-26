@@ -1,18 +1,27 @@
 import React from 'react';
 import styles from  './app.module.sass';
-import browserHistory from './utils/browserHistory';
 import Home from "./pages/Home/Home";
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
+
+class Product extends React.Component {
+    render() {
+        return (
+            <div>
+                <h1>LALALALALA</h1>
+            </div>
+        );
+    }
+}
 
 function App() {
   return (
-      <BrowserRouter history={browserHistory} basename={process.env.PUBLIC_URL}>
         <div className={styles.app}>
             <Switch>
+
+                <Route exact path="/product" render={ (routerProps) => <Product routerProps={routerProps} />} />
                 <Route exact path="/" component={Home}/>
             </Switch>
         </div>
-      </BrowserRouter>
   );
 }
 

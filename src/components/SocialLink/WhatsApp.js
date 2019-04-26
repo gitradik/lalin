@@ -43,7 +43,7 @@ class WhatsApp extends React.Component {
                    onMouseOver={this.viewTitle}
                    onMouseLeave={this.hiddenTitle}
                 >
-                    <i className={whatsApp.classIcon} style={{color: 'white'}}/>
+                    <i className={whatsApp.classIcon} style={{color: !isViewTitle ? 'white' : whatsApp.color}}/>
                 </a>
             </div>
         );

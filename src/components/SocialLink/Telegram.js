@@ -43,7 +43,7 @@ class Telegram extends React.Component {
                    onMouseOver={this.viewTitle}
                    onMouseLeave={this.hiddenTitle}
                 >
-                    <i className={telegram.classIcon} style={{color: 'white'}}/>
+                    <i className={telegram.classIcon} style={{color: !isViewTitle ? 'white' : telegram.color}}/>
                 </a>
             </div>
         );
