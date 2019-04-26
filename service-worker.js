@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.0/workbox-sw.js");
 
 importScripts(
-  "/lalin/precache-manifest.f169d1bf6c50cd38a81c0ce3cc4b858e.js"
+  "/lalin/precache-manifest.808fb5a5e0914262f2f34ce600171350.js"
 );
 
 self.addEventListener('message', (event) => {
