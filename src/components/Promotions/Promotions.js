@@ -10,7 +10,7 @@ class Promotions extends React.Component {
 
     renderStockMins() {
         return dataPromotions.map((el, i) =>
-            <Col key={i} className="d-flex justify-content-center" md={4}>
+            <Col key={i} className="d-flex justify-content-center" lg={4} md={6}>
                 <StockMin
                     name={el.name}
                     mainImage={el.mainImage}

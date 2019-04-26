@@ -20,6 +20,29 @@
     .box
 
       .buttons
+        display: flex
+        justify-content: space-around
+        padding: 10px 0
+
+        button
+          background: transparent
+          font-size: 18px
+          display: flex
+          align-items: center
+          justify-content: center
+          font-weight: 600
+          padding: 7px 20px
+          box-shadow: $boxShadowLight
+          transition: .2s
+          color: black
+          border: 2px solid #ff54b0
+
+          i
+            margin-right: 5px
+
+          &:hover
+            background: #ff54b0
+            color: white
 
       .imgBox
 
@@ -34,19 +57,29 @@
         .name
           text-align: center
           color: #ffb3ff
-          text-shadow: $textShadow
+          font-size: 30px
+          font-weight: 700
           text-transform: capitalize
 
         .sizes
 
           span
+            font-size: 24px
+            font-weight: 500
             margin: 0 3px
 
         .price
+          padding-bottom: 5px
+
+          span
+            font-size: 24px
+            font-weight: 500
+            margin: 0 3px
 
           .old
 
           .new
+            color: red
 
       .discount
         position: absolute

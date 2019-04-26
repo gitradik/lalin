@@ -14,38 +14,11 @@
     align-items: center
     padding-top: 150px
 
-    //&:before
-      position: absolute
-      content: ''
-      top: 30px
-      bottom: 30px
-      left: 60px
-      transform: skewX(-2deg)
-      right: 60px
-      border-left: 8px solid #ffb3ff
-      border-right: 8px solid black
-
-    //&:after
-      position: absolute
-      content: ''
-      top: 60px
-      bottom: 60px
-      transform: skewX(-2deg)
-      left: 30px
-      right: 30px
-      border-top: 8px solid black
-      border-bottom: 8px solid #ffb3ff
-
-
-      //background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 28%, rgba(255,255,255,1) 73%, rgba(0,0,0,1) 100%)
-      //background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(255,255,255,1) 28%,rgba(255,255,255,1) 73%,rgba(0,0,0,1) 100%)
-      //background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(255,255,255,1) 28%,rgba(255,255,255,1)
-
     .bordPink
       position: absolute
       content: ''
       top: 52px
-      left: 60px
+      left: 30px
       right: 30px
       height: 8px
       transform: skewX(-2deg)
@@ -55,6 +28,9 @@
 
 
     h2
+      text-align: center
+      padding: 7px
+      background: rgba(255,255,255,.8)
       position: absolute
       margin-top: 30px
       top: 0
@@ -70,42 +46,5 @@
       width: 100%
 
 
-
-    //.bord
-      position: absolute
-      top: 30px
-      left: 30px
-      right: 30px
-      bottom: 30px
-      border: 8px solid #ffb3ff
-      z-index: -2
-
-    //.flower, .flower2, .flower3, .flower4
-      position: absolute
-      right: 27px
-      top: 27px
-      height: 100px
-      width: 100px
-      background-image: url('../../public/images/flower.png')
-      background-position: center
-      background-repeat: no-repeat
-      background-size: cover
-
-    .flower2
-      right: auto
-      left: 27px
-      transform: rotateZ(-100deg)
-
-    .flower3
-      right: auto
-      left: 27px
-      top: auto
-      bottom: 27px
-      transform: rotateZ(180deg)
-
-    .flower4
-      top: auto
-      bottom: 27px
-      transform: rotateZ(90deg)
-
+@import "./media"
 

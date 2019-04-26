@@ -33,7 +33,9 @@ class StockMin extends React.Component {
 
     renderSize() {
         const {sizes} = this.props;
-        return sizes.map((el, i, arr) => <span key={i}>{el + (i !== arr.length && ",")}</span>)
+        return sizes.map((el, i) =>
+            <span key={i}>{el}{i !== sizes.length - 1 && ','}</span>
+        );
     }
 
     renderImagesForSlider() {
@@ -47,7 +49,7 @@ class StockMin extends React.Component {
 
     renderModals() {
         const {isOpenPhoto, isOpenForm, titleForm} = this.state;
-        if(isOpenForm) {
+        if (isOpenForm) {
             return <Modal
                 closeIconSize={38} styles={modalStyle} open={isOpenForm} onClose={this.closeModal} centered>
                 <div className={styles.contactForm}>
@@ -56,7 +58,7 @@ class StockMin extends React.Component {
                         location="Promotions"/>
                 </div>
             </Modal>;
-        } else if(isOpenPhoto) {
+        } else if (isOpenPhoto) {
             return <Modal
                 closeIconSize={38} styles={modalStyle} open={isOpenPhoto} onClose={this.closeModal} centered>
                 <Slider {...slickSettings}>
@@ -70,34 +72,40 @@ class StockMin extends React.Component {
         const {mainImage, name, discount, price} = this.props;
         return (
             <>{this.renderModals()}
-            <div className={styles.stockMin} onClick={this.onClickImg}>
-                <div className={styles.container}>
-                    <div className={styles.box}>
-                        <div className={styles.imgBox}>
-                            <img src={require("../../public/images/promotions/" + mainImage)} alt={mainImage}/>
-                        </div>
-                        <div className={styles.descr}>
-                            <h5 className={styles.name}>{name}</h5>
-                            <div className={styles.sizes}>
-                                <span>Размеры: </span>
-                                {this.renderSize()}
+                <div className={styles.stockMin} onClick={this.onClickImg}>
+                    <div className={styles.container}>
+                        <div className={styles.box}>
+                            <div className={styles.imgBox}>
+                                <img src={require("../../public/images/promotions/" + mainImage)} alt={mainImage}/>
                             </div>
-                            <div className={styles.price}>
-                                <span className={styles.old}><strike>{price}</strike></span>
-                                <span className={styles.new}>{price - (price * (discount / 100))}</span>
+                            <div className={styles.descr}>
+                                <h5 className={styles.name}>{name}</h5>
+                                <div className={styles.sizes}>
+                                    <span>Размеры: </span>
+                                    {this.renderSize()}
+                                </div>
+                                <div className={styles.price}>
+                                    <span>Цена: </span>
+                                    <span className={styles.old}><strike>{price}</strike></span>
+                                    <span className={styles.new}>{price - (price * (discount / 100))}</span>
+                                    <span>грн.</span>
+                                </div>
                             </div>
-                        </div>
-                        <div className={styles.discount}>
-                            <img src={require('../../public/images/sale.png')} alt="discount"/>
-                            <span>{discount + "%"}</span>
-                        </div>
-                        <div className={styles.buttons}>
-                            <button onClick={this.onClickImg}>Фото</button>
-                            <button onClick={() => this.onClickForm(name)}>Заказать</button>
+                            <div className={styles.discount}>
+                                <img src={require('../../public/images/sale.png')} alt="discount"/>
+                                <span>{discount + "%"}</span>
+                            </div>
+                            <div className={styles.buttons}>
+                                <button onClick={this.onClickImg}><i className="far fa-image"/><span>Фото</span>
+                                </button>
+                                <button onClick={() => this.onClickForm(name)}>
+                                    <i className="fas fa-phone"/>
+                                    <span>Заказать</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             </>
         );
     }
