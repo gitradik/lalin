@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2ce04710a770d7514a5c18f8cb121593",
+    "revision": "2a0dece8e9d0a50580369609dd6b07fd",
     "url": "/lalin/index.html"
   },
   {
@@ -8,16 +8,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lalin/static/css/2.df59263a.chunk.css"
   },
   {
-    "revision": "f1d741b6e8384389a7cf",
-    "url": "/lalin/static/css/main.aa866236.chunk.css"
+    "revision": "95b5e544003e95ac5c0a",
+    "url": "/lalin/static/css/main.1e84d108.chunk.css"
   },
   {
     "revision": "6597130b22841c0633c0",
     "url": "/lalin/static/js/2.8ce92900.chunk.js"
   },
   {
-    "revision": "f1d741b6e8384389a7cf",
-    "url": "/lalin/static/js/main.c904489f.chunk.js"
+    "revision": "95b5e544003e95ac5c0a",
+    "url": "/lalin/static/js/main.d6bc84f2.chunk.js"
   },
   {
     "revision": "4414672a97511678aeb9",
