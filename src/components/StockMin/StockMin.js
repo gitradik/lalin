@@ -52,11 +52,9 @@ class StockMin extends React.Component {
         if (isOpenForm) {
             return <Modal
                 closeIconSize={38} styles={modalStyle} open={isOpenForm} onClose={this.closeModal} centered>
-                <div className={styles.contactForm}>
                     <ContactForm
                         title={titleForm}
                         location="Promotions"/>
-                </div>
             </Modal>;
         } else if (isOpenPhoto) {
             return <Modal

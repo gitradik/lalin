@@ -1,15 +1,19 @@
 export const modalStyle = {
     closeButton: {
         fill: "#ff28ed",
+        right: '0',
+        marginTop: '-50px'
     },
     overlay: {
-        padding: '0'
+        padding: '0',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     modal: {
-        margin: '0',
-        width: '100%',
         maxWidth: '100%',
-        background: 'none',
         padding: '0',
+        background: 'none',
+        boxShadow: 'none'
     }
 };

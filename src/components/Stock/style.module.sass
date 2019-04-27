@@ -1,27 +1,30 @@
 @import "../../utils/dataStyle.module"
 
 .stock
+  padding-bottom: 15px
 
   .container
     margin-top: 40px
     position: relative
 
     .img
-      position: relative
       display: flex
-      max-height: 330px
+      justify-content: center
+      align-items: center
 
-      img
-        height: auto
-        max-width: 250px
-        transform: translateX(5%) rotateZ(-10deg)
-        cursor: pointer
-        transition: .2s
-        box-shadow: $boxShadowLight
+      .imgContainer
+        transform: translateX(5%)  rotateZ(-10deg)
 
-        &:hover
+        img
+          height: auto
+          max-width: 100%
+          cursor: pointer
           transition: .2s
-          box-shadow: $boxShadowMiddle
+          box-shadow: $boxShadowLight
+
+          &:hover
+            transition: .2s
+            box-shadow: $boxShadowMiddle
 
         &:last-child
           transform: translateX(-5%) rotateZ(-10deg)
@@ -29,7 +32,9 @@
     .text
       position: absolute
       background-color: rgba(255, 40, 237, .15)
-      right: 0
+      left: 50%
+      width: 80%
+      transform: translateX(-50%)
       bottom: 100px
       text-align: center
       font-family: 'Marck Script', cursive

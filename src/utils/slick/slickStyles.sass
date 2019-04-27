@@ -3,7 +3,7 @@
 .slick-slider
   position: relative
   width: 100%
-  margin-top: 30px
+  padding-top: 15px
 
   .slick-dots
     padding-top: 10px
@@ -14,6 +14,11 @@
       border: 1px solid #ff28ed
       background: transparent
       margin: 0 4px
+      height: 30px
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 30px
       border-radius: 100%
       transition: .2s
 
@@ -67,37 +72,23 @@
       .slick-slide
 
         div
+          display: flex
+          justify-content: center
 
           div
+            display: inline-block!important
+            vertical-align: top!important
+            width: auto!important
 
             img
               height: auto
-              max-width: 400px
+              max-width: 100%
               box-shadow: $bsLogo
-              margin-left: 50%
-              transform: translateX(-50%)
 
-@media only screen and (max-width: 767px)
+@media only screen and (min-width: 576px)
   .slick-slider
-
-    .slick-dots
-
-    .slick-list
-      padding-top: 30px
-
-      .slick-track
-
-        .slick-slide
-
-          div
-
-            div
-
-              img
-                max-width: 350px
-
-@media only screen and (max-width: 575px)
-  .slick-slider
+    height: 100%
+    width: 100%
 
     .slick-list
 
@@ -110,20 +101,5 @@
             div
 
               img
-                max-width: 350px
+                max-width: 576px
 
-@media only screen and (max-width: 399px)
-  .slick-slider
-
-    .slick-list
-
-      .slick-track
-
-        .slick-slide
-
-          div
-
-            div
-
-              img
-                max-width: 290px

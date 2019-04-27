@@ -1,3 +1,49 @@
 .thanks
+  display: flex
+  align-items: center
+  justify-content: center
+  padding-top: 30px
 
   .container
+    padding: 15px
+    border: 3px solid #ff54b0
+    position: relative
+
+    .text
+      color: white
+      font-family: 'Amatic SC', cursive
+      font-weight: 600
+
+      h4
+        font-size: 40px
+
+      p
+        font-size: 18px
+
+    .heard, .heard1, .heard2, .heard3
+      position: absolute
+      content: ''
+      color: #ff54b0
+      font-size: 30px
+
+    .heard
+      top: -25px
+      left: -25px
+      transform: rotateZ(-45deg)
+
+    .heard1
+      top: -25px
+      right: -25px
+      transform: rotateZ(45deg)
+
+    .heard2
+      bottom: -25px
+      right: -25px
+      transform: rotateZ(135deg)
+
+    .heard3
+      bottom: -25px
+      left: -25px
+      transform: rotateZ(-135deg)
+
+

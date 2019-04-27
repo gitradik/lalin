@@ -52,9 +52,10 @@ const socialLinks = {
 
 const title = "Магия нижнего белья";
 
-const titleContactForm = <span>Закажи сейчас и получи <small style={{color: "red", display: "block"}}>скидку 10%</small></span>;
+const titleContactForm = <span>Заказать сейчас и получить <small style={{color: "red", display: "block", fontSize: "32px"}}>скидку 10%</small></span>;
+const textButton = "Получить";
 
-const titleStock = <span>Закажи этот прекрасный комплект со <small style={{color: "red", display: "block"}}>скидкой 10%</small></span>;
+const titleStock = <span>Закажи этот прекрасный комплект со <small style={{color: "red", display: "block", fontSize: "32px"}}>скидкой 10%</small></span>;
 
 const priceStockBefore = 350;
 const priceStockAfter = 315;
@@ -64,5 +65,5 @@ const stockImages = ['stock.jpg', 'stock1.jpg'];
 export default {
     links, socialLinks, title, titleContactForm,
     titleStock, priceStockBefore, priceStockAfter,
-    stockImages,
+    stockImages, textButton
 };

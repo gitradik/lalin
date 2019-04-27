@@ -2,13 +2,12 @@
 @import "../../utils/dataStyle.module"
 
 .contactForm
+  width: 100%
+  padding-top: 15px
 
   .container
-    margin-top: 20px
-    //border: 8px solid black
-    padding: 30px
+    padding: 20px
     background: linear-gradient(to bottom, rgba(255, 153, 255, .6), rgba(255,255,255,.5))
-    //box-shadow: $boxShadowMiddle
     position: relative
 
     .bord
@@ -48,8 +47,11 @@
       justify-content: center
 
       .inputContainer
-        display: block
         margin: 5px 0
+        max-width: 90%
+        min-width: 290px
+        display: flex
+        justify-content: center
 
         .submitBtn
           font-family: 'Amatic SC', cursive
@@ -68,7 +70,7 @@
         input
           font-family: 'Amatic SC', cursive
           font-size: 24px
-          min-width: 250px
+          width: 100%
           letter-spacing: -1px
           padding: 10px
           border: 1px solid transparent

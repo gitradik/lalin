@@ -8,13 +8,30 @@
       .img
         padding-bottom: 20px
 
-        img
+        .imgContainer
           transform: translateX(5%) rotateZ(-10deg)
 
           &:last-child
             transform: translateX(-5%) rotateZ(-10deg)
 
+@media only screen and (max-width: 575px)
+  .stock
+
+    .container
+      padding-bottom: 30px
+
       .text
-        left: 50%
-        transform: translateX(-50%)
-        max-width: 100%
+        font-size: 20px
+        bottom: 30px
+
+@media only screen and (min-width: 576px)
+  .stock
+
+    .container
+
+      .img
+
+        .imgContainer
+
+          img
+            max-width: 300px

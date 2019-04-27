@@ -35,9 +35,11 @@ class Stock extends React.Component {
     renderStockImages() {
         const {stockImages} = dataContent;
         return stockImages.map((el, i) =>
-            <img key={i + "stockImages"} onClick={this.onClickImg}
-                 src={require("../../public/images/" + el)}
-                 alt={el}/>
+            <div key={i + "stockImages"} className={styles.imgContainer}>
+                <img onClick={this.onClickImg}
+                     src={require("../../public/images/" + el)}
+                     alt={el}/>
+            </div>
         );
     }
 
@@ -53,11 +55,11 @@ class Stock extends React.Component {
                 </Modal>
                 <div className={styles.stock}>
                     <div className={styles.container}>
-                        <div className={styles.text}>
-                            {dataContent.titleStock}
-                        </div>
                         <div className={styles.img}>
                             {this.renderStockImages()}
+                        </div>
+                        <div className={styles.text}>
+                            {dataContent.titleStock}
                         </div>
                     </div>
                 </div>
