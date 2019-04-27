@@ -47,13 +47,26 @@ class StockMin extends React.Component {
         );
     }
 
+    renderDiscountPrice() {
+        const {discount, price} = this.props;
+        return price - (price * (discount / 100));
+    }
+
     renderModals() {
         const {isOpenPhoto, isOpenForm, titleForm} = this.state;
         if (isOpenForm) {
             return <Modal
                 closeIconSize={38} styles={modalStyle} open={isOpenForm} onClose={this.closeModal} centered>
                     <ContactForm
-                        title={titleForm}
+                        title={
+                            <span className={styles.titleForm}>
+                                {titleForm}
+                                <small className={styles.titleFormPrice}>
+                                    {this.renderDiscountPrice()}
+                                    <small>грн.</small>
+                                </small>
+                            </span>
+                        }
                         location="Promotions"/>
             </Modal>;
         } else if (isOpenPhoto) {
@@ -85,7 +98,7 @@ class StockMin extends React.Component {
                                 <div className={styles.price}>
                                     <span>Цена: </span>
                                     <span className={styles.old}><strike>{price}</strike></span>
-                                    <span className={styles.new}>{price - (price * (discount / 100))}</span>
+                                    <span className={styles.new}>{this.renderDiscountPrice()}</span>
                                     <span>грн.</span>
                                 </div>
                             </div>
