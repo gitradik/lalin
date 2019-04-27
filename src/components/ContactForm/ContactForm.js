@@ -6,7 +6,8 @@ import PropTypes from 'prop-types';
 import {botToken, chatId} from "../../utils/dataTelegram";
 import axios from 'axios';
 import Thanks from "../Thanks/Thanks";
-import Loader from "../../utils/Loader/Loader";
+import Loader from "../Loader/Loader";
+import { sendMessage } from '../../api/telegramController';
 
 class ContactForm extends React.Component {
     constructor(props) {
@@ -48,7 +49,7 @@ class ContactForm extends React.Component {
         const {location, product} = this.props;
         const message = `name: ${name}; phone: ${phone}; product: ${product}; location: ${location}`;
         this.setState({isFetching: true});
-        axios.post(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${message}`)
+        axios.post(sendMessage(botToken, chatId, message))
             .then(() => {
                 this.setState({
                     isFetching: false,

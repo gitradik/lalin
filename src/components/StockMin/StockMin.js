@@ -53,6 +53,7 @@ class StockMin extends React.Component {
     }
 
     renderModals() {
+        const {name} = this.props;
         const {isOpenPhoto, isOpenForm, titleForm} = this.state;
         if (isOpenForm) {
             return <Modal
@@ -67,7 +68,9 @@ class StockMin extends React.Component {
                                 </small>
                             </span>
                         }
-                        location="Promotions"/>
+                        location="Promotions"
+                        product={name + " " + this.renderDiscountPrice() + "грн."}
+                    />
             </Modal>;
         } else if (isOpenPhoto) {
             return <Modal

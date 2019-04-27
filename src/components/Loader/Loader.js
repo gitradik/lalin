@@ -2,7 +2,7 @@ import React from 'react';
 import './style.scss';
 import styles from "../../components/Thanks/style.module.sass";
 import Modal from "react-responsive-modal";
-import {modalStyle} from "../modalStyle";
+import {modalStyle} from "../../utils/modalStyle";
 
 const Loader = () => {
     return (
