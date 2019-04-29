@@ -4,9 +4,9 @@ import dataContent from '../../utils/dataContent';
 import Modal from 'react-responsive-modal';
 import Slider from "react-slick";
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import '../../utils/slick/slickStyles.sass';
+import '../../utils/slickImagesGallery/slickStyles.sass';
 import {modalStyle} from '../../utils/modalStyle';
-import {slickSettings} from '../../utils/slick/slickSettings';
+import {slickSettingsStock} from '../../utils/slickImagesGallery/slickSettings';
 
 class Stock extends React.Component {
     constructor(props) {
@@ -49,7 +49,7 @@ class Stock extends React.Component {
             <>
                 <Modal
                     closeIconSize={38} styles={modalStyle} open={isOpen} onClose={this.closeModal} centered>
-                    <Slider {...slickSettings}>
+                    <Slider {...slickSettingsStock}>
                         {this.renderImagesForSlider()}
                     </Slider>
                 </Modal>

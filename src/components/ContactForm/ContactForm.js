@@ -31,17 +31,17 @@ class ContactForm extends React.Component {
 
     onChangeName = (value) => {
         this.setState({
-            name: value.trimLeft(),
+            name: value,
             isValidName: value.length > 0
         });
     };
 
     renderThanksModal() {
-        return this.state.isThanks && <Thanks product={this.props.product} />
+        return this.state.isThanks && <Thanks />
     }
 
     renderLoader() {
-        return this.state.isFetching && <Loader/>
+        return this.state.isFetching && <Loader />
     }
 
     onSubmit = () => {
@@ -52,16 +52,12 @@ class ContactForm extends React.Component {
         axios.post(sendMessage(botToken, chatId, message))
             .then(() => {
                 this.setState({
-                    isFetching: false,
-                    isThanks: true,
-                    name: '', phone: '',
-                    isValidPhone: false,
-                    isValidName: false })
+                    isFetching: false, isThanks: true, name: '', phone: '', isValidPhone: false, isValidName: false
+                });
             })
             .catch(() => {
                 this.setState({ isFetching: false });
             });
-
     };
 
     render() {
@@ -78,14 +74,16 @@ class ContactForm extends React.Component {
                     </div>
                     <div className={styles.inputs}>
                         <div className={styles.inputContainer} style={{paddingRight: "10px"}}>
-                            <input type="text" name="name"
+                            <input className={isValidName || ""}
+                                type="text" name="name"
                                    placeholder="Ваше Имя"
                                    value={name}
                                    onChange={(e) => this.onChangeName(e.target.value)}
                             />
                         </div>
                         <div className={styles.inputContainer} style={{paddingLeft: "10px"}}>
-                            <InputMask placeholder="Ваш номер телефона"
+                            <InputMask className={isValidPhone || ""}
+                                placeholder="Ваш номер телефона"
                                        name="phone" mask="+389999999999"
                                        maskChar=" "
                                        value={phone}

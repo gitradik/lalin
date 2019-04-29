@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "http://gitradik.github.io/lalin",
   "dependencies": {
+    "animation-kit": "^0.5.6",
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
     "history": "^4.9.0",

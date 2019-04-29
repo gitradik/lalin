@@ -6,12 +6,13 @@ import Viber from "../SocialLink/Viber";
 import Telegram from "../SocialLink/Telegram";
 import WhatsApp from "../SocialLink/WhatsApp";
 import AnchorLink from 'react-anchor-link-smooth-scroll';
+import animation from 'animation-kit';
+import {Nav, Navbar} from "react-bootstrap";
 
 class HamMenu extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            isOpenMenu: false,
             isScroll: false,
         };
         this.hamList = React.createRef();
@@ -21,11 +22,9 @@ class HamMenu extends React.Component {
     renderLinks() {
         const {links} = this.props;
         return links.map((el, i) =>
-            <div key={i} className={styles.linkContainer}>
-                <AnchorLink className={styles.link} href={"#" + el.to} onClick={this.handleClickLink}>
-                    <span>{el.title}</span>
-                </AnchorLink>
-            </div>
+            <AnchorLink key={i} className={[styles.link, (i === 0 && styles.promotions)].join(' ')} href={`#${el.to}`} onClick={this.handleClickLink}>
+                <span>{el.title}</span>
+            </AnchorLink>
         );
     }
 
@@ -38,14 +37,18 @@ class HamMenu extends React.Component {
     };
 
     handleClickLink = () => {
-        this.setState({isOpenMenu: false});
+        if (this.hamList.current.classList.contains('show')) {
+            this.ham.current.click();
+        }
     };
 
     handleClick = (e) => {
         if (this.hamList.current.contains(e.target) || this.ham.current.contains(e.target)) {
             return;
         }
-        this.setState({isOpenMenu: false});
+        if (this.hamList.current.classList.contains('show')) {
+            this.ham.current.click();
+        }
     };
 
     renderNumberTel() {
@@ -57,28 +60,22 @@ class HamMenu extends React.Component {
     };
 
     render() {
-        const {isOpenMenu, isScroll} = this.state;
+        const {isScroll} = this.state;
         return (
-            <div className={styles.hamMenu}>
-                <div className={[styles.subMain, (isScroll && styles.subMainScroll)].join(' ')}>
-                <div className={styles.hamContainer}>
-                    <button ref={this.ham}
-                        className={[styles.ham, (isOpenMenu || styles.hamHidded)].join(' ')}
-                            onClick={() => this.setState({isOpenMenu: !isOpenMenu})}
-                    >
-                        <i className="fas fa-bars"/>
-                    </button>
-                    {this.renderNumberTel()}
-                    <div className={styles.socialLinks}>
-                       <Viber />
-                       <Telegram />
-                       <WhatsApp />
+            <div className={[styles.navBarBox, (isScroll && styles.navBarBoxScroll)].join(' ')}>
+                <Navbar className={styles.navBar} expand="lg">
+                    <Navbar.Toggle ref={this.ham} aria-controls="basic-navbar-nav" />
+                    <div className={styles.social}>
+                        <Telegram/>
+                        <WhatsApp/>
+                        <Viber/>
                     </div>
-                </div>
-                <div ref={this.hamList} className={[styles.list, (isOpenMenu || styles.listHidden)].join(' ')}>
-                    {this.renderLinks()}
-                </div>
-                </div>
+                    <Navbar.Collapse className={styles.navBarCollapse} id="basic-navbar-nav" ref={this.hamList}>
+                       <Nav className={["mr-auto", styles.navBarNav].join(' ')}>
+                            {this.renderLinks()}
+                        </Nav>
+                    </Navbar.Collapse>
+                </Navbar>
             </div>
         );
     }

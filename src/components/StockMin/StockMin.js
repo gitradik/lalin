@@ -4,8 +4,8 @@ import styles from './style.module.sass';
 import PropTypes from 'prop-types';
 import {modalStyle} from "../../utils/modalStyle";
 import Slider from "react-slick/lib";
-import {slickSettings} from "../../utils/slick/slickSettings";
-import '../../utils/slick/slickStyles.sass';
+import {slickSettingsStock} from "../../utils/slickImagesGallery/slickSettings";
+import '../../utils/slickImagesGallery/slickStyles.sass';
 import Modal from "react-responsive-modal";
 import ContactForm from "../ContactForm/ContactForm";
 
@@ -75,7 +75,7 @@ class StockMin extends React.Component {
         } else if (isOpenPhoto) {
             return <Modal
                 closeIconSize={38} styles={modalStyle} open={isOpenPhoto} onClose={this.closeModal} centered>
-                <Slider {...slickSettings}>
+                <Slider {...slickSettingsStock}>
                     {this.renderImagesForSlider()}
                 </Slider>
             </Modal>;
@@ -87,36 +87,34 @@ class StockMin extends React.Component {
         return (
             <>{this.renderModals()}
                 <div className={styles.stockMin} onClick={this.onClickImg}>
-                    <div className={styles.container}>
-                        <div className={styles.box}>
-                            <div className={styles.imgBox}>
-                                <img src={require("../../public/images/promotions/" + mainImage)} alt={mainImage}/>
+                    <div className={styles.box}>
+                        <div className={styles.imgBox}>
+                            <img src={require("../../public/images/promotions/" + mainImage)} alt={mainImage}/>
+                        </div>
+                        <div className={styles.descr}>
+                            <h5 className={styles.name}>{name}</h5>
+                            <div className={styles.sizes}>
+                                <span>Размеры: </span>
+                                {this.renderSize()}
                             </div>
-                            <div className={styles.descr}>
-                                <h5 className={styles.name}>{name}</h5>
-                                <div className={styles.sizes}>
-                                    <span>Размеры: </span>
-                                    {this.renderSize()}
-                                </div>
-                                <div className={styles.price}>
-                                    <span>Цена: </span>
-                                    <span className={styles.old}><strike>{price}</strike></span>
-                                    <span className={styles.new}>{this.renderDiscountPrice()}</span>
-                                    <span>грн.</span>
-                                </div>
+                            <div className={styles.price}>
+                                <span>Цена: </span>
+                                <span className={styles.old}><strike>{price}</strike></span>
+                                <span className={styles.new}>{this.renderDiscountPrice()}</span>
+                                <span>грн.</span>
                             </div>
-                            <div className={styles.discount}>
-                                <img src={require('../../public/images/sale.png')} alt="discount"/>
-                                <span>{discount + "%"}</span>
-                            </div>
-                            <div className={styles.buttons}>
-                                <button onClick={this.onClickImg}><i className="far fa-image"/><span>Фото</span>
-                                </button>
-                                <button onClick={() => this.onClickForm(name)}>
-                                    <i className="fas fa-phone"/>
-                                    <span>Заказать</span>
-                                </button>
-                            </div>
+                        </div>
+                        <div className={styles.discount}>
+                            <img src={require('../../public/images/sale.png')} alt="discount"/>
+                            <span>{discount + "%"}</span>
+                        </div>
+                        <div className={styles.buttons}>
+                            <button onClick={this.onClickImg}><i className="far fa-image"/><span>Фото</span>
+                            </button>
+                            <button onClick={() => this.onClickForm(name)}>
+                                <i className="fas fa-phone"/>
+                                <span>Заказать</span>
+                            </button>
                         </div>
                     </div>
                 </div>

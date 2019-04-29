@@ -11,7 +11,7 @@ class TitleScroll extends React.Component {
     render() {
         return (
             <div className={styles.titleScroll}>
-                <div className={styles.back}/>
+               <div className={styles.back}/>
                 <Container fluid={true}>
                     <Row className="justify-content-center">
                         <Col lg={12}>
@@ -19,11 +19,10 @@ class TitleScroll extends React.Component {
                                 <div className={styles.subTitle}>
                                     <h1>
                                         {dataContent.title}
-                                        <div className={styles.bord}/>
-                                        <div className={styles.bord}/>
+                                       {/* <div className={styles.bord}/>
+                                        <div className={styles.bord}/>*/}
                                     </h1>
                                 </div>
-                                <Logo/>
                             </div>
                         </Col>
                     </Row>

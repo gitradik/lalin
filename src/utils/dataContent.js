@@ -50,12 +50,12 @@ const socialLinks = {
     },
 };
 
-const title = "Магия нижнего белья";
+const title = "Кружевное нежное бельe";
 
 const titleContactForm = <span>Заказать сейчас и получить <small style={{color: "red", display: "block", fontSize: "32px"}}>скидку 10%</small></span>;
 const textButton = "Получить";
 
-const titleStock = <span>Закажи этот прекрасный комплект со <small style={{color: "red", display: "block", fontSize: "32px"}}>скидкой 10%</small></span>;
+const titleStock = <span>Закажи этот прекрасный комплект <small style={{color: "red", display: "block", fontSize: "32px"}}>скидка 10%</small></span>;
 
 const priceStockBefore = 350;
 const priceStockAfter = 315;

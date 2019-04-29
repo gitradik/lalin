@@ -5,21 +5,24 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import StockMin from "../StockMin/StockMin";
 import styles from './style.module.sass';
 import {dataPromotions} from '../../utils/dataPromotions';
+import Slider from "react-slick/lib";
+import {slickSettings} from "../../utils/slickImagesGallery/slickSettings";
+import Modal from "react-responsive-modal";
 
 class Promotions extends React.Component {
 
     renderStockMins() {
         return dataPromotions.map((el, i) =>
-            <Col key={i} className="d-flex justify-content-center" lg={4} md={6}>
-                <StockMin
-                    name={el.name}
+            <div className={styles.stockMin}>
+                <StockMin key={i}
+                          name={el.name}
                     mainImage={el.mainImage}
                     discount={el.discount}
                     sizes={el.sizes}
                     price={el.price}
                     images={el.images}
                 />
-            </Col>
+            </div>
         )
     }
 
@@ -30,11 +33,9 @@ class Promotions extends React.Component {
                     <h2>Акции этой недели</h2>
                     <div className={styles.bordPink}/>
                     <div className={styles.boxes}>
-                        <Container>
-                            <Row className="justify-content-center">
-                                {this.renderStockMins()}
-                            </Row>
-                        </Container>
+                        <Slider {...slickSettings}>
+                            {this.renderStockMins()}
+                        </Slider>
                     </div>
                 </div>
             </div>

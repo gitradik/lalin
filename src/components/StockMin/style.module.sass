@@ -1,12 +1,12 @@
 @import "../../utils/dataStyle.module"
 
 .stockMin
-  font-family: 'Amatic SC', cursive
+  font-family: 'El Messiri', sans-serif
   cursor: pointer
-  margin: 30px 0
   padding: 5px
   background: rgba(255,255,255,1)
   position: relative
+  display: inline-block
   border-radius: 4px
   transition: .2s
   box-shadow: $boxShadowLight
@@ -15,97 +15,99 @@
     transition: .2s
     box-shadow: $boxShadowMiddle
 
-  .container
+  .box
+    display: flex!important
+    flex-direction: column
 
-    .box
+    .buttons
+      display: flex
+      justify-content: space-around!important
+      padding: 10px 0
 
-      .buttons
+      button
+        background: transparent
+        font-size: 15px
         display: flex
-        justify-content: space-around
-        padding: 10px 0
-
-        button
-          background: transparent
-          font-size: 18px
-          display: flex
-          align-items: center
-          justify-content: center
-          font-weight: 600
-          padding: 7px 20px
-          box-shadow: $boxShadowLight
-          transition: .2s
-          color: black
-          border: 2px solid #ff54b0
-
-          i
-            margin-right: 5px
-
-          &:hover
-            background: #ff54b0
-            color: white
-
-      .imgBox
-        max-width: 240px
-
-        img
-          height: auto
-          max-width: 100%
-          box-shadow: 0 0 2px 1px #F2AECC
-
-      .descr
-        padding-top: 10px
-
-        .name
-          text-align: center
-          color: #ffb3ff
-          font-size: 30px
-          font-weight: 700
-          text-transform: capitalize
-
-        .sizes
-
-          span
-            font-size: 24px
-            font-weight: 500
-            margin: 0 3px
-
-        .price
-          padding-bottom: 5px
-
-          span
-            font-size: 24px
-            font-weight: 500
-            margin: 0 3px
-
-          .old
-
-          .new
-            color: red
-
-      .discount
-        position: absolute
-        top: -20px
-        right: -20px
-        background: linear-gradient(to top, #ffb3ff, #ff54b0)
-        border-radius: 100%
-        height: 80px
-        width: 80px
-        padding: 3px
-        display: flex
-        justify-content: center
         align-items: center
+        justify-content: center
+        font-weight: 300
         box-shadow: $boxShadowLight
+        transition: .2s
+        color: black
+        border: 2px solid #ff54b0
+
+        i
+          margin-right: 5px
+
+        &:hover
+          background: #ff54b0
+          color: white
+
+    .imgBox
+
+      img
+        height: auto
+        max-width: 100%
+        box-shadow: 0 0 2px 1px #F2AECC
+
+    .descr
+      padding-top: 10px
+
+      .name
+        text-align: center
+        color: #ffb3ff
+        font-size: 24px
+        font-weight: 700
+        text-transform: capitalize
+
+      .sizes
+        padding-left: 10px
+        text-align: left!important
 
         span
-          color: white
-          font-size: 32px
-          font-weight: 700
+          font-size: 20px
+          font-weight: 500
+          color: rgba(0,0,0,.6)
+          margin: 0 3px
 
-        img
-          height: auto
-          max-width: 50px
+      .price
+        padding-bottom: 5px
+        padding-left: 10px
+        text-align: left!important
 
+        span
+          color: rgba(0,0,0,.6)
+          font-size: 20px
+          font-weight: 500
+          margin: 0 3px
 
+        .old
+
+        .new
+          color: red
+
+    .discount
+      position: absolute
+      top: -20px
+      right: -20px
+      background: linear-gradient(to top, #ffb3ff, #ff54b0)
+      border-radius: 100%
+      height: 80px
+      width: 80px
+      padding: 3px
+      display: flex
+      justify-content: center
+      align-items: center
+      box-shadow: $boxShadowLight
+
+      span
+        color: white
+        font-size: 22px
+        font-weight: 700
+
+      img
+        height: auto
+        width: 40px
 
 .titleForm
 
@@ -118,3 +120,5 @@
     small
       margin-left: 3px
       font-weight: 800
+
+@import "./media"

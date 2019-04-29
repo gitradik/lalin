@@ -1,128 +1,90 @@
 @import "../../utils/dataStyle.module"
-$backHamContainer: linear-gradient(to bottom, #ffe6ff, #ffb3ff)
+$backHamRow: linear-gradient(to bottom, #ffe6ff, #ffb3ff)
 $backHamContainerScroll: linear-gradient(to bottom, rgba(255, 230, 255, .8), rgba(255, 179, 255, .8))
-$backHamMenu: linear-gradient(to left bottom,  #ffe6ff, #ffb3ff)
-$boxShadow: 0 2px 4px 0 rgba(0,0,0,0.4)
+$backHamList: linear-gradient(to left bottom,  #ffe6ff, #ffb3ff)
+$boxShadow: 0 3px 6px 0 rgba(0,0,0,.2)
 
-.hamMenu
-  display: block
-  position: fixed
+.navBarBox
   z-index: 999
+  position: fixed!important
   width: 100%
-  padding-bottom: 0
+  font-family: 'El Messiri', sans-serif
+  overflow: hidden
+  transition: .2s
+  padding: 40px
 
-  .subMain
+  .navBar
     position: relative
-    transition: .2s
-    margin-right: 40px
-    margin-left: 40px
+    background: $backHamRow
+    padding-top: 2px
+    padding-bottom: 2px
+    border-radius: 4px
+    box-shadow: $boxShadow
 
-    .hamContainer
-      position: relative
-      z-index: 91
-      height: 50px
-      display: flex
-      align-items: center
-      justify-content: space-between
-      border-radius: 4px
-      box-shadow: $boxShadow
-      transition: .2s
-      margin-top: 40px
-      background: $backHamContainer
+    button
+      border: none
+      padding: 7px 10px
 
-      .numTel
+      span
+        background-image: url('../../public/images/ham.png')
+        height: 25px
+        width: 25px
+
+    .link
+      color: white
+      font-size: 16px
+      font-weight: 600
+      text-transform: uppercase
+      padding: 7px 30px
+
+      &:hover
+        transition: .2s
+        color: #e56cf2
+
+      span
+        padding-top: 2px
+
+    .promotions
+      font-size: 18px
+      margin-top: 15px
+      margin-bottom: 15px
+
+      span
+        box-shadow: $boxShadowLight
+        padding: 5px 50px
+        background: linear-gradient(to bottom, #ff66ff, #e600e6)
+
+      &:hover
         color: white
-        text-shadow: $textShadow
-        font-family: 'Marck Script', cursive
-        font-size: 24px
 
-      .ham
-        position: relative
-        z-index: 909
-        background: none
-        border: none
-        cursor: pointer
-        padding: 5px 7px
-        margin-left: 10px
-        width: 35px
-
-        i
-          color: white
-          text-shadow: 1px 1px 1px rgba(0,0,0,.4)
+        span
           transition: .2s
-          font-size: 20px
+          background: linear-gradient(to bottom left, #ff66ff, #e600e6)
+          box-shadow: $boxShadow
 
-      .hamHidded
+    .social
+      padding-top: 4px
+      height: 100%
 
-        i
-          transition: .2s
-          font-size: 24px
+    .navBarCollapse
 
-      .socialLinks
-        padding: 0 17px
+      .navBarNav
+        margin-left: auto
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
 
-    .list
-      padding-bottom: 15px
-      padding-top: 20px
-      position: absolute
-      top: 50px
-      left: 0
-      border-radius: 4px
-      overflow: hidden
-      display: flex
-      z-index: 90
-      max-width: 320px
-      flex-direction: column
-      background: $backHamMenu
-      box-shadow: $boxShadow
-      transition: .6s
-      width: 100%
+.navBarBoxScroll
+  transition: .2s
+  padding-left: 0
+  padding-right: 0
+  padding-top: 0
 
-      .linkContainer
-        display: inline-block
+  .navBar
+    border-top-left-radius: 0
+    border-top-right-radius: 0
 
-        .link
-          font-family: 'Marck Script', cursive
-          font-size: 24px
-          color: white
-          padding: 10px
-          padding-left: 0
-          text-shadow: 1px 1px 1px rgba(0,0,0,.3)
-          margin-left: 10px
-          position: relative
-          display: inline-block
-
-          &:before
-            position: absolute
-            content: ''
-            bottom: 10px
-            left: 0
-            height: 2px
-            border-radius: 4px
-            background-color: rgba(255,255,255,.7)
-            transition: .2s
-            width: 0
-
-          &:hover
-
-            &:before
-              transition: .2s
-              width: 100%
-
-
-    .listHidden
-      transition: .2s
-      width: 0
-
-  .subMainScroll
-    transition: .2s
-    margin: 0
-
-    .hamContainer
-      transition: .2s
-      background: $backHamContainerScroll
-      margin-top: 0
-      border-radius: 0
 
 @import "./media"
 

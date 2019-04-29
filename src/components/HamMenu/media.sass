@@ -1,9 +1,39 @@
+@media only screen and (min-width: 992px)
+  .navBarBox
+
+    .navBar
+
+      .link
+        padding-left: 0
+
+      .promotions
+        margin: 0
+
+        span
+          box-shadow: 0 0 1px 0 rgba(0,0,0,.5)
+
+        &:hover
+
+          span
+            box-shadow: 0 0 2px 0 rgba(0,0,0,.5)
+
+
+      .social
+        order: 1
+
+      .navBarCollapse
+        order: 0
+
+        .navBarNav
+          flex-direction: row
+          justify-content: flex-start
+          margin-left: 0
+
 @media only screen and (max-width: 575px)
-  .hamMenu
+  .navBarBox
 
-    .subMain
+    .navBar
 
-      .hamContainer
-
-        .numTel
-          font-size: 20px
+      .promotions
+        padding-left: 0
+        padding-right: 0
