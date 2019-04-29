@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2a0dece8e9d0a50580369609dd6b07fd",
+    "revision": "db30c3d0051b96fc803dddaa9a61f3d9",
     "url": "/lalin/index.html"
   },
   {
-    "revision": "6597130b22841c0633c0",
+    "revision": "03da37c449633a0fd377",
     "url": "/lalin/static/css/2.df59263a.chunk.css"
   },
   {
-    "revision": "95b5e544003e95ac5c0a",
-    "url": "/lalin/static/css/main.1e84d108.chunk.css"
+    "revision": "8af1aa4c47673b5f7cb6",
+    "url": "/lalin/static/css/main.4a0bae6f.chunk.css"
   },
   {
-    "revision": "6597130b22841c0633c0",
-    "url": "/lalin/static/js/2.8ce92900.chunk.js"
+    "revision": "03da37c449633a0fd377",
+    "url": "/lalin/static/js/2.8a5454db.chunk.js"
   },
   {
-    "revision": "95b5e544003e95ac5c0a",
-    "url": "/lalin/static/js/main.d6bc84f2.chunk.js"
+    "revision": "8af1aa4c47673b5f7cb6",
+    "url": "/lalin/static/js/main.83382144.chunk.js"
   },
   {
     "revision": "4414672a97511678aeb9",
@@ -204,12 +204,32 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lalin/static/media/fa-solid-900.ff8d9f8a.ttf"
   },
   {
+    "revision": "bdf0531743e6cc04a8ef172e48aa0c4a",
+    "url": "/lalin/static/media/flower-with-board.bdf05317.jpg"
+  },
+  {
+    "revision": "0b00a93e6b10e0629055dba76647f6fc",
+    "url": "/lalin/static/media/flower.0b00a93e.jpg"
+  },
+  {
     "revision": "a78839b906434e609c1fee66d0468ec4",
     "url": "/lalin/static/media/flower.a78839b9.png"
   },
   {
     "revision": "c340cb243adf271e00a96f79b1a7fe5e",
     "url": "/lalin/static/media/logo.c340cb24.jpg"
+  },
+  {
+    "revision": "48d57678ce5cbf468b8434485abf85d4",
+    "url": "/lalin/static/media/rose.48d57678.jpg"
+  },
+  {
+    "revision": "4786f9f4199f88e7e162cadd723d3f59",
+    "url": "/lalin/static/media/rose2.4786f9f4.jpg"
+  },
+  {
+    "revision": "0e759e7d8eed5ef3cf235644a1786d54",
+    "url": "/lalin/static/media/rose3.0e759e7d.jpg"
   },
   {
     "revision": "2f30ef29c84f1dfd466b28825f37de0b",
