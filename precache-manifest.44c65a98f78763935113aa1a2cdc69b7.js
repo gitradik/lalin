@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "db30c3d0051b96fc803dddaa9a61f3d9",
+    "revision": "d8a6c93a7661462ceb1dfdba76e6f769",
     "url": "/lalin/index.html"
   },
   {
-    "revision": "03da37c449633a0fd377",
-    "url": "/lalin/static/css/2.df59263a.chunk.css"
+    "revision": "6a60b4375b8f4a354e53",
+    "url": "/lalin/static/css/2.78fe3b34.chunk.css"
   },
   {
-    "revision": "8af1aa4c47673b5f7cb6",
-    "url": "/lalin/static/css/main.4a0bae6f.chunk.css"
+    "revision": "c6a89b012ae746bc178f",
+    "url": "/lalin/static/css/main.c8b678cc.chunk.css"
   },
   {
-    "revision": "03da37c449633a0fd377",
-    "url": "/lalin/static/js/2.8a5454db.chunk.js"
+    "revision": "6a60b4375b8f4a354e53",
+    "url": "/lalin/static/js/2.61d83954.chunk.js"
   },
   {
-    "revision": "8af1aa4c47673b5f7cb6",
-    "url": "/lalin/static/js/main.83382144.chunk.js"
+    "revision": "c6a89b012ae746bc178f",
+    "url": "/lalin/static/js/main.c7334bc8.chunk.js"
   },
   {
     "revision": "4414672a97511678aeb9",
@@ -144,6 +144,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lalin/static/media/backTitleScrollMobile4.da1fbebe.png"
   },
   {
+    "revision": "b83c150c54501be14c8dc81d8306e556",
+    "url": "/lalin/static/media/choices.b83c150c.png"
+  },
+  {
     "revision": "2ef8ba3410dcc71578a880e7064acd7a",
     "url": "/lalin/static/media/fa-brands-400.2ef8ba34.woff"
   },
@@ -216,8 +220,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lalin/static/media/flower.a78839b9.png"
   },
   {
+    "revision": "ca51b7910fca23318640a427950dd8ed",
+    "url": "/lalin/static/media/form.ca51b791.png"
+  },
+  {
+    "revision": "77dbc7c25550c5253db634df047e8b9d",
+    "url": "/lalin/static/media/international.77dbc7c2.png"
+  },
+  {
     "revision": "c340cb243adf271e00a96f79b1a7fe5e",
     "url": "/lalin/static/media/logo.c340cb24.jpg"
+  },
+  {
+    "revision": "afde4184add09ae5c1bf13d32480ccb1",
+    "url": "/lalin/static/media/payment-method.afde4184.png"
   },
   {
     "revision": "48d57678ce5cbf468b8434485abf85d4",
@@ -230,6 +246,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "0e759e7d8eed5ef3cf235644a1786d54",
     "url": "/lalin/static/media/rose3.0e759e7d.jpg"
+  },
+  {
+    "revision": "e9360fef10d362d30097ff6c5995cc67",
+    "url": "/lalin/static/media/smartphone.e9360fef.png"
   },
   {
     "revision": "2f30ef29c84f1dfd466b28825f37de0b",
