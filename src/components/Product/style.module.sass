@@ -1,0 +1,102 @@
+@import "../../utils/dataStyle.module"
+
+.product
+  font-family: 'El Messiri', sans-serif
+  display: inline-block
+  cursor: pointer
+  overflow: hidden
+  border-radius: 4px
+  color: white
+  transition: .2s
+  box-shadow: $boxShadowLight
+
+  &:hover
+    transition: .2s
+    box-shadow: $boxShadowMiddle
+
+  .box
+    width: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+    background: linear-gradient(to bottom, $light 40%, $hard)
+
+    .buttons
+      display: flex
+      width: 100%
+
+      button
+        color: white
+        font-size: 14px
+        padding: 14px 0
+        border: none
+        display: flex
+        flex-direction: column
+        align-items: center
+        min-width: 50%
+        border-top: 1px solid rgba(255,255,255,.7)
+        transition: .2s
+        background: transparent
+
+        i
+          font-size: 12px
+          margin-right: 3px
+
+        &:hover
+          transition: .2s
+          background: rgba(255,255,255,.4)
+
+        &:first-child
+          border-top-right-radius: 14px
+          border-right: 1px solid $light
+
+        &:last-child
+          border-top-left-radius: 14px
+          border-left: 1px solid $light
+
+    .imgBox
+      padding: 2px
+
+      img
+        height: auto
+        max-width: 100%
+        box-shadow: 0 2px 0 0 rgba(0,0,0,.2)
+
+    .descr
+      width: 100%
+      padding: 10px 0
+
+      .name
+        font-size: 18px
+        text-transform: capitalize
+        text-align: center
+
+      .sizes
+        font-size: 15px
+
+        span
+          margin-left: 3px
+
+      .price
+        font-size: 15px
+
+        span
+          margin-left: 3px
+
+        .old
+
+        .new
+
+.titleForm
+
+  .titleFormPrice
+    color: white
+    display: block
+    font-size: 32px
+    font-weight: 800
+
+    small
+      margin-left: 3px
+      font-weight: 800
+
+@import "./media"

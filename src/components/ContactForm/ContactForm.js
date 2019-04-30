@@ -68,12 +68,11 @@ class ContactForm extends React.Component {
                 {this.renderLoader()}
                 {this.renderThanksModal()}
                 <div className={styles.container}>
-                    <div className={styles.bord}/>
                     <div className={styles.title}>
                         {this.props.title}
                     </div>
                     <div className={styles.inputs}>
-                        <div className={styles.inputContainer} style={{paddingRight: "10px"}}>
+                        <div className={styles.inputContainer}>
                             <input className={isValidName || ""}
                                 type="text" name="name"
                                    placeholder="Ваше Имя"
@@ -81,7 +80,7 @@ class ContactForm extends React.Component {
                                    onChange={(e) => this.onChangeName(e.target.value)}
                             />
                         </div>
-                        <div className={styles.inputContainer} style={{paddingLeft: "10px"}}>
+                        <div className={styles.inputContainer}>
                             <InputMask className={isValidPhone || ""}
                                 placeholder="Ваш номер телефона"
                                        name="phone" mask="+389999999999"
@@ -97,7 +96,6 @@ class ContactForm extends React.Component {
                             </button>
                         </div>
                     </div>
-                    <div className={styles.bord}/>
                 </div>
             </div>
         );

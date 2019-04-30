@@ -4,6 +4,8 @@ import HamMenu from '../../components/HamMenu/HamMenu';
 import dataContent from '../../utils/dataContent';
 import TitleScroll from '../../components/TitleScroll/TitleScroll';
 import Promotions from '../../components/Promotions/Promotions';
+import Products from "../../components/Products/Products";
+import Delivery from "../../components/Delivery/Delivery";
 
 class Home extends React.Component {
     render() {
@@ -14,6 +16,8 @@ class Home extends React.Component {
                 />
                 <TitleScroll />
                 <Promotions />
+                <Products/>
+                <Delivery/>
             </div>
         );
     }

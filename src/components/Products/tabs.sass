@@ -1,0 +1,25 @@
+@import "../../utils/dataStyle.module"
+
+.nav-tabs
+  border: none
+
+  .nav-item
+    border: none
+    color: rgba(0,0,0,.4)
+    padding: 10px 40px
+    margin: 2px 0
+    transition: .2s
+    border-bottom: 2px solid #dee2e6
+
+  .nav-item.active
+    transition: .2s
+    border-bottom-color: $hard
+
+.tab-content
+  padding-top: 15px
+
+@media only screen and (max-width: 575px)
+  .tab-content
+
+    .col
+      padding: 10px

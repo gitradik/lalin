@@ -1,5 +1,6 @@
 export const dataPromotions = [
     {
+        id: 1,
         name: 'beige',
         color: 'beige',
         sizes: ['M', 'S', 'Xl'],
@@ -15,6 +16,7 @@ export const dataPromotions = [
         ]
     },
     {
+        id: 2,
         name: 'black',
         color: 'black',
         sizes: ['M', 'S'],
@@ -28,6 +30,7 @@ export const dataPromotions = [
         ]
     },
     {
+        id: 3,
         name: 'blue',
         color: 'blue',
         sizes: ['M'],
@@ -42,6 +45,7 @@ export const dataPromotions = [
         ]
     },
     {
+        id: 4,
         name: 'purple',
         color: 'purple',
         sizes: ['M', 'S'],
@@ -57,6 +61,7 @@ export const dataPromotions = [
         ]
     },
     {
+        id: 5,
         name: 'white',
         color: 'white',
         sizes: ['M', 'S', 'XXL'],
@@ -73,6 +78,7 @@ export const dataPromotions = [
         ]
     },
     {
+        id: 6,
         name: 'whiteLif',
         color: 'whiteLif',
         sizes: ['M', 'S', 'XXL'],

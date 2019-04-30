@@ -1,0 +1,30 @@
+@import "../../utils/dataStyle.module"
+
+.title
+  padding: 15px 0
+  position: relative
+
+  h4
+    text-align: center
+    background: rgba(255,255,255,.8)
+    font-size: 46px
+    color: #ffb3ff
+    text-shadow: $textShadow
+    position: relative
+    z-index: 25
+    margin: 0 30%
+
+  &:before
+    position: absolute
+    content: ''
+    margin-top: -15px
+    top: 50%
+    left: 0
+    right: 0
+    transform: translateY(-50%)
+    height: 8px
+    z-index: 2
+    background: linear-gradient(to right, rgba(255,179,255,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 70%, rgba(255,179,255,1) 100%)
+
+
+@import "./media"

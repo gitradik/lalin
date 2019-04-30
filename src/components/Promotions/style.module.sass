@@ -9,42 +9,16 @@
   padding-bottom: 30px
 
   .container
-    padding-top: 140px
     position: relative
     display: flex
-    align-items: center
-
-    .bordPink
-      position: absolute
-      content: ''
-      top: 52px
-      left: 30px
-      right: 30px
-      height: 8px
-      transform: skewX(-2deg)
-      background: -moz-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 32%, rgba(255,255,255,1) 69%, rgba(0,0,0,1) 100%)
-      background: -webkit-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 32%, rgba(255,255,255,1) 69%, rgba(0,0,0,1) 100%)
-      background: linear-gradient(to left, #ffb3ff 0%, rgba(255,255,255,1) 32%, rgba(255,255,255,1) 69%, #ffb3ff 100%)
-
-
-    h2
-      text-align: center
-      padding: 7px
-      background: rgba(255,255,255,.8)
-      position: absolute
-      margin-top: 30px
-      top: 0
-      left: 50%
-      transform: translateX(-50%)
-      font-size: 46px
-      color: #ffb3ff
-      z-index: 20
-      text-shadow: $textShadow
+    flex-direction: column
 
     .boxes
       width: 100%
 
       .stockMin
+        display: flex!important
+        justify-content: center!important
 
 
 @import "./media"

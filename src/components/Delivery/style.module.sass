@@ -1,0 +1,43 @@
+@import "../../utils/dataStyle.module"
+
+.delivery
+  font-family: 'El Messiri', sans-serif
+  padding-bottom: 30px
+
+  .cards
+    display: flex
+    justify-content: center
+
+    .card
+      background-image: url("../../public/images/rose3.jpg")
+      background-size: 100% 100%
+      background-position: center
+      background-repeat: no-repeat
+      height: 150px
+      width: 150px
+      border-radius: 100%
+      border: 2px solid $hard
+      display: flex
+      align-items: center
+      justify-content: center
+      overflow: hidden
+      position: relative
+      box-shadow: $bsInput
+      z-index: 5
+
+      img
+        height: auto
+        max-width: 70px
+
+      .name
+        position: absolute
+        bottom: 0
+        background: $hardRgba
+        width: 100%
+        font-weight: 500
+        font-size: 18px
+        padding-top: 5px
+        height: 50%
+        text-align: center
+        color: white
+        z-index: 2

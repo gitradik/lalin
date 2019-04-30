@@ -6,7 +6,7 @@
   padding: 5px
   background: rgba(255,255,255,1)
   position: relative
-  display: inline-block
+  display: inline-block!important
   border-radius: 4px
   transition: .2s
   box-shadow: $boxShadowLight
@@ -17,7 +17,7 @@
 
   .box
     display: flex!important
-    flex-direction: column
+    flex-direction: column!important
 
     .buttons
       display: flex
@@ -31,6 +31,7 @@
         align-items: center
         justify-content: center
         font-weight: 300
+        padding: 12px 0
         box-shadow: $boxShadowLight
         transition: .2s
         color: black
@@ -43,6 +44,13 @@
           background: #ff54b0
           color: white
 
+        &:first-child
+          width: 40%
+
+        &:last-child
+          width: 60%
+          margin-left: 3px
+
     .imgBox
 
       img
@@ -52,6 +60,8 @@
 
     .descr
       padding-top: 10px
+      display: flex
+      flex-direction: column
 
       .name
         text-align: center
