@@ -1,38 +1,36 @@
 import React from 'react';
 import styles from './style.module.sass';
-import Modal from "react-responsive-modal";
-import {modalStyle} from "../../utils/modalStyle";
+import PropTypes from 'prop-types';
 
 class Thanks extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { isOpen: true }
-    }
-
-    closeModal = () => {
-        this.setState({ isOpen: false })
-    };
 
     render() {
-        const { isOpen } = this.state;
+        const {title, subTitle} = this.props;
         return (
-            <Modal
-                closeIconSize={38} styles={modalStyle} open={isOpen} onClose={this.closeModal} centered>
-                <div className={styles.thanks}>
-                    <div className={styles.container}>
-                        <div className={styles.text}>
-                            <h4>Спасибо за покупку!</h4>
-                            <p>Мы Вам перезвоним в ближайшее время</p>
-                        </div>
-                        <i className={["far fa-heart", styles.heard].join(' ')}/>
-                        <i className={["far fa-heart", styles.heard1].join(' ')}/>
-                        <i className={["far fa-heart", styles.heard2].join(' ')}/>
-                        <i className={["far fa-heart", styles.heard3].join(' ')}/>
+            <div className={styles.thanks}>
+                <div className={styles.container}>
+                    <div className={styles.text}>
+                        <h4>{title}</h4>
+                        <p>{subTitle}</p>
                     </div>
+                    <i className={["far fa-heart", styles.heard].join(' ')}/>
+                    <i className={["far fa-heart", styles.heard1].join(' ')}/>
+                    <i className={["far fa-heart", styles.heard2].join(' ')}/>
+                    <i className={["far fa-heart", styles.heard3].join(' ')}/>
                 </div>
-            </Modal>
+            </div>
         );
     }
 }
+
+Thanks.propTypes = {
+    title: PropTypes.string,
+    subTitle: PropTypes.string,
+};
+
+Thanks.defaultProps = {
+    title: '',
+    subTitle: '',
+};
 
 export default Thanks;

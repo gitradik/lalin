@@ -8,6 +8,8 @@ import {slickSettingsStock} from "../../utils/slickImagesGallery/slickSettings";
 import '../../utils/slickImagesGallery/slickStyles.sass';
 import Modal from "react-responsive-modal";
 import cookie from 'react-cookies';
+import DATA_COOKIES from '../../utils/dataCookies';
+import Thanks from "../Thanks/Thanks";
 
 class Product extends React.Component {
 
@@ -23,12 +25,12 @@ class Product extends React.Component {
 
     onClickForm() {
         const {id, name, mainImage, discount, color, price, images} = this.props;
-        let products = cookie.load('basket');
+        let products = cookie.load(DATA_COOKIES.BASKET);
         if (products === undefined) {
             products = [];
         }
         products.push({id, name, mainImage, discount, color, size: this.state.sizeKey, price, images});
-        cookie.save('basket', products);
+        cookie.save(DATA_COOKIES.BASKET, products);
         this.setState({isBasketPush: true});
     }
 
@@ -76,10 +78,9 @@ class Product extends React.Component {
             </Modal>;
         } else if (isBasketPush) {
             return <Modal
-                closeIconSize={38} styles={modalStyle} open={isBasketPush} onClose={this.closeModal} centered
-            >
-                Товар добавлен в корзину
-            </Modal>
+                closeIconSize={38} styles={modalStyle} open={isBasketPush} onClose={this.closeModal} centered>
+                    <Thanks title="Ваш товар добавлен в корзину!"/>
+            </Modal>;
         }
     }
 

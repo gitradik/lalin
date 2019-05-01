@@ -1,9 +1,29 @@
+@import "../../utils/dataStyle.module"
+
 .basket
-  min-height: 100vh
+  background-color: white
+  padding: 5px
+  margin-top: 5px
+  border-radius: 4px
 
   .content
+    width: 98%
 
     .price
+      padding-top: 15px
+
+      span
+        font-size: 24px
+        font-weight: 600
+
+    .submit
+      padding-top: 15px
+
+      button
+        background: none
+        padding: 10px 25px
+        border: 2px solid black
+        border-radius: 4px
 
     .product
       display: flex
@@ -45,6 +65,7 @@
         flex: 1
 
         .name
+          width: 100%
           padding-left: 15px
           text-align: center
           position: relative
@@ -59,9 +80,10 @@
 
         button
           padding: 10px 20px
-          border: 2px solid red
+          border: none
           background: none
           border-radius: 4px
+          box-shadow: 0 1px 3px 1px rgba(255,0,0,.6)
 
 .bord
   position: absolute
@@ -70,5 +92,51 @@
   right: -5px
   width: 1px
   background-color: rgba(0,0,0,.2)
+
+.question
+  display: flex
+  flex-direction: column
+  align-items: center
+  border-radius: 4px
+  padding: 20px
+  margin-top: 10px
+  background: white
+  box-shadow: $boxShadowLight
+
+  span
+    color: black
+    font-size: 24px
+
+.questionBtns
+  width: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+
+  button
+    margin: 15px 10px
+    padding: 10px 30px
+    background: rgba(255,255,255,.8)
+    border: 1px solid $hard
+    border-radius: 4px
+    transition: .2s
+    box-shadow: $boxShadowLight
+
+    &:hover
+      transition: .2s
+      box-shadow: $bsInputFocus
+
+.basketLink
+  align-self: flex-start
+  margin: 0
+  padding: 2px 3px
+  border-radius: 4px
+  cursor: pointer
+  margin-right: 5px
+
+  i
+    font-size: 24px
+    color: white
+    text-shadow: $textShadow
 
 @import "./media"

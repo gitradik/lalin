@@ -2,21 +2,58 @@ import React from 'react';
 import styles from './style.module.sass';
 import PropTypes from 'prop-types';
 import cookie from 'react-cookies';
+import {modalStyle} from "../../utils/modalStyle";
+import Modal from "react-responsive-modal";
+import DATA_COOKIES from '../../utils/dataCookies';
 
 class BasketProduct extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isOpen: false,
+            isRemove: false,
+        }
+    }
 
     removeProd = () => {
+        this.setState({isOpen: true})
+    };
+
+    closeModal = () => {
+        this.setState({isOpen: false, isRemove: false});
+    };
+
+    onClickRemove = () => {
         const {id, size, onChange} = this.props;
-        const products = cookie.load('basket');
-        const indexProd = products.findIndex(p => p.id === id && p.size === size);
+        const products = cookie.load(DATA_COOKIES.BASKET);
+        const indexProd = products.findIndex(p => (p.id === id && p.size === size));
         products.splice(indexProd, 1);
-        cookie.save('basket', products);
+        cookie.save(DATA_COOKIES.BASKET, products);
+        this.setState({isOpen: false, isRemove: false});
         onChange();
     };
 
+    renderPrice() {
+        const {price, discount} = this.props;
+        return discount ? <span style={{color: 'red'}}>{price - (price * (discount / 100))} грн</span> : <span>{price} грн</span>;
+    }
+
     render() {
-        const {index, name, color, size, price, mainImage} = this.props;
+        const {index, name, color, size, mainImage} = this.props;
+        const {isOpen} = this.state;
         return (
+            <>
+                <Modal
+                    closeIconSize={38} styles={modalStyle} open={isOpen} onClose={this.closeModal} centered
+                >
+                    <div className={styles.question}>
+                    <span>Вы уверены?</span>
+                    <div className={styles.questionBtns}>
+                        <button onClick={this.onClickRemove}>Да</button>
+                        <button onClick={() => this.setState({isOpen: false, isRemove: false})}>Нет</button>
+                    </div>
+                    </div>
+                </Modal>
             <div className={styles.product}>
                 <div className={styles.indexAndImg}>
                     <div className={styles.index}>
@@ -44,7 +81,7 @@ class BasketProduct extends React.Component {
                     </div>
                     <div className={styles.name}>
                         <span>Цена:</span>
-                        <span>{price} грн.</span>
+                        {this.renderPrice()}
                         <div className={styles.bord}/>
                     </div>
                 </div>
@@ -52,6 +89,7 @@ class BasketProduct extends React.Component {
                     <button onClick={this.removeProd}>Удалить</button>
                 </div>
             </div>
+            </>
         );
     }
 }

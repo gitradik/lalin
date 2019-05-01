@@ -1,9 +1,27 @@
+@import "../../utils/dataStyle.module"
+
 @media only screen and (max-width: 575px)
   .basket
 
     .product
       flex-direction: column
       padding: 5px
+      position: relative
+
+      .indexAndImg
+
+        .index
+          position: absolute
+          left: 10px
+          top: 10px
+
+      .imgBox
+        max-width: 70px
+
+        img
+          border: none
+          box-shadow: $bsBasket
+          border-radius: 4px
 
       .content
         justify-content: space-between
@@ -12,10 +30,7 @@
         padding-bottom: 10px
         margin: 5px 0
         border-radius: 4px
-        box-shadow: 0 1px 3px 0 rgba(0,0,0,.3)
-
-        .imgBox
-          max-width: 70px
+        box-shadow: $bsBasket
 
   .bord
     display: none

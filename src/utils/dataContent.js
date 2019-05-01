@@ -79,8 +79,8 @@ const data = {
                         name: 'beige',
                         color: 'beige',
                         sizes: ['M', 'S', 'Xl'],
-                        price: 120,
-                        discount: 15,
+                        price: null,
+                        discount: 12,
                         mainImage: 'beige/1.jpg',
                         images: [
                             'beige/1.jpg',
@@ -96,7 +96,7 @@ const data = {
                         color: 'black',
                         sizes: ['M', 'S'],
                         price: 130,
-                        discount: 10,
+                        discount: null,
                         mainImage: 'black/1.jpg',
                         images: [
                             'black/1.jpg',
@@ -110,7 +110,7 @@ const data = {
                         color: 'blue',
                         sizes: ['M'],
                         price: 150,
-                        discount: 20,
+                        discount: null,
                         mainImage: 'blue/1.jpg',
                         images: [
                             'blue/1.jpg',
@@ -125,7 +125,7 @@ const data = {
                         color: 'purple',
                         sizes: ['M', 'S'],
                         price: 170,
-                        discount: 15,
+                        discount: null,
                         mainImage: 'purple/1.jpg',
                         images: [
                             'purple/1.jpg',
@@ -141,7 +141,7 @@ const data = {
                         color: 'white',
                         sizes: ['M', 'S', 'XXL'],
                         price: 200,
-                        discount: 10,
+                        discount: null,
                         mainImage: 'white/1.jpg',
                         images: [
                             'white/1.jpg',
@@ -158,7 +158,7 @@ const data = {
                         color: 'white',
                         sizes: ['M', 'S', 'XXL'],
                         price: 250,
-                        discount: 17,
+                        discount: null,
                         mainImage: 'whiteLif/1.jpg',
                         images: [
                             'whiteLif/1.jpg',
@@ -177,7 +177,7 @@ const data = {
                         color: 'beige',
                         sizes: ['M', 'S', 'Xl'],
                         price: 120,
-                        discount: 15,
+                        discount: null,
                         mainImage: 'beige/1.jpg',
                         images: [
                             'beige/1.jpg',
@@ -193,7 +193,7 @@ const data = {
                         color: 'black',
                         sizes: ['M', 'S'],
                         price: 130,
-                        discount: 10,
+                        discount: null,
                         mainImage: 'black/1.jpg',
                         images: [
                             'black/1.jpg',
@@ -207,7 +207,7 @@ const data = {
                         color: 'blue',
                         sizes: ['M'],
                         price: 150,
-                        discount: 20,
+                        discount: null,
                         mainImage: 'blue/1.jpg',
                         images: [
                             'blue/1.jpg',
@@ -222,7 +222,7 @@ const data = {
                         color: 'purple',
                         sizes: ['M', 'S'],
                         price: 170,
-                        discount: 15,
+                        discount: null,
                         mainImage: 'purple/1.jpg',
                         images: [
                             'purple/1.jpg',
@@ -238,7 +238,7 @@ const data = {
                         color: 'white',
                         sizes: ['M', 'S', 'XXL'],
                         price: 200,
-                        discount: 10,
+                        discount: null,
                         mainImage: 'white/1.jpg',
                         images: [
                             'white/1.jpg',
@@ -255,7 +255,7 @@ const data = {
                         color: 'white',
                         sizes: ['M', 'S', 'XXL'],
                         price: 250,
-                        discount: 17,
+                        discount: null,
                         mainImage: 'whiteLif/1.jpg',
                         images: [
                             'whiteLif/1.jpg',
@@ -274,7 +274,7 @@ const data = {
                         color: 'beige',
                         sizes: ['M', 'S', 'Xl'],
                         price: 120,
-                        discount: 15,
+                        discount: null,
                         mainImage: 'beige/1.jpg',
                         images: [
                             'beige/1.jpg',
@@ -290,7 +290,7 @@ const data = {
                         color: 'black',
                         sizes: ['M', 'S'],
                         price: 130,
-                        discount: 10,
+                        discount: null,
                         mainImage: 'black/1.jpg',
                         images: [
                             'black/1.jpg',
@@ -304,7 +304,7 @@ const data = {
                         color: 'blue',
                         sizes: ['M'],
                         price: 150,
-                        discount: 20,
+                        discount: null,
                         mainImage: 'blue/1.jpg',
                         images: [
                             'blue/1.jpg',
@@ -319,7 +319,7 @@ const data = {
                         color: 'purple',
                         sizes: ['M', 'S'],
                         price: 170,
-                        discount: 15,
+                        discount: null,
                         mainImage: 'purple/1.jpg',
                         images: [
                             'purple/1.jpg',
@@ -335,7 +335,7 @@ const data = {
                         color: 'white',
                         sizes: ['M', 'S', 'XXL'],
                         price: 200,
-                        discount: 10,
+                        discount: null,
                         mainImage: 'white/1.jpg',
                         images: [
                             'white/1.jpg',
@@ -352,7 +352,7 @@ const data = {
                         color: 'white',
                         sizes: ['M', 'S', 'XXL'],
                         price: 250,
-                        discount: 17,
+                        discount: null,
                         mainImage: 'whiteLif/1.jpg',
                         images: [
                             'whiteLif/1.jpg',
@@ -371,7 +371,7 @@ const data = {
                         color: 'beige',
                         sizes: ['M', 'S', 'Xl'],
                         price: 120,
-                        discount: 15,
+                        discount: null,
                         mainImage: 'beige/1.jpg',
                         images: [
                             'beige/1.jpg',
@@ -387,7 +387,7 @@ const data = {
                         color: 'black',
                         sizes: ['M', 'S'],
                         price: 130,
-                        discount: 10,
+                        discount: null,
                         mainImage: 'black/1.jpg',
                         images: [
                             'black/1.jpg',
@@ -401,7 +401,7 @@ const data = {
                         color: 'blue',
                         sizes: ['M'],
                         price: 150,
-                        discount: 20,
+                        discount: null,
                         mainImage: 'blue/1.jpg',
                         images: [
                             'blue/1.jpg',
@@ -416,7 +416,7 @@ const data = {
                         color: 'purple',
                         sizes: ['M', 'S'],
                         price: 170,
-                        discount: 15,
+                        discount: null,
                         mainImage: 'purple/1.jpg',
                         images: [
                             'purple/1.jpg',
@@ -432,7 +432,7 @@ const data = {
                         color: 'white',
                         sizes: ['M', 'S', 'XXL'],
                         price: 200,
-                        discount: 10,
+                        discount: null,
                         mainImage: 'white/1.jpg',
                         images: [
                             'white/1.jpg',
@@ -449,7 +449,7 @@ const data = {
                         color: 'white',
                         sizes: ['M', 'S', 'XXL'],
                         price: 250,
-                        discount: 17,
+                        discount: null,
                         mainImage: 'whiteLif/1.jpg',
                         images: [
                             'whiteLif/1.jpg',
