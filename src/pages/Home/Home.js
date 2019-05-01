@@ -6,6 +6,8 @@ import TitleScroll from '../../components/TitleScroll/TitleScroll';
 import Promotions from '../../components/Promotions/Promotions';
 import Products from "../../components/Products/Products";
 import Delivery from "../../components/Delivery/Delivery";
+import Footer from "../../components/Footer/Footer";
+import Basket from "../../components/Basket/Basket";
 
 class Home extends React.Component {
     render() {
@@ -18,6 +20,8 @@ class Home extends React.Component {
                 <Promotions />
                 <Products/>
                 <Delivery/>
+                <Basket/>
+                <Footer/>
             </div>
         );
     }

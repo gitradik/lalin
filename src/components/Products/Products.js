@@ -8,11 +8,11 @@ import Product from "../Product/Product";
 import './tabs.sass';
 
 class Products extends React.Component {
-    constructor(props, context) {
-        super(props, context);
+    constructor(props) {
+        super(props);
         this.state = {
-            key: dataContent.data.products.tabs[0].key,
-        };
+            key: dataContent.data.products.tabs[0].key
+        }
     }
 
     renderTabs() {
@@ -23,11 +23,13 @@ class Products extends React.Component {
                    <Row className="justify-content-start">
                 {
                     tab.products.map(p =>
-                        <Col key={p.name + "prod"} xs={6} sm={4} lg={2} md={3} className="col d-flex justify-content-center my-2">
+                        <Col key={p.id + "prod"} xs={6} sm={4} lg={2} md={3} className="col d-flex justify-content-center my-2">
                             <Product
+                                id={p.id}
                                 name={p.name}
                                 mainImage={p.mainImage}
                                 discount={p.discount}
+                                color={p.color}
                                 sizes={p.sizes}
                                 price={p.price}
                                 images={p.images}

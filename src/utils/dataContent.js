@@ -155,7 +155,7 @@ const data = {
                     {
                         id: 6,
                         name: 'whiteLif',
-                        color: 'whiteLif',
+                        color: 'white',
                         sizes: ['M', 'S', 'XXL'],
                         price: 250,
                         discount: 17,
@@ -252,7 +252,7 @@ const data = {
                     {
                         id: 6,
                         name: 'whiteLif',
-                        color: 'whiteLif',
+                        color: 'white',
                         sizes: ['M', 'S', 'XXL'],
                         price: 250,
                         discount: 17,
@@ -349,7 +349,7 @@ const data = {
                     {
                         id: 6,
                         name: 'whiteLif',
-                        color: 'whiteLif',
+                        color: 'white',
                         sizes: ['M', 'S', 'XXL'],
                         price: 250,
                         discount: 17,
@@ -446,7 +446,7 @@ const data = {
                     {
                         id: 6,
                         name: 'whiteLif',
-                        color: 'whiteLif',
+                        color: 'white',
                         sizes: ['M', 'S', 'XXL'],
                         price: 250,
                         discount: 17,

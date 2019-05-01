@@ -1,6 +1,5 @@
 import React from 'react';
 import dataContent from '../../utils/dataContent';
-import {Container, Row, Col} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from './style.module.sass';
 import {dataPromotions} from '../../utils/dataPromotions';

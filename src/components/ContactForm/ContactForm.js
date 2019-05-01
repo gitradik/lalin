@@ -8,6 +8,7 @@ import axios from 'axios';
 import Thanks from "../Thanks/Thanks";
 import Loader from "../Loader/Loader";
 import { sendMessage } from '../../api/telegramController';
+import cookie from 'react-cookies';
 
 class ContactForm extends React.Component {
     constructor(props) {
@@ -23,6 +24,7 @@ class ContactForm extends React.Component {
     }
 
     onChangePhone = (value) => {
+        cookie.save('userPhone', value, { path: '/' });
         this.setState({
             phone: value,
             isValidPhone: isValidPhone(value)
@@ -30,6 +32,7 @@ class ContactForm extends React.Component {
     };
 
     onChangeName = (value) => {
+        cookie.save('userName', value, { path: '/' });
         this.setState({
             name: value,
             isValidName: value.length > 0
@@ -99,6 +102,13 @@ class ContactForm extends React.Component {
                 </div>
             </div>
         );
+    }
+
+    componentDidMount() {
+        this.setState({
+            name: cookie.load('userName'),
+            phone: cookie.load('userPhone'),
+        });
     }
 }
 

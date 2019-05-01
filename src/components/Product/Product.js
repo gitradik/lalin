@@ -7,20 +7,29 @@ import Slider from "react-slick/lib";
 import {slickSettingsStock} from "../../utils/slickImagesGallery/slickSettings";
 import '../../utils/slickImagesGallery/slickStyles.sass';
 import Modal from "react-responsive-modal";
-import ContactForm from "../ContactForm/ContactForm";
+import cookie from 'react-cookies';
 
 class Product extends React.Component {
+
     constructor(props) {
         super(props);
         this.state = {
             isOpenPhoto: false,
-            isOpenForm: false,
-            titleForm: ''
-        }
+            isBasketPush: false,
+            titleForm: '',
+            sizeKey: props.sizes[0],
+        };
     }
 
-    onClickForm(value) {
-        this.setState({isOpenForm: true, titleForm: value});
+    onClickForm() {
+        const {id, name, mainImage, discount, color, price, images} = this.props;
+        let products = cookie.load('basket');
+        if (products === undefined) {
+            products = [];
+        }
+        products.push({id, name, mainImage, discount, color, size: this.state.sizeKey, price, images});
+        cookie.save('basket', products);
+        this.setState({isBasketPush: true});
     }
 
     onClickImg = () => {
@@ -28,13 +37,22 @@ class Product extends React.Component {
     };
 
     closeModal = () => {
-        this.setState({isOpenPhoto: false, isOpenForm: false});
+        this.setState({isOpenPhoto: false, isBasketPush: false});
     };
+
+    onClickSize(size) {
+        this.setState({sizeKey: size})
+    }
 
     renderSize() {
         const {sizes} = this.props;
+        const {sizeKey} = this.state;
         return sizes.map((el, i) =>
-            <span key={i}>{el}{i !== sizes.length - 1 && ','}</span>
+            <React.Fragment key={el}>
+                <span onClick={() => this.onClickSize(el)}
+                      className={[styles.size, (sizeKey === el && styles.activeSize)].join(' ')} key={i}>{el}</span>
+                {i !== sizes.length - 1 && ','}
+            </React.Fragment>
         );
     }
 
@@ -48,32 +66,20 @@ class Product extends React.Component {
     }
 
     renderModals() {
-        const {name, price} = this.props;
-        const {isOpenPhoto, isOpenForm, titleForm} = this.state;
-        if (isOpenForm) {
-            return <Modal
-                closeIconSize={38} styles={modalStyle} open={isOpenForm} onClose={this.closeModal} centered>
-                <ContactForm
-                    title={
-                        <span className={styles.titleForm}>
-                                {titleForm}
-                            <small className={styles.titleFormPrice}>
-                                    {price}
-                                <small>грн.</small>
-                                </small>
-                            </span>
-                    }
-                    location="Products"
-                    product={name + " " + price + "грн."}
-                />
-            </Modal>;
-        } else if (isOpenPhoto) {
+        const {isOpenPhoto, isBasketPush} = this.state;
+        if (isOpenPhoto) {
             return <Modal
                 closeIconSize={38} styles={modalStyle} open={isOpenPhoto} onClose={this.closeModal} centered>
                 <Slider {...slickSettingsStock}>
                     {this.renderImagesForSlider()}
                 </Slider>
             </Modal>;
+        } else if (isBasketPush) {
+            return <Modal
+                closeIconSize={38} styles={modalStyle} open={isBasketPush} onClose={this.closeModal} centered
+            >
+                Товар добавлен в корзину
+            </Modal>
         }
     }
 
@@ -81,29 +87,31 @@ class Product extends React.Component {
         const {mainImage, name, price} = this.props;
         return (
             <>{this.renderModals()}
-                <div className={styles.product} onClick={this.onClickImg}>
+                <div className={styles.product}>
                     <div className={styles.box}>
-                        <div className={styles.imgBox}>
-                            <img src={require("../../public/images/promotions/" + mainImage)} alt={mainImage}/>
-                        </div>
-                        <div className={styles.descr}>
-                            <h5 className={styles.name}>{name}</h5>
-                            <div className={styles.sizes}>
-                                <span>Размеры: </span>
-                                {this.renderSize()}
+                        <div className={styles.subBox}>
+                            <div className={styles.imgBox}>
+                                <img src={require("../../public/images/promotions/" + mainImage)} alt={mainImage}/>
                             </div>
-                            <div className={styles.price}>
-                                <span>Цена: </span>
-                                <span className={styles.new}>{price}</span>
-                                <span>грн.</span>
+                            <div className={styles.descr}>
+                                <h5 className={styles.name}>{name}</h5>
+                                <div className={styles.sizes}>
+                                    <span>Размеры: </span>
+                                    {this.renderSize()}
+                                </div>
+                                <div className={styles.price}>
+                                    <span>Цена: </span>
+                                    <span className={styles.new}>{price}</span>
+                                    <span>грн.</span>
+                                </div>
                             </div>
                         </div>
                         <div className={styles.buttons}>
                             <button onClick={this.onClickImg}><i className="far fa-image"/><span>Фото</span>
                             </button>
                             <button onClick={() => this.onClickForm(name)}>
-                                <i className="fas fa-phone"/>
-                                <span>Заказать</span>
+                                <img src={require('../../public/images/basket.png')} alt="basket"/>
+                                <span>В корзину</span>
                             </button>
                         </div>
                     </div>
@@ -114,9 +122,11 @@ class Product extends React.Component {
 }
 
 Product.propTypes = {
+    id: PropTypes.number,
     name: PropTypes.string,
     mainImage: PropTypes.string,
     discount: PropTypes.number,
+    color: PropTypes.string,
     sizes: PropTypes.array,
     price: PropTypes.number,
     images: PropTypes.array,

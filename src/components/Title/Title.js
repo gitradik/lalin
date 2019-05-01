@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './style.module.sass';
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 
 class Title extends React.Component {
     render() {
@@ -14,10 +14,10 @@ class Title extends React.Component {
     }
 }
 
-Title.propTypes = {
-};
+//Title.propTypes = {
+//};
 
-Title.propTypes = {
-};
+//Title.propTypes = {
+//};
 
 export default Title;

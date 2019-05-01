@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './style.module.sass';
 import dataContent from '../../utils/dataContent';
 import ContactForm from "../ContactForm/ContactForm";
-import Logo from "../Logo/Logo";
 import Stock from "../Stock/Stock";
 import {Container, Row, Col} from 'react-bootstrap';
 
@@ -19,8 +18,6 @@ class TitleScroll extends React.Component {
                                 <div className={styles.subTitle}>
                                     <h1>
                                         {dataContent.title}
-                                       {/* <div className={styles.bord}/>
-                                        <div className={styles.bord}/>*/}
                                     </h1>
                                 </div>
                             </div>

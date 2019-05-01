@@ -14,10 +14,10 @@ class Product extends React.Component {
 }
 
 function App() {
+
   return (
         <div className={styles.app}>
             <Switch>
-
                 <Route exact path="/product" render={ (routerProps) => <Product routerProps={routerProps} />} />
                 <Route exact path="/" component={Home}/>
             </Switch>

@@ -6,7 +6,6 @@ import Viber from "../SocialLink/Viber";
 import Telegram from "../SocialLink/Telegram";
 import WhatsApp from "../SocialLink/WhatsApp";
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import animation from 'animation-kit';
 import {Nav, Navbar} from "react-bootstrap";
 
 class HamMenu extends React.Component {
