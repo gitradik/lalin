@@ -27,7 +27,7 @@ class ContactForm extends React.Component {
     }
 
     onChangePhone = (value) => {
-        cookie.save(DATA_COOKIES.USER_PHONE, value, { path: '/' });
+        cookie.save(DATA_COOKIES.USER_PHONE, value, {path: process.env.PUBLIC_URL});
         this.setState({
             phone: value,
             isValidPhone: isValidPhone(value)
@@ -35,7 +35,7 @@ class ContactForm extends React.Component {
     };
 
     onChangeName = (value) => {
-        cookie.save(DATA_COOKIES.USER_NAME, value, { path: '/' });
+        cookie.save(DATA_COOKIES.USER_NAME, value, {path: process.env.PUBLIC_URL});
         this.setState({
             name: value,
             isValidName: value.length > 0
@@ -133,12 +133,14 @@ class ContactForm extends React.Component {
     componentDidMount() {
         const _name = cookie.load(DATA_COOKIES.USER_NAME);
         const _phone = cookie.load(DATA_COOKIES.USER_PHONE);
-        this.setState({
-            name: _name,
-            phone: _phone,
-            isValidName: _name.length > 0,
-            isValidPhone: isValidPhone(_phone)
-        });
+        if(_name && _phone) {
+            this.setState({
+                name: _name,
+                phone: _phone,
+                isValidName: _name.length > 0,
+                isValidPhone: isValidPhone(_phone)
+            });
+        }
     }
 }
 

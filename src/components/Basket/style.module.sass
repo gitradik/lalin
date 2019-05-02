@@ -127,16 +127,40 @@
       box-shadow: $bsInputFocus
 
 .basketLink
+  font-family: 'El Messiri', sans-serif
   align-self: flex-start
-  margin: 0
-  padding: 2px 3px
   border-radius: 4px
   cursor: pointer
+  position: relative
   margin-right: 5px
+  margin-bottom: 0
 
   i
     font-size: 24px
     color: white
     text-shadow: $textShadow
+
+  &:hover
+
+    i
+      transition: .2s
+
+  .counter
+    position: absolute
+    top: -7px
+    right: -7px
+    width: 20px
+    height: 20px
+    display: flex
+    align-items: center
+    justify-content: center
+    background-color: rgba(255,255,255,.7)
+    border-radius: 100%
+
+    p
+      font-size: 14px
+      margin-bottom: -3px
+      color: red
+
 
 @import "./media"

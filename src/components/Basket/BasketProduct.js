@@ -28,7 +28,7 @@ class BasketProduct extends React.Component {
         const products = cookie.load(DATA_COOKIES.BASKET);
         const indexProd = products.findIndex(p => (p.id === id && p.size === size));
         products.splice(indexProd, 1);
-        cookie.save(DATA_COOKIES.BASKET, products);
+        cookie.save(DATA_COOKIES.BASKET, products, {path: process.env.PUBLIC_URL});
         this.setState({isOpen: false, isRemove: false});
         onChange();
     };

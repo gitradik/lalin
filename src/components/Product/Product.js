@@ -30,7 +30,7 @@ class Product extends React.Component {
             products = [];
         }
         products.push({id, name, mainImage, discount, color, size: this.state.sizeKey, price, images});
-        cookie.save(DATA_COOKIES.BASKET, products);
+        cookie.save(DATA_COOKIES.BASKET, products, {path: process.env.PUBLIC_URL});
         this.setState({isBasketPush: true});
     }
 
@@ -91,7 +91,7 @@ class Product extends React.Component {
                 <div className={styles.product}>
                     <div className={styles.box}>
                         <div className={styles.subBox}>
-                            <div className={styles.imgBox}>
+                            <div className={styles.imgBox} onClick={this.onClickImg}>
                                 <img src={require("../../public/images/promotions/" + mainImage)} alt={mainImage}/>
                             </div>
                             <div className={styles.descr}>
