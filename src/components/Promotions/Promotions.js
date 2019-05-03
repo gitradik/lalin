@@ -7,23 +7,24 @@ import Slider from "react-slick/lib";
 import {slickSettings} from "../../utils/slickImagesGallery/slickSettings";
 import Title from "../Title/Title";
 import Product from "../Product/Product";
+import {Container, Row, Col} from 'react-bootstrap';
 
 class Promotions extends React.Component {
 
     renderStockMins() {
         return dataPromotions.map((el, i) =>
-            <div key={el.name} className={styles.stockMin}>
-                <Product
-                    id={el.id}
-                    name={el.name}
-                    mainImage={el.mainImage}
-                    discount={el.discount}
-                    color={el.color}
-                    sizes={el.sizes}
-                    price={el.price}
-                    images={el.images}
-                />
-            </div>
+                <div className={styles.boxProduct}>
+                    <Product
+                        id={el.id}
+                        name={el.name}
+                        mainImage={el.mainImage}
+                        discount={el.discount}
+                        color={el.color}
+                        sizes={el.sizes}
+                        price={el.price}
+                        images={el.images}
+                    />
+                </div>
         )
     }
 

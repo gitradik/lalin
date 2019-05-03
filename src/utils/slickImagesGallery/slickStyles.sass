@@ -67,23 +67,18 @@
     .slick-track
       display: flex
       justify-content: center
-      align-items: center
+      align-items: flex-start
+      height: 100%
 
       .slick-slide
+        text-align: center
 
-        div
+        img
+          height: auto
+          max-width: 100%
 
-          div
-            text-align: center
-
-            img
-              height: auto
-              max-width: 100%
-
-@media only screen and (min-width: 576px)
+@media only screen and (min-width: 575px)
   .slick-slider
-    height: 100%
-    width: 100%
 
     .slick-list
 
@@ -91,10 +86,7 @@
 
         .slick-slide
 
-          div
-
-            div
-
-              img
-                max-width: 475px
+          img
+            height: auto
+            max-width: 450px
 

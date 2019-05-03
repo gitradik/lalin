@@ -105,14 +105,14 @@ class Product extends React.Component {
                                 {this.renderPrice()}
                                 <span> грн.</span>
                             </div>
-                        </div>
-                        <div className={styles.buttons}>
-                            <button onClick={this.onClickImg}><i className="far fa-image"/><span>Фото</span>
-                            </button>
-                            <button onClick={() => this.onClickForm(name)}>
-                                <i className="fas fa-shopping-cart"/>
-                                <span>В корзину</span>
-                            </button>
+                            <div className={styles.buttons}>
+                                <button onClick={this.onClickImg}><i className="far fa-image"/><span>Фото</span>
+                                </button>
+                                <button onClick={() => this.onClickForm(name)}>
+                                    <i className="fas fa-shopping-cart"/>
+                                    <span>В корзину</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
