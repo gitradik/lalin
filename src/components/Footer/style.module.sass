@@ -1,3 +1,48 @@
+@import "../../utils/dataStyle.module"
+
 .footer
   width: 100%
-  padding: 30px 0
+  padding-bottom: 30px
+
+  .content
+    padding-top: 10px
+    box-shadow: $boxShadowLight
+    border-radius: 4px
+    display: flex
+    flex: 1
+    flex-direction: column
+    align-items: center
+
+    .title
+      text-align: center
+
+    .links
+      text-align: center
+
+      a
+        display: flex
+        align-items: center
+        justify-content: center
+        padding: 5px 20px
+        color: black
+
+        i
+          margin-right: 5px
+          font-size: 24px
+
+        img
+          margin-right: 5px
+          height: 24px
+          width: 24px
+
+      .phones
+        padding-top: 10px
+        display: flex
+        align-items: center
+        justify-content: center
+
+        i
+          font-size: 24px
+          color: $hard
+
+@import "./media"

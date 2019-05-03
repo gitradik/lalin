@@ -2,62 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61a6085c-6e9e-4e6d-b530-42fab3d9b2e4" name="Default Changelist" comment="Hello World">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/actionCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/actionCreator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/actiontsTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/actiontsTypes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Basket/Basket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Basket/Basket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Basket/BasketLink.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Basket/BasketLink.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Basket/BasketProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Basket/BasketProduct.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Basket/style.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Basket/style.module.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ContactForm/ContactForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContactForm/ContactForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ContactForm/style.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ContactForm/style.module.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Delivery/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Delivery/Card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Delivery/Delivery.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Delivery/Delivery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Delivery/media.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Delivery/media.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Delivery/style.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Delivery/style.module.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HamMenu/HamMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HamMenu/HamMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Loader/Loader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Loader/Loader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer/style.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/style.module.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HamMenu/style.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HamMenu/style.module.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Product/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Product/Product.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Product/style.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Product/style.module.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Promotions/Promotions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Promotions/Promotions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/StockMin/StockMin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/StockMin/media.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/StockMin/style.module.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Title/media.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Title/media.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TitleScroll/TitleScroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TitleScroll/TitleScroll.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home/style.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/style.module.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/images/international.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/images/promotions/beige/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/images/promotions/beige/1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/images/promotions/beige/2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/images/promotions/beige/2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/images/promotions/beige/3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/images/promotions/beige/3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/images/promotions/beige/4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/images/promotions/beige/4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/images/promotions/beige/5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/images/promotions/beige/5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/images/promotions/black/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/images/promotions/black/1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/images/promotions/black/2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/images/promotions/black/2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/images/promotions/black/3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/images/promotions/black/3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/images/promotions/blue/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/images/promotions/blue/1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/images/promotions/blue/2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/images/promotions/blue/2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/images/promotions/blue/3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/images/promotions/blue/3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/images/promotions/blue/4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/images/promotions/blue/4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/images/promotions/pink/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/images/promotions/pink/1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/images/promotions/purple/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/images/promotions/purple/1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/images/promotions/purple/2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/images/promotions/purple/2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/images/promotions/purple/3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/images/promotions/purple/3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/images/promotions/purple/4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/images/promotions/purple/4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/images/promotions/purple/5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/images/promotions/purple/5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/images/promotions/white/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/images/promotions/white/1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/images/promotions/white/2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/images/promotions/white/2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/images/promotions/white/3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/images/promotions/white/3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/images/promotions/white/4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/images/promotions/white/4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/images/promotions/white/5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/images/promotions/white/5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/images/promotions/white/6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/images/promotions/white/6.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/images/promotions/whiteLif/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/images/promotions/whiteLif/1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/images/promotions/whiteLif/2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/images/promotions/whiteLif/2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/basketReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/basketReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sagas/basketSaga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sagas/basketSaga.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sagas/rootSaga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sagas/rootSaga.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Promotions/style.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Promotions/style.module.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/dataContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/dataContent.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -72,10 +23,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Basket/Basket.js">
+        <entry file="file://$PROJECT_DIR$/src/components/Footer/Footer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
+            <state relative-caret-position="-180">
+              <caret line="12" column="41" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="41" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -84,57 +35,57 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/ContactForm/ContactForm.js">
+        <entry file="file://$PROJECT_DIR$/src/components/Product/style.module.sass">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="82" column="73" selection-start-line="82" selection-start-column="73" selection-end-line="82" selection-end-column="73" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sagas/contactFormSaga.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="81" lean-forward="true" selection-start-line="12" selection-start-column="81" selection-end-line="12" selection-end-column="81" />
-              <folding>
-                <element signature="e#0#40#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="244">
+              <caret line="80" column="27" selection-start-line="80" selection-start-column="27" selection-end-line="80" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/sagas/rootSaga.js">
+        <entry file="file://$PROJECT_DIR$/src/components/HamMenu/style.module.sass">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="84" selection-start-line="12" selection-start-column="84" selection-end-line="12" selection-end-column="84" />
-              <folding>
-                <element signature="e#0#48#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="102">
+              <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/reducers/contactFormReducer.js">
+        <entry file="file://$PROJECT_DIR$/src/components/Footer/media.sass">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="14" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="14" />
+            <state relative-caret-position="45">
+              <caret line="3" column="12" lean-forward="true" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/reducers/index.js">
+        <entry file="file://$PROJECT_DIR$/src/components/Footer/style.module.sass">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+            <state relative-caret-position="462">
+              <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/dataContent.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="431">
+              <caret line="497" column="49" selection-start-line="497" selection-start-column="49" selection-end-line="497" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Product/Product.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="106" column="34" selection-start-line="106" selection-start-column="34" selection-end-line="106" selection-end-column="34" />
               <folding>
-                <element signature="e#0#40#0" expanded="true" />
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -147,8 +98,8 @@
       <list>
         <option value="CSS File" />
         <option value="SCSS File" />
-        <option value="Sass File" />
         <option value="JavaScript File" />
+        <option value="Sass File" />
       </list>
     </option>
   </component>
@@ -177,10 +128,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/utils/slickImagesGallery/slickStyles.sass" />
-        <option value="$PROJECT_DIR$/src/components/Footer/style.module.scss" />
-        <option value="$PROJECT_DIR$/src/components/Footer/style.module.sass" />
-        <option value="$PROJECT_DIR$/src/components/Footer/Footer.js" />
         <option value="$PROJECT_DIR$/src/components/Title/Title.js" />
         <option value="$PROJECT_DIR$/src/components/Products/Products.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
@@ -203,31 +150,35 @@
         <option value="$PROJECT_DIR$/src/components/StockMin/media.sass" />
         <option value="$PROJECT_DIR$/src/components/StockMin/style.module.sass" />
         <option value="$PROJECT_DIR$/src/components/StockMin/StockMin.js" />
-        <option value="$PROJECT_DIR$/src/components/Product/Product.js" />
         <option value="$PROJECT_DIR$/src/components/HamMenu/HamMenu.js" />
         <option value="$PROJECT_DIR$/src/pages/Home/Home.js" />
         <option value="$PROJECT_DIR$/src/pages/Home/style.module.sass" />
         <option value="$PROJECT_DIR$/src/components/Basket/BasketLink.js" />
         <option value="$PROJECT_DIR$/src/components/Basket/style.module.sass" />
-        <option value="$PROJECT_DIR$/src/components/Product/style.module.sass" />
         <option value="$PROJECT_DIR$/src/components/Basket/BasketProduct.js" />
-        <option value="$PROJECT_DIR$/src/components/HamMenu/style.module.sass" />
         <option value="$PROJECT_DIR$/src/components/Basket/Basket.js" />
         <option value="$PROJECT_DIR$/src/components/ContactForm/style.module.sass" />
         <option value="$PROJECT_DIR$/src/components/Delivery/Delivery.js" />
         <option value="$PROJECT_DIR$/src/components/Delivery/Card.js" />
-        <option value="$PROJECT_DIR$/src/utils/dataContent.js" />
-        <option value="$PROJECT_DIR$/src/components/Delivery/style.module.sass" />
         <option value="$PROJECT_DIR$/src/components/Delivery/media.sass" />
         <option value="$PROJECT_DIR$/src/sagas/basketSaga.js" />
         <option value="$PROJECT_DIR$/src/reducers/basketReducer.js" />
         <option value="$PROJECT_DIR$/src/reducers/index.js" />
-        <option value="$PROJECT_DIR$/src/actions/actionCreator.js" />
-        <option value="$PROJECT_DIR$/src/components/ContactForm/ContactForm.js" />
         <option value="$PROJECT_DIR$/src/reducers/contactFormReducer.js" />
         <option value="$PROJECT_DIR$/src/sagas/contactFormSaga.js" />
         <option value="$PROJECT_DIR$/src/actions/actiontsTypes.js" />
         <option value="$PROJECT_DIR$/src/sagas/rootSaga.js" />
+        <option value="$PROJECT_DIR$/src/actions/actionCreator.js" />
+        <option value="$PROJECT_DIR$/src/components/ContactForm/ContactForm.js" />
+        <option value="$PROJECT_DIR$/src/components/Promotions/style.module.sass" />
+        <option value="$PROJECT_DIR$/src/components/Delivery/style.module.sass" />
+        <option value="$PROJECT_DIR$/src/components/Footer/media.sass" />
+        <option value="$PROJECT_DIR$/src/components/Footer/Footer.js" />
+        <option value="$PROJECT_DIR$/src/components/Footer/style.module.sass" />
+        <option value="$PROJECT_DIR$/src/utils/dataContent.js" />
+        <option value="$PROJECT_DIR$/src/components/Product/Product.js" />
+        <option value="$PROJECT_DIR$/src/components/Product/style.module.sass" />
+        <option value="$PROJECT_DIR$/src/components/HamMenu/style.module.sass" />
       </list>
     </option>
   </component>
@@ -272,19 +223,34 @@
               <item name="lalin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Basket" type="462c0819:PsiDirectoryNode" />
+              <item name="HamMenu" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lalin" type="b2602c69:ProjectViewProjectNode" />
               <item name="lalin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="reducers" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Product" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lalin" type="b2602c69:ProjectViewProjectNode" />
               <item name="lalin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sagas" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Promotions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lalin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lalin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Stock" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lalin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lalin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -351,7 +317,7 @@
       <workItem from="1556716140788" duration="11720000" />
       <workItem from="1556804623013" duration="10410000" />
       <workItem from="1556819166855" duration="664000" />
-      <workItem from="1556866029537" duration="18256000" />
+      <workItem from="1556866029537" duration="23741000" />
     </task>
     <task id="LOCAL-00001" summary="Hello World">
       <created>1556211928671</created>
@@ -371,7 +337,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="180197000" />
+    <option name="totallyTimeSpent" value="185682000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="0" width="1374" height="736" extended-state="6" />
@@ -496,54 +462,10 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/SocialLink/Telegram.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SocialLink/Viber.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SocialLink/WhatsApp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="39" lean-forward="true" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SocialLink/style.module.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="55" column="23" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/web-forms.rnc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="277">
           <caret line="597" column="16" selection-start-line="597" selection-start-column="16" selection-end-line="597" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Thanks/Thanks.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="41" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -597,26 +519,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Title/Title.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Stock/Stock.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="51" column="50" selection-start-line="51" selection-start-column="50" selection-end-line="51" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/TitleScroll/TitleScroll.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -657,16 +559,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="33" lean-forward="true" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Product/Product.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="106" column="43" selection-start-line="106" selection-start-column="43" selection-end-line="106" selection-end-column="43" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -734,31 +626,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/HamMenu/style.module.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Product/style.module.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="87" column="26" selection-start-line="87" selection-start-column="26" selection-end-line="87" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/ContactForm/style.module.sass">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
           <caret line="45" column="11" lean-forward="true" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/dataCookies.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -789,20 +660,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Delivery/style.module.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="41" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/dataContent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="473" column="39" selection-start-line="473" selection-start-column="39" selection-end-line="473" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Basket/Basket.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
@@ -823,13 +680,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/actionCreator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/reducers/basketReducer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -837,22 +687,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/index.js">
+    <entry file="file://$PROJECT_DIR$/src/actions/actiontsTypes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="225">
+          <caret line="15" column="57" selection-start-line="15" selection-start-column="57" selection-end-line="15" selection-end-column="57" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ContactForm/ContactForm.js">
+    <entry file="file://$PROJECT_DIR$/src/actions/actionCreator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="82" column="73" selection-start-line="82" selection-start-column="73" selection-end-line="82" selection-end-column="73" />
+        <state relative-caret-position="417">
+          <caret line="29" column="23" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sagas/rootSaga.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="82" lean-forward="true" selection-start-line="11" selection-start-column="82" selection-end-line="11" selection-end-column="82" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -867,10 +721,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/actiontsTypes.js">
+    <entry file="file://$PROJECT_DIR$/src/components/ContactForm/ContactForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="57" selection-start-line="15" selection-start-column="57" selection-end-line="15" selection-end-column="57" />
+        <state relative-caret-position="32">
+          <caret line="74" column="41" selection-start-line="74" selection-start-column="41" selection-end-line="74" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -881,13 +738,113 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sagas/rootSaga.js">
+    <entry file="file://$PROJECT_DIR$/src/reducers/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="84" selection-start-line="12" selection-start-column="84" selection-end-line="12" selection-end-column="84" />
+        <state relative-caret-position="75">
+          <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
           <folding>
-            <element signature="e#0#48#0" expanded="true" />
+            <element signature="e#0#40#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Title/Title.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Thanks/Thanks.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="41" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Stock/Stock.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="33" lean-forward="true" selection-start-line="4" selection-start-column="33" selection-end-line="5" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/dataCookies.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Promotions/style.module.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="30" lean-forward="true" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Delivery/style.module.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="46" column="20" lean-forward="true" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Footer/media.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="12" lean-forward="true" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/dataContent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="497" column="49" selection-start-line="497" selection-start-column="49" selection-end-line="497" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Footer/style.module.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Footer/Footer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-180">
+          <caret line="12" column="41" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Product/Product.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="106" column="34" selection-start-line="106" selection-start-column="34" selection-end-line="106" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Product/style.module.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="80" column="27" selection-start-line="80" selection-start-column="27" selection-end-line="80" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/HamMenu/style.module.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
         </state>
       </provider>
     </entry>

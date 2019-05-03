@@ -24,6 +24,12 @@ const links = [
 ];
 
 const socialLinks = {
+    instagram: {
+        title: "@la_li_lingerie",
+        classIcon: "fab fa-instagram",
+        color: '#665CAC',
+        hrefMobile: 'https://www.instagram.com/la_li_lingerie/',
+    },
     viber: {
         title: 'Viber',
         classIcon: 'fab fa-viber',
@@ -35,6 +41,7 @@ const socialLinks = {
     whatsApp: {
         title: 'WhatsApp',
         classIcon: 'fab fa-whatsapp',
+        classIconSecond: "fab fa-whatsapp-square",
         color: '#49C759',
         phone: '+380997669525',
         href: 'whatsapp://send?phone=+380500618460',
@@ -43,11 +50,17 @@ const socialLinks = {
     telegram: {
         title: 'Telegram',
         classIcon: 'fab fa-telegram-plane',
+        classIconSecond: "fab fa-telegram",
         color: '#1E96C8',
         phone: '+380997669525',
         href: 'tg://resolve?domain=ksenia_girl',
         hrefMobile: 'tg://resolve?domain=ksenia_girl',
     },
+};
+
+const numberPhones = {
+    rodion: "+380997669525",
+    ksu: "+380500618460"
 };
 
 const title = "Кружевное нежное бельe";
@@ -482,7 +495,7 @@ const data = {
                 photo: "smartphone.png"
             },
             {
-                name: "Оплата при получении",
+                name: "Оплата наложенным платежом",
                 photo: "payment-method.png"
             },
         ]
@@ -492,5 +505,5 @@ const data = {
 export default {
     links, socialLinks, title, titleContactForm,
     titleStock, priceStockBefore, priceStockAfter,
-    stockImages, textButton, data
+    stockImages, textButton, data, numberPhones
 };

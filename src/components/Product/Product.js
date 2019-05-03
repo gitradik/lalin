@@ -48,7 +48,6 @@ class Product extends React.Component {
             <React.Fragment key={el}>
                 <span onClick={() => this.onClickSize(el)}
                       className={[styles.size, (sizeKey === el && styles.activeSize)].join(' ')} key={i}>{el}</span>
-                {i !== sizes.length - 1 && ','}
             </React.Fragment>
         );
     }
@@ -100,12 +99,11 @@ class Product extends React.Component {
                                     <span>Размеры: </span>
                                     {this.renderSize()}
                                 </div>
-                                <div className={styles.price}>
-                                    <span>Цена: </span>
-                                   {/* <span className={styles.new}>{price}</span>*/}
-                                    {this.renderPrice()}
-                                    <span> грн.</span>
-                                </div>
+                            </div>
+                            <div className={styles.price}>
+                                <span>Цена: </span>
+                                {this.renderPrice()}
+                                <span> грн.</span>
                             </div>
                         </div>
                         <div className={styles.buttons}>
