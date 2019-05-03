@@ -12,6 +12,8 @@ import cookie from 'react-cookies';
 import DATA_COOKIES from '../../utils/dataCookies';
 import Modal from "react-responsive-modal";
 import {modalStyle} from "../../utils/modalStyle";
+import {clearBasket, thanksOn, thanksOff, fetchingOn, fetchingOff} from "../../actions/actionCreator";
+import connect from "react-redux/es/connect/connect";
 
 class ContactForm extends React.Component {
     constructor(props) {
@@ -21,8 +23,6 @@ class ContactForm extends React.Component {
             phone: '',
             isValidName: false,
             isValidPhone: false,
-            isThanks: false,
-            isFetching: false,
         };
     }
 
@@ -43,97 +43,89 @@ class ContactForm extends React.Component {
     };
 
     closeModal = () => {
-        this.setState({isThanks: false})
+       this.props.thanksOff();
     };
 
-    renderThanksModal() {
-        return <Modal
-            closeIconSize={38} styles={modalStyle} open={this.state.isThanks} onClose={this.closeModal} centered>
-            <Thanks title="Спасибо за покупку!" subTitle="Вам позвонят в ближайшее время"/>
-        </Modal>;
-    }
-
-    renderLoader() {
-        return this.state.isFetching && <Loader />
-    }
-
     getDiscount(price, discount) {
-        return discount ? price - (price * (discount / 100)) : price;
+        return price - (price * (discount / 100));
     }
 
     onSubmit = () => {
-        this.setState({isFetching: true});
+
+        this.props.fetchingOn();
 
         const {name, phone} = this.state;
-        const {location, products, onChange} = this.props;
-        let msg = `name: ${name}; phone: ${phone}; products: `;
-        if (products.length !== 0) {
-            products.map((p, i) => {
-                const str = `num: ${i + 1}. name(${p.name}) discount+price(${p.discount} ${p.price}) price(${this.getDiscount(p.price, p.discount)}); `;
+        const {location, basket} = this.props;
+        let msg = `name: ${name}; phone: ${phone}; location: ${location}; products: `;
+        if (basket) {
+            basket.map((p, i) => {
+                const str = `num: ${i + 1}. name(${p.name}) discount/price(${p.discount}/${p.price}) price(${this.getDiscount(p.price, p.discount)}); `;
                 msg = msg + str;
                 return
             });
-            msg = msg + `location: ${location}`;
         }
 
         axios.post(sendMessage(botToken, chatId, msg))
             .then(() => {
-                cookie.remove(DATA_COOKIES.BASKET);
-                this.setState({
-                    isFetching: false, isThanks: true,
-                });
-                onChange();
+                this.props.clearBasket();
+                this.props.fetchingOff();
+                this.props.thanksOn();
             })
             .catch(() => {
-                this.setState({isFetching: false});
+                this.props.fetchingOff();
             });
     };
 
     render() {
-        const {textButton} = this.props;
+        const {textButton, isThanks, isFetching} = this.props;
         const {name, phone, isValidName, isValidPhone} = this.state;
         return (
-            <div className={styles.contactForm}>
-                {this.renderLoader()}
-                {this.renderThanksModal()}
-                <div className={styles.container}>
-                    <div className={styles.title}>
-                        {this.props.title}
-                    </div>
-                    <div className={styles.inputs}>
-                        <div className={styles.inputContainer}>
-                            <input
-                                type="text" name="name"
-                                   placeholder="Ваше Имя"
-                                   value={name}
-                                   onChange={(e) => this.onChangeName(e.target.value)}
-                            />
+            <>
+                <Modal
+                    closeIconSize={38} styles={modalStyle} open={isThanks} onClose={this.closeModal} centered>
+                    <Thanks title="Спасибо за покупку!" subTitle="Вам позвонят в ближайшее время"/>
+                </Modal>
+                {isFetching && <Loader/>}
+                <div className={styles.contactForm}>
+                    <div className={styles.container}>
+                        <div className={styles.title}>
+                            {this.props.title}
                         </div>
-                        <div className={styles.inputContainer}>
-                            <InputMask
-                                placeholder="Ваш номер телефона"
-                                       name="phone" mask="+389999999999"
-                                       maskChar=" "
-                                       value={phone}
-                                       onChange={e => this.onChangePhone(e.target.value)}
-                            />
-                        </div>
-                        <div className={styles.inputContainer}>
-                            <button disabled={!isValidPhone || !isValidName} onClick={this.onSubmit}
-                                    className={[styles.submitBtn, ((isValidPhone && isValidName) && styles.activeSubmit)].join(' ')}>
-                                {textButton}
-                            </button>
+                        <div className={styles.inputs}>
+                            <div className={styles.inputContainer}>
+                                <input
+                                    type="text" name="name"
+                                    placeholder="Ваше Имя"
+                                    value={name}
+                                    onChange={(e) => this.onChangeName(e.target.value)}
+                                />
+                            </div>
+                            <div className={styles.inputContainer}>
+                                <InputMask
+                                    placeholder="Ваш номер телефона"
+                                    name="phone" mask="+389999999999"
+                                    maskChar=" "
+                                    value={phone}
+                                    onChange={e => this.onChangePhone(e.target.value)}
+                                />
+                            </div>
+                            <div className={styles.inputContainer}>
+                                <button disabled={!isValidPhone || !isValidName} onClick={this.onSubmit}
+                                        className={[styles.submitBtn, ((isValidPhone && isValidName) && styles.activeSubmit)].join(' ')}>
+                                    {textButton}
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </>
         );
     }
 
     componentDidMount() {
         const _name = cookie.load(DATA_COOKIES.USER_NAME);
         const _phone = cookie.load(DATA_COOKIES.USER_PHONE);
-        if(_name && _phone) {
+        if (_name && _phone) {
             this.setState({
                 name: _name,
                 phone: _phone,
@@ -147,18 +139,27 @@ class ContactForm extends React.Component {
 ContactForm.propTypes = {
     location: PropTypes.string,
     title: PropTypes.object,
-    product: PropTypes.string,
     textButton: PropTypes.string,
-    products: PropTypes.array,
-    onChange: PropTypes.func,
 };
 
 ContactForm.defaultProps = {
     location: '',
     title: '',
-    product: '',
     textButton: 'Заказать',
-    products: []
 };
 
-export default ContactForm;
+const mapStateToProps = (state) => {
+    const {basket} = state.basketReducer;
+    const {isThanks, isFetching} = state.contactFormReducer;
+    return {basket, isThanks, isFetching};
+};
+
+const mapDispatchToProps = (dispatch) => ({
+    clearBasket: () => dispatch(clearBasket()),
+    thanksOn: () => dispatch(thanksOn()),
+    thanksOff: () => dispatch(thanksOff()),
+    fetchingOn: () => dispatch(fetchingOn()),
+    fetchingOff: () => dispatch(fetchingOff()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ContactForm);

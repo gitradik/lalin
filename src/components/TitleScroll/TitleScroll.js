@@ -32,7 +32,6 @@ class TitleScroll extends React.Component {
                                 <ContactForm
                                     title={dataContent.titleContactForm}
                                     location="first-scroll"
-                                    product="Акционный со скидкой 10%"
                                     textButton={dataContent.textButton}
                                 />
                             </div>

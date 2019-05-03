@@ -7,7 +7,6 @@ import Telegram from "../SocialLink/Telegram";
 import WhatsApp from "../SocialLink/WhatsApp";
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import {Nav, Navbar} from "react-bootstrap";
-import BasketLink from "../Basket/BasketLink";
 
 class HamMenu extends React.Component {
     constructor(props) {
@@ -66,7 +65,6 @@ class HamMenu extends React.Component {
                 <Navbar className={styles.navBar} expand="lg">
                     <Navbar.Toggle ref={this.ham} aria-controls="basic-navbar-nav" />
                     <div className={styles.social}>
-                        <BasketLink/>
                         <Telegram/>
                         <WhatsApp/>
                         <Viber/>

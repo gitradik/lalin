@@ -1,7 +1,7 @@
 import ACTION from '../actions/actiontsTypes';
 
 const initialState = {
-    basket: null,
+    basket: undefined,
     isFetching: false,
     error: null
 };

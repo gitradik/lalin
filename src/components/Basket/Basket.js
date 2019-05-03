@@ -1,44 +1,29 @@
 import React from 'react';
 import styles from './style.module.sass';
 import Title from "../Title/Title";
-import cookie from 'react-cookies';
 import {Container, Row, Col} from 'react-bootstrap';
 import BasketProduct from "./BasketProduct";
-import DATA_COOKIES from '../../utils/dataCookies';
 import Modal from "react-responsive-modal";
 import {modalStyle} from "../../utils/modalStyle";
 import ContactForm from "../ContactForm/ContactForm";
+import {updateBasket} from "../../actions/actionCreator";
+import connect from "react-redux/es/connect/connect";
 
 class Basket extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            products: [],
-            allPrice: 0,
             isOpenForm: false,
         }
     }
 
-    onChangeBasketProd = () => {
-        this.setState({products: cookie.load(DATA_COOKIES.BASKET)});
-        setTimeout(() => this.setAllPrice(), 0);
-    };
-
     renderProducts() {
-        const {products} = this.state;
-        if(products !== undefined) {
-            return products.map((p, i) =>
+        const {basket} = this.props;
+        if(basket !== undefined) {
+            return basket.map((p, i) =>
                 <Col key={i + 'basket'} md={12}>
-                    <BasketProduct
-                        id={p.id}
-                        index={i}
-                        name={p.name}
-                        color={p.color}
-                        discount={p.discount}
-                        size={p.size}
-                        price={p.price}
-                        mainImage={p.mainImage}
-                        onChange={this.onChangeBasketProd}
+                    <BasketProduct id={p.id} index={i} name={p.name} color={p.color} discount={p.discount}
+                        size={p.size} price={p.price} mainImage={p.mainImage}
                     />
                 </Col>
             );
@@ -50,37 +35,44 @@ class Basket extends React.Component {
     };
 
     renderContactForm() {
-        const {isOpenForm, products} = this.state;
-        if(products) {
+        const {isOpenForm} = this.state;
+        const {basket} = this.props;
+        if(basket) {
             return <Modal
                 closeIconSize={38} styles={modalStyle} open={isOpenForm} onClose={this.closeModal} centered>
                 <ContactForm
-                    title={<span>Корзина</span>}
+                    title={<span>Оставьте свои данные для оформления заказа</span>}
                     location="Basket"
-                    products={products}
-                    onChange={this.onChangeBasketProd}
                 />
             </Modal>;
         }
     }
 
     getDiscount(price, discount) {
-        return discount ? price - (price * (discount / 100)) : price;
+        return price - (price * (discount / 100));
     }
 
-    setAllPrice() {
-        const {products} = this.state;
-        let _allPrice = 0;
-        if (products !== undefined) {
-            products.forEach(p => {
-                _allPrice += this.getDiscount(p.price, p.discount)
+    getAllPrice() {
+        const {basket} = this.props;
+        let allPrice = 0;
+        if (basket !== undefined) {
+            basket.forEach(p => {
+                allPrice += this.getDiscount(p.price, p.discount)
             });
         }
-        this.setState({allPrice: _allPrice})
+       return allPrice;
+    }
+
+    isDisabledSubmit() {
+        const {basket} = this.props;
+        if(basket) {
+            return !(basket.length > 0);
+        } else {
+            return true;
+        }
     }
 
     render() {
-        const {allPrice} = this.state;
         return (
             <div className={styles.basket}>
                 {this.renderContactForm()}
@@ -90,13 +82,14 @@ class Basket extends React.Component {
                         <Row className="justify-content-start">
                             {this.renderProducts()}
                             <Col md={12}>
-                                <div className={styles.price}>
-                                   <span>Общая сумма: {allPrice} грн.</span>
+                                <div className={[styles.price, (this.isDisabledSubmit() && styles.inactive)].join(' ')}>
+                                   <span>Общая сумма: {this.getAllPrice()} грн.</span>
                                 </div>
                             </Col>
                             <Col md={12}>
-                                <div className={styles.submit}>
-                                    <button onClick={() => this.setState({isOpenForm: true})}>Заказать</button>
+                                <div className={[styles.submit, (this.isDisabledSubmit() && styles.disabled)].join(' ')}>
+                                    <button disabled={this.isDisabledSubmit()}
+                                            onClick={() => this.setState({isOpenForm: true})}>Заказать</button>
                                 </div>
                             </Col>
                         </Row>
@@ -107,9 +100,17 @@ class Basket extends React.Component {
     }
 
     componentDidMount() {
-        this.setState({products: cookie.load(DATA_COOKIES.BASKET)});
-        setTimeout(() => this.setAllPrice(), 0);
+        this.props.updateBasket();
     }
 }
 
-export default Basket;
+const mapStateToProps = (state) => {
+    const {basket, isFetching} = state.basketReducer;
+    return {basket, isFetching};
+};
+
+const mapDispatchToProps = (dispatch) => ({
+    updateBasket: () => dispatch(updateBasket())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Basket);

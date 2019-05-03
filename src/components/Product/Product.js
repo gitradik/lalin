@@ -7,9 +7,9 @@ import Slider from "react-slick/lib";
 import {slickSettingsStock} from "../../utils/slickImagesGallery/slickSettings";
 import '../../utils/slickImagesGallery/slickStyles.sass';
 import Modal from "react-responsive-modal";
-import cookie from 'react-cookies';
-import DATA_COOKIES from '../../utils/dataCookies';
 import Thanks from "../Thanks/Thanks";
+import {pushInBasket} from "../../actions/actionCreator";
+import connect from "react-redux/es/connect/connect";
 
 class Product extends React.Component {
 
@@ -24,13 +24,8 @@ class Product extends React.Component {
     }
 
     onClickForm() {
-        const {id, name, mainImage, discount, color, price, images} = this.props;
-        let products = cookie.load(DATA_COOKIES.BASKET);
-        if (products === undefined) {
-            products = [];
-        }
-        products.push({id, name, mainImage, discount, color, size: this.state.sizeKey, price, images});
-        cookie.save(DATA_COOKIES.BASKET, products, {path: process.env.PUBLIC_URL});
+        const {id, name, mainImage, discount, color, price, images, pushInBasket} = this.props;
+        pushInBasket({id, name, mainImage, discount, color, size: this.state.sizeKey, price, images});
         this.setState({isBasketPush: true});
     }
 
@@ -61,7 +56,7 @@ class Product extends React.Component {
     renderImagesForSlider() {
         const {images} = this.props;
         return images.map((el, i) =>
-            <div key={i} ref={this.hamList}>
+            <div key={i}>
                 <img src={require('../../public/images/promotions/' + el)} alt={el}/>
             </div>
         );
@@ -84,8 +79,13 @@ class Product extends React.Component {
         }
     }
 
+    renderPrice() {
+        const {discount, price} = this.props;
+        return discount ? <div className={styles.old}><strike>{price}</strike> <span style={{color: 'red'}}>{price - (price * (discount / 100))}</span></div> : <span>{price}</span>
+    }
+
     render() {
-        const {mainImage, name, price} = this.props;
+        const {mainImage, name} = this.props;
         return (
             <>{this.renderModals()}
                 <div className={styles.product}>
@@ -102,8 +102,9 @@ class Product extends React.Component {
                                 </div>
                                 <div className={styles.price}>
                                     <span>Цена: </span>
-                                    <span className={styles.new}>{price}</span>
-                                    <span>грн.</span>
+                                   {/* <span className={styles.new}>{price}</span>*/}
+                                    {this.renderPrice()}
+                                    <span> грн.</span>
                                 </div>
                             </div>
                         </div>
@@ -111,7 +112,7 @@ class Product extends React.Component {
                             <button onClick={this.onClickImg}><i className="far fa-image"/><span>Фото</span>
                             </button>
                             <button onClick={() => this.onClickForm(name)}>
-                                <img src={require('../../public/images/basket.png')} alt="basket"/>
+                                <i className="fas fa-shopping-cart"/>
                                 <span>В корзину</span>
                             </button>
                         </div>
@@ -133,4 +134,8 @@ Product.propTypes = {
     images: PropTypes.array,
 };
 
-export default Product;
+const mapDispatchToProps = (dispatch) => ({
+    pushInBasket: (product) => dispatch(pushInBasket(product))
+});
+
+export default connect(null, mapDispatchToProps)(Product);

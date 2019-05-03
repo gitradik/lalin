@@ -65,7 +65,10 @@ const stockImages = ['stock.jpg', 'stock1.jpg'];
 const data = {
     titleScroll: {},
     promotions: {
-        title: "Акции этой недели"
+        title: "Акции этой недели",
+        promotionProduct: {
+            id: 1,
+        },
     },
     products: {
         title: "Товары",
@@ -79,8 +82,8 @@ const data = {
                         name: 'beige',
                         color: 'beige',
                         sizes: ['M', 'S', 'Xl'],
-                        price: null,
-                        discount: 12,
+                        price: 125,
+                        discount: null,
                         mainImage: 'beige/1.jpg',
                         images: [
                             'beige/1.jpg',
@@ -463,20 +466,20 @@ const data = {
     delivery: {
         cards: [
             {
-                name: "Выбор товара",
+                name: "Выберите товар",
                 photo: "choices.png",
             },
             {
-                name: "Заполнение формы",
+                name: "Добавьте в корзину",
+                photo: "add-to-cart.png",
+            },
+            {
+                name: "Заполните форму для оформления заказа",
                 photo: "form.png"
             },
             {
-                name: "Уточнение всех вопросов",
+                name: "Вам перезвонит наш сотрудник для уточнения всех вопросов",
                 photo: "smartphone.png"
-            },
-            {
-                name: "Отправка Новой почтой",
-                photo: "international.png"
             },
             {
                 name: "Оплата при получении",

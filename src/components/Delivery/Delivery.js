@@ -10,7 +10,7 @@ class Delivery extends React.Component {
     renderCards() {
         const {cards} = dataContent.data.delivery;
         return cards.map((card, i) =>
-            <Col key={card.name} xl={2} lg={4} md={4} className="d-flex justify-content-center my-2">
+            <Col key={card.name} xl={2} lg={3} md={4} sm={6} className="d-flex justify-content-center my-2">
                 <Card key={card.name}
                       name={card.name}
                       photo={card.photo}

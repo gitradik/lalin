@@ -1,41 +1,32 @@
 import React from 'react';
 import styles from './style.module.sass';
 import PropTypes from 'prop-types';
-import cookie from 'react-cookies';
 import {modalStyle} from "../../utils/modalStyle";
 import Modal from "react-responsive-modal";
-import DATA_COOKIES from '../../utils/dataCookies';
+import {removeInBasket} from "../../actions/actionCreator";
+import connect from "react-redux/es/connect/connect";
 
 class BasketProduct extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             isOpen: false,
-            isRemove: false,
         }
     }
 
-    removeProd = () => {
-        this.setState({isOpen: true})
-    };
-
     closeModal = () => {
-        this.setState({isOpen: false, isRemove: false});
+        this.setState({isOpen: false});
     };
 
     onClickRemove = () => {
-        const {id, size, onChange} = this.props;
-        const products = cookie.load(DATA_COOKIES.BASKET);
-        const indexProd = products.findIndex(p => (p.id === id && p.size === size));
-        products.splice(indexProd, 1);
-        cookie.save(DATA_COOKIES.BASKET, products, {path: process.env.PUBLIC_URL});
-        this.setState({isOpen: false, isRemove: false});
-        onChange();
+        const {id, size} = this.props;
+        this.props.removeInBasket(id, size);
+        setTimeout(() => this.setState({isOpen: false}),0);
     };
 
     renderPrice() {
         const {price, discount} = this.props;
-        return discount ? <span style={{color: 'red'}}>{price - (price * (discount / 100))} грн</span> : <span>{price} грн</span>;
+        return <span style={{color: (discount ? 'red' : 'black')}}>{price - (price * (discount / 100))} грн</span>;
     }
 
     render() {
@@ -50,7 +41,7 @@ class BasketProduct extends React.Component {
                     <span>Вы уверены?</span>
                     <div className={styles.questionBtns}>
                         <button onClick={this.onClickRemove}>Да</button>
-                        <button onClick={() => this.setState({isOpen: false, isRemove: false})}>Нет</button>
+                        <button onClick={() => this.setState({isOpen: false})}>Нет</button>
                     </div>
                     </div>
                 </Modal>
@@ -86,7 +77,7 @@ class BasketProduct extends React.Component {
                     </div>
                 </div>
                 <div className={styles.delete}>
-                    <button onClick={this.removeProd}>Удалить</button>
+                    <button onClick={() => this.setState({isOpen: true})}>Удалить</button>
                 </div>
             </div>
             </>
@@ -104,4 +95,8 @@ BasketProduct.propTypes = {
     mainImage: PropTypes.string,
 };
 
-export default BasketProduct;
+const mapDispatchToProps = (dispatch) => ({
+    removeInBasket: (id, size) => dispatch(removeInBasket(id, size))
+});
+
+export default connect(null, mapDispatchToProps)(BasketProduct);

@@ -5,6 +5,9 @@ import Modal from "react-responsive-modal";
 import {modalStyle} from "../../utils/modalStyle";
 
 const Loader = () => {
+
+    const onClose = () => {};
+
     return (
         <Modal className={styles.thanks}
                closeOnEsc={false}
@@ -12,7 +15,7 @@ const Loader = () => {
                 closeButton: {display: 'none'},
                 overlay: modalStyle.overlay,
                 modal: modalStyle.modal,
-            }} open={true} centered>
+            }} open={true} onClose={onClose} centered>
             <div className="cssload-loader">
                 <div className="cssload-inner cssload-one"/>
                 <div className="cssload-inner cssload-two"/>

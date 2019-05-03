@@ -8,10 +8,10 @@ class Card extends React.Component {
         return (
             <div className={styles.card}>
                 <span className={styles.index}>{index}</span>
-                <img src={require(`../../public/images/${photo}`)} alt={photo}/>
                 <span className={styles.name}>
                     <span>{name}</span>
                 </span>
+               <img src={require(`../../public/images/${photo}`)} alt={photo}/>
             </div>
         );
     }
