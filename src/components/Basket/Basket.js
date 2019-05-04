@@ -23,7 +23,7 @@ class Basket extends React.Component {
             return basket.map((p, i) =>
                 <Col key={i + 'basket'} md={12}>
                     <BasketProduct id={p.id} index={i} name={p.name} color={p.color} discount={p.discount}
-                        size={p.size} price={p.price} mainImage={p.mainImage}
+                        size={p.size} price={p.price} mainImage={p.mainImage} count={p.count}
                     />
                 </Col>
             );

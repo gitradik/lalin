@@ -33,6 +33,7 @@ class Products extends React.Component {
                                 sizes={p.sizes}
                                 price={p.price}
                                 images={p.images}
+                                length={p.length}
                             />
                         </Col>
                     )

@@ -104,7 +104,8 @@ const data = {
                             'beige/3.jpg',
                             'beige/4.jpg',
                             'beige/5.jpg'
-                        ]
+                        ],
+                        length: 5
                     },
                     {
                         id: 2,
@@ -118,7 +119,8 @@ const data = {
                             'black/1.jpg',
                             'black/2.jpg',
                             'black/3.jpg',
-                        ]
+                        ],
+                        length: 5
                     },
                     {
                         id: 3,
@@ -133,7 +135,8 @@ const data = {
                             'blue/2.jpg',
                             'blue/3.jpg',
                             'blue/4.jpg',
-                        ]
+                        ],
+                        length: 5
                     },
                     {
                         id: 4,
@@ -149,7 +152,8 @@ const data = {
                             'purple/3.jpg',
                             'purple/4.jpg',
                             'purple/5.jpg',
-                        ]
+                        ],
+                        length: 5
                     },
                     {
                         id: 5,
@@ -166,7 +170,8 @@ const data = {
                             'white/4.jpg',
                             'white/5.jpg',
                             'white/6.jpg',
-                        ]
+                        ],
+                        length: 5
                     },
                     {
                         id: 6,
@@ -179,7 +184,8 @@ const data = {
                         images: [
                             'whiteLif/1.jpg',
                             'whiteLif/2.jpg',
-                        ]
+                        ],
+                        length: 5
                     },
                 ],
             },
@@ -201,7 +207,8 @@ const data = {
                             'beige/3.jpg',
                             'beige/4.jpg',
                             'beige/5.jpg'
-                        ]
+                        ],
+                        length: 5
                     },
                     {
                         id: 2,
@@ -215,7 +222,8 @@ const data = {
                             'black/1.jpg',
                             'black/2.jpg',
                             'black/3.jpg',
-                        ]
+                        ],
+                        length: 5
                     },
                     {
                         id: 3,
@@ -230,7 +238,8 @@ const data = {
                             'blue/2.jpg',
                             'blue/3.jpg',
                             'blue/4.jpg',
-                        ]
+                        ],
+                        length: 5
                     },
                     {
                         id: 4,
@@ -246,7 +255,8 @@ const data = {
                             'purple/3.jpg',
                             'purple/4.jpg',
                             'purple/5.jpg',
-                        ]
+                        ],
+                        length: 5
                     },
                     {
                         id: 5,
@@ -263,7 +273,8 @@ const data = {
                             'white/4.jpg',
                             'white/5.jpg',
                             'white/6.jpg',
-                        ]
+                        ],
+                        length: 5
                     },
                     {
                         id: 6,
@@ -276,7 +287,8 @@ const data = {
                         images: [
                             'whiteLif/1.jpg',
                             'whiteLif/2.jpg',
-                        ]
+                        ],
+                        length: 5
                     },
                 ],
             },
@@ -298,7 +310,8 @@ const data = {
                             'beige/3.jpg',
                             'beige/4.jpg',
                             'beige/5.jpg'
-                        ]
+                        ],
+                        length: 5
                     },
                     {
                         id: 2,
@@ -312,7 +325,8 @@ const data = {
                             'black/1.jpg',
                             'black/2.jpg',
                             'black/3.jpg',
-                        ]
+                        ],
+                        length: 5
                     },
                     {
                         id: 3,
@@ -327,7 +341,8 @@ const data = {
                             'blue/2.jpg',
                             'blue/3.jpg',
                             'blue/4.jpg',
-                        ]
+                        ],
+                        length: 5
                     },
                     {
                         id: 4,
@@ -343,7 +358,8 @@ const data = {
                             'purple/3.jpg',
                             'purple/4.jpg',
                             'purple/5.jpg',
-                        ]
+                        ],
+                        length: 5
                     },
                     {
                         id: 5,
@@ -360,7 +376,8 @@ const data = {
                             'white/4.jpg',
                             'white/5.jpg',
                             'white/6.jpg',
-                        ]
+                        ],
+                        length: 5
                     },
                     {
                         id: 6,
@@ -373,7 +390,8 @@ const data = {
                         images: [
                             'whiteLif/1.jpg',
                             'whiteLif/2.jpg',
-                        ]
+                        ],
+                        length: 5
                     },
                 ],
             },
@@ -395,7 +413,8 @@ const data = {
                             'beige/3.jpg',
                             'beige/4.jpg',
                             'beige/5.jpg'
-                        ]
+                        ],
+                        length: 5
                     },
                     {
                         id: 2,
@@ -409,7 +428,8 @@ const data = {
                             'black/1.jpg',
                             'black/2.jpg',
                             'black/3.jpg',
-                        ]
+                        ],
+                        length: 5
                     },
                     {
                         id: 3,
@@ -424,7 +444,8 @@ const data = {
                             'blue/2.jpg',
                             'blue/3.jpg',
                             'blue/4.jpg',
-                        ]
+                        ],
+                        length: 5
                     },
                     {
                         id: 4,
@@ -440,7 +461,8 @@ const data = {
                             'purple/3.jpg',
                             'purple/4.jpg',
                             'purple/5.jpg',
-                        ]
+                        ],
+                        length: 5
                     },
                     {
                         id: 5,
@@ -457,7 +479,8 @@ const data = {
                             'white/4.jpg',
                             'white/5.jpg',
                             'white/6.jpg',
-                        ]
+                        ],
+                        length: 5
                     },
                     {
                         id: 6,
@@ -470,7 +493,8 @@ const data = {
                         images: [
                             'whiteLif/1.jpg',
                             'whiteLif/2.jpg',
-                        ]
+                        ],
+                        length: 5
                     },
                 ],
             },

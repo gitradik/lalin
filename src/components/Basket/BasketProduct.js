@@ -30,7 +30,7 @@ class BasketProduct extends React.Component {
     }
 
     render() {
-        const {index, name, color, size, mainImage} = this.props;
+        const {index, name, color, size, mainImage, count} = this.props;
         const {isOpen} = this.state;
         return (
             <>
@@ -68,6 +68,11 @@ class BasketProduct extends React.Component {
                     <div className={styles.name}>
                         <span>Размер:</span>
                         <span>{size}</span>
+                        <div className={styles.bord}/>
+                    </div>
+                    <div className={styles.name}>
+                        <span>Количество:</span>
+                        {count}
                         <div className={styles.bord}/>
                     </div>
                     <div className={styles.name}>

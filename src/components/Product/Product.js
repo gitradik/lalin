@@ -10,6 +10,7 @@ import Modal from "react-responsive-modal";
 import Thanks from "../Thanks/Thanks";
 import {pushInBasket} from "../../actions/actionCreator";
 import connect from "react-redux/es/connect/connect";
+import {isValidCount} from '../../utils/validationForm';
 
 class Product extends React.Component {
 
@@ -20,12 +21,15 @@ class Product extends React.Component {
             isBasketPush: false,
             titleForm: '',
             sizeKey: props.sizes[0],
+            count: 1,
+            isValidCount: true
         };
     }
 
     onClickForm() {
+        const {count} = this.state;
         const {id, name, mainImage, discount, color, price, images, pushInBasket} = this.props;
-        pushInBasket({id, name, mainImage, discount, color, size: this.state.sizeKey, price, images});
+        pushInBasket({id, name, mainImage, discount, color, size: this.state.sizeKey, price, images, count});
         this.setState({isBasketPush: true});
     }
 
@@ -46,8 +50,8 @@ class Product extends React.Component {
         const {sizeKey} = this.state;
         return sizes.map((el, i) =>
             <React.Fragment key={el}>
-                <span onClick={() => this.onClickSize(el)}
-                      className={[styles.size, (sizeKey === el && styles.activeSize)].join(' ')} key={i}>{el}</span>
+                <div onClick={() => this.onClickSize(el)}
+                      className={[styles.size, (sizeKey === el && styles.activeSize)].join(' ')} key={i}>{el}</div>
             </React.Fragment>
         );
     }
@@ -83,11 +87,20 @@ class Product extends React.Component {
         return discount ? <div className={styles.old}><strike>{price}</strike> <span style={{color: 'red'}}>{price - (price * (discount / 100))}</span></div> : <span>{price}</span>
     }
 
+    onChangeCounter = (e) => {
+        const {length} = this.props;
+        this.setState({
+            count: e.target.value,
+            isValidCount: isValidCount(e.target.value, length)
+        });
+    };
+
     render() {
-        const {mainImage, name} = this.props;
+        const {mainImage, name, className, length} = this.props;
+        const {isValidCount, count} = this.state;
         return (
             <>{this.renderModals()}
-                <div className={styles.product}>
+                <div className={styles[className]}>
                     <div className={styles.box}>
                         <div className={styles.subBox}>
                             <div className={styles.imgBox} onClick={this.onClickImg}>
@@ -96,9 +109,19 @@ class Product extends React.Component {
                             <div className={styles.descr}>
                                 <h5 className={styles.name}>{name}</h5>
                                 <div className={styles.sizes}>
-                                    <span>Размеры: </span>
+                                    <span className={styles.titleSize}>Размеры: </span>
                                     {this.renderSize()}
                                 </div>
+                            </div>
+                            <div className={styles.counter}>
+                                <div className={styles.titleCount}>
+                                    <span className={styles.tit}>Количество: </span>
+                                    {count > length && <span>{"максимум: " + this.props.length}</span>}
+                                    {count < 1 && <span>{"минимум: 1"}</span>}
+                                </div>
+                                <input className={!isValidCount ? styles.invalid : ""} value={this.state.count}
+                                       onChange={this.onChangeCounter} type="number"
+                                />
                             </div>
                             <div className={styles.price}>
                                 <span>Цена: </span>
@@ -108,7 +131,7 @@ class Product extends React.Component {
                             <div className={styles.buttons}>
                                 <button onClick={this.onClickImg}><i className="far fa-image"/><span>Фото</span>
                                 </button>
-                                <button onClick={() => this.onClickForm(name)}>
+                                <button disabled={!isValidCount} onClick={() => this.onClickForm(name)}>
                                     <i className="fas fa-shopping-cart"/>
                                     <span>В корзину</span>
                                 </button>
@@ -130,6 +153,12 @@ Product.propTypes = {
     sizes: PropTypes.array,
     price: PropTypes.number,
     images: PropTypes.array,
+    className: PropTypes.string,
+    length: PropTypes.number
+};
+
+Product.defaultProps = {
+    className: 'product'
 };
 
 const mapDispatchToProps = (dispatch) => ({
