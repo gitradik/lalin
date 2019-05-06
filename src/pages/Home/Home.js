@@ -9,6 +9,7 @@ import Delivery from "../../components/Delivery/Delivery";
 import Footer from "../../components/Footer/Footer";
 import BasketLink from "../../components/Basket/BasketLink";
 import AboutUs from "../../components/AboutUs/AboutUs";
+import Reviews from "../../components/Reviews/Reviews";
 
 class Home extends React.Component {
     render() {
@@ -23,6 +24,7 @@ class Home extends React.Component {
                 <Promotions />
                 <Products/>
                 <Delivery/>
+                <Reviews/>
                 <Footer/>
             </div>
         );

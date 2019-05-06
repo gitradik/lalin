@@ -61,7 +61,7 @@ class ContactForm extends React.Component {
             basket.map((p, i) => {
                 const str = `num: ${i + 1}. name(${p.name}) discount/price(${p.discount}/${p.price}) count(${p.count}) price(${this.getDiscount(p.price, p.discount)}); `;
                 msg = msg + str;
-                return
+                return (<></>);
             });
         }
 

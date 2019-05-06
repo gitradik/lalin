@@ -3,7 +3,6 @@ export const modalStyle = {
         fill: "#ff28ed",
         right: '0',
         marginTop: '-50px',
-        marginRight: '10px'
     },
     overlay: {
         padding: '0',

@@ -16,7 +16,7 @@ class BasketProduct extends React.Component {
     }
 
     closeModal = () => {
-        this.props.setConfirmation(false);
+        this.setState({isOpen: false})
     };
 
     onClickRemove() {
@@ -106,8 +106,8 @@ class BasketProduct extends React.Component {
         );
     }
 
-    componentWillUpdate(nextProps, nextState, nextContext) {
-        if(this.state === nextState) {
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if(prevState.isOpen) {
             this.setState({isOpen: false})
         }
     }

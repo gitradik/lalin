@@ -30,16 +30,12 @@ class Basket extends React.Component {
         }
     }
 
-    closeModal = () => {
-        this.setState({isOpenForm: false})
-    };
-
     renderContactForm() {
         const {isOpenForm} = this.state;
         const {basket} = this.props;
         if(basket) {
             return <Modal
-                closeIconSize={38} styles={modalStyle} open={isOpenForm} onClose={this.closeModal} centered>
+                closeIconSize={38} styles={modalStyle} open={isOpenForm} onClose={() => this.setState({isOpenForm: false})} centered>
                 <ContactForm
                     title={<span>Оставьте свои данные для оформления заказа</span>}
                     location="Basket"
