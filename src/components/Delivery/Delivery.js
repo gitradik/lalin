@@ -22,7 +22,7 @@ class Delivery extends React.Component {
 
     render() {
         return (
-            <div className={styles.delivery}>
+            <div id="order" className={styles.delivery}>
                 <Title name="Порядок заказа и получения"/>
                 <div className={styles.cards}>
                     <Container>

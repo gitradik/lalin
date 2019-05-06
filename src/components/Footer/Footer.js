@@ -27,7 +27,7 @@ class Footer extends React.Component {
     render() {
         const {instagram, telegram, whatsApp, viber} = dataContent.socialLinks;
         return (
-            <div className={styles.footer}>
+            <div id="contacts" className={styles.footer}>
                 <Title name="Контакты"/>
                 <Container>
                     <Row className="justify-content-center">

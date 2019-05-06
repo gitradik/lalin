@@ -8,6 +8,7 @@ import Products from "../../components/Products/Products";
 import Delivery from "../../components/Delivery/Delivery";
 import Footer from "../../components/Footer/Footer";
 import BasketLink from "../../components/Basket/BasketLink";
+import AboutUs from "../../components/AboutUs/AboutUs";
 
 class Home extends React.Component {
     render() {
@@ -18,6 +19,7 @@ class Home extends React.Component {
                     links={dataContent.links}
                 />
                 <TitleScroll />
+                <AboutUs/>
                 <Promotions />
                 <Products/>
                 <Delivery/>

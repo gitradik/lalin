@@ -8,16 +8,21 @@ import connect from "react-redux/es/connect/connect";
 import {Container, Row, Col} from 'react-bootstrap';
 
 class BasketProduct extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isOpen: false
+        };
+    }
 
     closeModal = () => {
         this.props.setConfirmation(false);
     };
 
-    onClickRemove = () => {
+    onClickRemove() {
         const {id, size} = this.props;
         this.props.removeInBasket(id, size);
         this.props.isBasketSubmit();
-        this.props.setConfirmation(false);
     };
 
     renderPrice() {
@@ -32,17 +37,17 @@ class BasketProduct extends React.Component {
     };
 
     render() {
-        const {index, name, color, size, mainImage, count, confirmation} = this.props;
+        const {index, name, color, size, mainImage, count} = this.props;
         return (
             <>
                 <Modal
-                    closeIconSize={38} styles={modalStyle} open={confirmation} onClose={this.closeModal} centered
+                    closeIconSize={38} styles={modalStyle} open={this.state.isOpen} onClose={this.closeModal} centered
                 >
                     <div className={styles.question}>
                     <span>Вы уверены?</span>
                     <div className={styles.questionBtns}>
-                        <button onClick={this.onClickRemove}>Да</button>
-                        <button onClick={() => this.props.setConfirmation(false)}>Нет</button>
+                        <button onClick={() => this.onClickRemove()}>Да</button>
+                        <button onClick={() => this.setState({isOpen: false})}>Нет</button>
                     </div>
                     </div>
                 </Modal>
@@ -91,7 +96,7 @@ class BasketProduct extends React.Component {
                         </Col>
                         <Col xs={12} className="d-flex align-items-center">
                             <div className={styles.delete}>
-                                <button onClick={() =>  this.props.setConfirmation(true)}>Удалить</button>
+                                <button onClick={() =>  this.setState({isOpen: true})}>Удалить</button>
                             </div>
                         </Col>
                     </Row>
@@ -100,6 +105,13 @@ class BasketProduct extends React.Component {
             </>
         );
     }
+
+    componentWillUpdate(nextProps, nextState, nextContext) {
+        if(this.state === nextState) {
+            this.setState({isOpen: false})
+        }
+    }
+
     componentDidMount() {
         this.props.isBasketSubmit();
     }
@@ -115,11 +127,6 @@ BasketProduct.propTypes = {
     mainImage: PropTypes.string,
 };
 
-const mapStateToProps = state => {
-    const {confirmation} = state.basketReducer;
-    return {confirmation};
-};
-
 const mapDispatchToProps = (dispatch) => ({
     removeInBasket: (id, size) => dispatch(removeInBasket(id, size)),
     updateBasketItemCount: (count, id, size) => dispatch(updateBasketItemCount(count, id, size)),
@@ -127,4 +134,4 @@ const mapDispatchToProps = (dispatch) => ({
     setConfirmation: (value) => dispatch(setConfirmation(value)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(BasketProduct);
+export default connect(null, mapDispatchToProps)(BasketProduct);
