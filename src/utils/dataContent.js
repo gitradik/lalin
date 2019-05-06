@@ -67,7 +67,14 @@ const numberPhones = {
     ksu: "+380500618460"
 };
 
-const title = "Кружевное нежное бельe";
+const title = "Кружевное нежное бельё";
+const subTitle = "которое Вам даст +100% к уверенности в себе";
+const triggers = [
+    'trigger 1 lalalalalalal alalalalala',
+    'trigger 2 lalalala alalalalala dsadasfas',
+    'trigger 3 lalalala vcxvs',
+];
+
 
 const titleContactForm = <span>Заказать сейчас и получить <small style={{color: "red", display: "block", fontSize: "32px"}}>скидку 10%</small></span>;
 const textButton = "Получить";
@@ -551,5 +558,6 @@ const data = {
 export default {
     links, socialLinks, title, titleContactForm,
     titleStock, priceStockBefore, priceStockAfter,
-    stockImages, textButton, data, numberPhones
+    stockImages, textButton, data, numberPhones,
+    subTitle, triggers
 };

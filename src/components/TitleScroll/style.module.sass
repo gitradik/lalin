@@ -17,7 +17,30 @@ $boxShadowTrigger: 0 1px 5px rgba(0,0,0,.4)
   font-family: 'El Messiri', sans-serif
   position: relative
 
-  .contactForm
+  .triggers
+
+    .trigger
+      display: flex
+      align-items: start
+      padding: 3px 0
+
+      p
+        font-size: 24px
+        color: white
+        text-shadow: $textShadow
+        margin: 0
+
+      i
+        color: #ff497d
+        margin-right: 15px
+        font-size: 28px
+
+    hr
+      height: 1px
+      background: $hard
+      width: 100%
+      box-shadow: $bsBasket
+      margin-top: 0
 
   .back
     position: absolute
@@ -47,24 +70,16 @@ $boxShadowTrigger: 0 1px 5px rgba(0,0,0,.4)
         color: white
         position: relative
         z-index: 22
-        text-shadow: 1px 1px 1px rgba(0,0,0,.7)
+        text-shadow: $textShadow
         font-size: 3em
 
-        //.bord
-          position: absolute
-          height: 8px
-          background-color: black
-          left: 0
-          right: 0
-          top: 10px
-          z-index: -2
-          transform: skewY(-1deg)
+      p
+        text-align: center
+        color: white
+        font-size: 2em
+        text-shadow: $textShadow
+        margin-bottom: 20px
 
-          &:last-child
-            top: auto
-            bottom: 10px
-            transform: skewY(1deg)
-            box-shadow: $boxShadowMiddle
 
 @import "./media"
 

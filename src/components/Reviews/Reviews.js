@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './style.module.sass';
 import Title from "../Title/Title";
 import dataContent from '../../utils/dataContent';
 import {slickSettings} from "../../utils/slickImagesGallery/slickSettings";
@@ -20,7 +21,7 @@ class Reviews extends React.Component {
     render() {
         const {reviews} = dataContent.data;
         return (
-            <div id="reviews">
+            <div id="reviews" className={styles.reviews}>
                 <Title name={reviews.title}/>
                 <Slider {...slickSettings}>
                     {this.renderImagesForSlider()}

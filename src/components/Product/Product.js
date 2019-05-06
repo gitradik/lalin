@@ -95,7 +95,7 @@ class Product extends React.Component {
     }
 
     render() {
-        const {mainImage, name, className} = this.props;
+        const {mainImage, name, className, color} = this.props;
         const {count} = this.state;
         return (
             <>{this.renderModals()}
@@ -107,6 +107,14 @@ class Product extends React.Component {
                             </div>
                             <div className={styles.descr}>
                                 <h5 className={styles.name}>{name}</h5>
+                                <div className={styles.color}>
+                                    <span>Цвет: {color}</span>
+                                </div>
+                                <div className={styles.price}>
+                                    <span>Цена: </span>
+                                    {this.renderPrice()}
+                                    <span> грн.</span>
+                                </div>
                                 <div className={styles.sizes}>
                                     <span className={styles.titleSize}>Размеры: </span>
                                     {this.renderSize()}
@@ -114,7 +122,7 @@ class Product extends React.Component {
                             </div>
                             <div className={styles.counter}>
                                 <div className={styles.titleCount}>
-                                    <span className={styles.tit}>Количество: </span>
+                                    <span className={styles.tit}>Кол-во: </span>
                                     {count <= 0 && <span>1 шт. минимум</span>}
                                 </div>
                                 <input className={count <= 0 ? styles.invalid : ""} value={count}
@@ -124,11 +132,6 @@ class Product extends React.Component {
                                            else this.setState({count: 1});
                                        }} type="number"
                                 />
-                            </div>
-                            <div className={styles.price}>
-                                <span>Цена: </span>
-                                {this.renderPrice()}
-                                <span> грн.</span>
                             </div>
                             <div className={styles.buttons}>
                                 <button onClick={this.onClickImg}><i className="far fa-image"/><span>Фото</span>
