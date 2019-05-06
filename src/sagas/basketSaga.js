@@ -54,10 +54,13 @@ export function * pushInBasketSaga({product}) {
         if(basket === undefined) {
             basket = [];
         }
-        yield basket.push(product);
-        yield cookie.save(DATA_COOKIES.BASKET, basket, {path: process.env.PUBLIC_URL});
-        yield put({ type: ACTION.BASKET_RESPONSE, basket });
-
+        let isRepeat = true;
+        if(basket.findIndex(p => product.id === p.id && product.size === p.size) === -1) {
+            isRepeat = false;
+            yield basket.push(product);
+            yield cookie.save(DATA_COOKIES.BASKET, basket, {path: process.env.PUBLIC_URL});
+        }
+        yield put({ type: ACTION.BASKET_RESPONSE, basket, isRepeat });
     } catch (err) {
         yield put({ type: ACTION.BASKET_ERROR, error: err });
     }

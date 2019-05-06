@@ -107,7 +107,7 @@ class BasketProduct extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if(prevState.isOpen) {
+        if(prevState.isOpen || this.props.isOpen) {
             this.setState({isOpen: false})
         }
     }

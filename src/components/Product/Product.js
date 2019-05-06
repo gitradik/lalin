@@ -12,7 +12,6 @@ import {pushInBasket} from "../../actions/actionCreator";
 import connect from "react-redux/es/connect/connect";
 
 class Product extends React.Component {
-
     constructor(props) {
         super(props);
         this.state = {
@@ -63,6 +62,16 @@ class Product extends React.Component {
         );
     }
 
+    getThanksTitle() {
+        const {isRepeat, name} = this.props;
+        const {sizeKey} = this.state;
+        if(isRepeat) {
+            return `(Название: ${name}, размер: ${sizeKey}) уже в корзине.`;
+        } else {
+            return `(Название: ${name}, размер: ${sizeKey}) добавлен в корзину!`;
+        }
+    };
+
     renderModals() {
         const {isOpenPhoto, isBasketPush} = this.state;
         if (isOpenPhoto) {
@@ -75,7 +84,7 @@ class Product extends React.Component {
         } else if (isBasketPush) {
             return <Modal
                 closeIconSize={38} styles={modalStyle} open={isBasketPush} onClose={this.closeModal} centered>
-                    <Thanks title="Ваш товар добавлен в корзину!"/>
+                    <Thanks title={this.getThanksTitle()}/>
             </Modal>;
         }
     }
@@ -154,8 +163,13 @@ Product.defaultProps = {
     className: 'product'
 };
 
+const mapStateToProps = state => {
+    const {basket, isRepeat} = state.basketReducer;
+    return {basket, isRepeat};
+};
+
 const mapDispatchToProps = (dispatch) => ({
     pushInBasket: (product) => dispatch(pushInBasket(product))
 });
 
-export default connect(null, mapDispatchToProps)(Product);
+export default connect(mapStateToProps, mapDispatchToProps)(Product);

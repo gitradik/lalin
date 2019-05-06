@@ -5,6 +5,7 @@ const initialState = {
     isFetching: false,
     isSubmit: false,
     confirmation: false,
+    isRepeat: false,
     error: null
 };
 
@@ -45,6 +46,7 @@ export default function (state = initialState, action) {
                 ...state,
                 basket: action.basket,
                 isFetching: false,
+                isRepeat: action.isRepeat,
                 error: null
             }
         }
