@@ -23,7 +23,7 @@ class Basket extends React.Component {
             return basket.map((p, i) =>
                 <Col key={i + 'basket'} md={12}>
                     <BasketProduct id={p.id} index={i} name={p.name} color={p.color} discount={p.discount}
-                        size={p.size} price={p.price} mainImage={p.mainImage} count={p.count}
+                        size={p.size} price={p.price * p.count} mainImage={p.mainImage} count={p.count}
                     />
                 </Col>
             );
@@ -57,7 +57,7 @@ class Basket extends React.Component {
         let allPrice = 0;
         if (basket !== undefined) {
             basket.forEach(p => {
-                allPrice += this.getDiscount(p.price, p.discount)
+                allPrice += this.getDiscount(p.price * p.count, p.discount)
             });
         }
        return allPrice;
@@ -73,6 +73,7 @@ class Basket extends React.Component {
     }
 
     render() {
+        const {isSubmit} = this.props;
         return (
             <div className={styles.basket}>
                 {this.renderContactForm()}
@@ -82,13 +83,13 @@ class Basket extends React.Component {
                         <Row className="justify-content-start">
                             {this.renderProducts()}
                             <Col md={12}>
-                                <div className={[styles.price, (this.isDisabledSubmit() && styles.inactive)].join(' ')}>
+                                <div className={[styles.allPrice, (!isSubmit && styles.inactive)].join(' ')}>
                                    <span>Общая сумма: {this.getAllPrice()} грн.</span>
                                 </div>
                             </Col>
                             <Col md={12}>
-                                <div className={[styles.submit, (this.isDisabledSubmit() && styles.disabled)].join(' ')}>
-                                    <button disabled={this.isDisabledSubmit()}
+                                <div className={[styles.submit, (!isSubmit && styles.disabled)].join(' ')}>
+                                    <button disabled={!isSubmit}
                                             onClick={() => this.setState({isOpenForm: true})}>Заказать</button>
                                 </div>
                             </Col>
@@ -105,8 +106,8 @@ class Basket extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    const {basket, isFetching} = state.basketReducer;
-    return {basket, isFetching};
+    const {basket, isFetching, isSubmit} = state.basketReducer;
+    return {basket, isFetching, isSubmit};
 };
 
 const mapDispatchToProps = (dispatch) => ({

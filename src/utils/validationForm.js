@@ -5,7 +5,3 @@ export const isValidPhone = (value) => {
     let phone = _.clone(value);
     return regexPhone.test(phone);
 };
-
-export const isValidCount = (count, length) => {
-  return count <= length && count > 0;
-};

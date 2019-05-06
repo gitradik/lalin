@@ -11,14 +11,9 @@
   .content
     width: 98%
 
-    .price
-      padding-top: 15px
-
-      span
-        font-size: 24px
-        font-weight: 600
-        transition: .2s
-        color: black
+    .allPrice
+      font-weight: 700
+      font-size: 24px
 
     .inactive
 
@@ -53,53 +48,69 @@
       padding: 3px 0
       margin: 5px 0
 
-      .indexAndImg
+      .price
+        padding-top: 15px
         display: flex
-        align-items: center
-        justify-content: space-between
-        padding: 5px
+        flex-direction: column
 
-        .index
-          padding: 10px
+        span
+          font-size: 16px
+          font-weight: 500
+          transition: .2s
+          color: black
 
-          span
+        .priceSpan
+          margin-left: 3px
 
-            &:first-child
-              align-self: flex-start
+      .index
+        padding: 10px
 
-        .imgBox
-          max-width: 100px
-          margin: 0 auto
+        span
 
-          img
-            border: 1px solid rgba(0,0,0,.2)
-            height: auto
-            max-width: 100%
+          &:first-child
+            align-self: flex-start
 
-      .content
-        display: flex
-        align-items: center
-        justify-content: space-between
-        padding-right: 10px
-        flex: 1
+      .imgBox
+        max-width: 110px
 
-        .name
-          width: 100%
-          padding-left: 15px
-          text-align: center
-          position: relative
-          font-size: 14px
-          padding-right: 5px
+        img
+          border: 1px solid rgba(0,0,0,.2)
+          height: auto
+          max-width: 100%
 
-          span
-            display: block
+      .name
+        width: 100%
+        padding: 3px 0
+        text-align: center
+        position: relative
+        border: 1px solid rgba(0,0,0,.15)
+        border-radius: 4px
+        margin: 3px 0
+        font-size: 14px
+
+        span
+          display: block
+
+        input
+          width: 80px
+          border-radius: 4px
+          padding: 5px 3px
+          transition: .2s
+          border: 1px solid #eee
+
+          &::-webkit-inner-spin-button
+            display: none
+
+          &:focus
+            transition: .2s
+            border-color: $hard
 
       .delete
         padding: 5px
         margin-right: 10px
 
         button
-          padding: 10px 20px
+          padding: 5px 10px
           border: none
           background: none
           border-radius: 4px

@@ -15,6 +15,20 @@ export const pushInBasket = (product) => ({
   product
 });
 
+export const updateBasketItemCount = (count, id, size) => ({
+  type: ACTION.BASKET_UPDATE_ITEM_COUNT,
+  count, id, size
+});
+
+export const isBasketSubmit = () => ({
+  type: ACTION.BASKET_IS_SUBMIT
+});
+
+export const setConfirmation = (value) => ({
+  type: ACTION.SET_BASKET_CONFIRMATION,
+  value
+});
+
 export const clearBasket = () => ({
   type: ACTION.BASKET_CLEAR
 });

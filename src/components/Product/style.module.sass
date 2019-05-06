@@ -69,7 +69,7 @@
         padding: 5px
 
         .titleCount
-          padding-bottom: 3px
+          padding: 6px 0
 
           .tit
             background: none!important
@@ -85,8 +85,11 @@
               margin-left: 3px
 
         input
+          width: 100px
           font-size: 16px
-          border: 1px solid #a1a1a1
+          background-color: rgba(255,255,255,.3)
+          border: 1px solid #e2e3e5
+          margin-bottom: 5px
           border-radius: 4px
           padding-left: 5px
           box-shadow: $bsBasket
@@ -206,6 +209,38 @@
 
     .subBox
 
+      .counter
+        padding: 10px 5px
+        display: flex
+        flex-direction: column
+        text-align: left
+
+        .titleCount
+          color: black
+
+          .tit
+
+          span
+
+            &:last-child
+
+        input
+          width: 100px
+          font-size: 16px
+          margin-bottom: 5px
+          border-radius: 4px
+          padding-left: 5px
+          transition: .2s
+          border: 1px solid #e2e3e5
+
+          &:focus
+            transition: .2s
+            border-color: $hard
+
+        .invalid
+          transition: .2s
+          border-color: red
+
       .imgBox
         box-shadow: $bsBasket
         position: relative
@@ -224,7 +259,7 @@
           border-bottom-left-radius: 4px
           border-bottom-right-radius: 4px
           background: $hard
-          padding: 5px 0
+          padding: 10px 0
           box-shadow: $bsBasket
 
         .sizes
@@ -260,8 +295,14 @@
         display: flex
         padding: 5px
 
-        span
-          margin-right: 3px
+        .innerPrice
+          padding-left: 5px
+
+          strike
+            margin-right: 5px
+
+          span
+            margin-right: 3px
 
 
 .titleForm

@@ -3,90 +3,105 @@ import styles from './style.module.sass';
 import PropTypes from 'prop-types';
 import {modalStyle} from "../../utils/modalStyle";
 import Modal from "react-responsive-modal";
-import {removeInBasket} from "../../actions/actionCreator";
+import {removeInBasket, updateBasketItemCount, isBasketSubmit, setConfirmation} from "../../actions/actionCreator";
 import connect from "react-redux/es/connect/connect";
+import {Container, Row, Col} from 'react-bootstrap';
 
 class BasketProduct extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            isOpen: false,
-        }
-    }
 
     closeModal = () => {
-        this.setState({isOpen: false});
+        this.props.setConfirmation(false);
     };
 
     onClickRemove = () => {
         const {id, size} = this.props;
         this.props.removeInBasket(id, size);
-        setTimeout(() => this.setState({isOpen: false}),0);
+        this.props.isBasketSubmit();
+        this.props.setConfirmation(false);
     };
 
     renderPrice() {
         const {price, discount} = this.props;
-        return <span style={{color: (discount ? 'red' : 'black')}}>{price - (price * (discount / 100))} грн</span>;
+        return <span className={styles.priceSpan} style={{color: (discount ? 'red' : 'black')}}>{price - (price * (discount / 100))} грн</span>;
     }
 
+    onChangeCount = (e) => {
+        const {id, size} = this.props;
+        this.props.updateBasketItemCount(e.target.value, id, size);
+        this.props.isBasketSubmit();
+    };
+
     render() {
-        const {index, name, color, size, mainImage, count} = this.props;
-        const {isOpen} = this.state;
+        const {index, name, color, size, mainImage, count, confirmation} = this.props;
         return (
             <>
                 <Modal
-                    closeIconSize={38} styles={modalStyle} open={isOpen} onClose={this.closeModal} centered
+                    closeIconSize={38} styles={modalStyle} open={confirmation} onClose={this.closeModal} centered
                 >
                     <div className={styles.question}>
                     <span>Вы уверены?</span>
                     <div className={styles.questionBtns}>
                         <button onClick={this.onClickRemove}>Да</button>
-                        <button onClick={() => this.setState({isOpen: false})}>Нет</button>
+                        <button onClick={() => this.props.setConfirmation(false)}>Нет</button>
                     </div>
                     </div>
                 </Modal>
             <div className={styles.product}>
-                <div className={styles.indexAndImg}>
-                    <div className={styles.index}>
-                        <span>#{index + 1}</span>
-                    </div>
-                    <div className={styles.imgBox}>
-                        <img src={require(`../../public/images/promotions/${mainImage}`)} alt={name}/>
-                    </div>
+                <Container fluid>
+                    <Row className="justify-content-between">
+                        <Col xs={2} className="d-flex align-items-center">
+                            <div className={styles.index}>
+                                <span>#{index + 1}</span>
+                            </div>
+                        </Col>
+                        <Col xs={5} className="d-flex align-items-center">
+                            <div className={styles.imgBox}>
+                                <img src={require(`../../public/images/promotions/${mainImage}`)} alt={name}/>
+                            </div>
+                        </Col>
+                        <Col xs={5} className="d-flex align-items-center">
+                            <div className={styles.price}>
+                                <span>Цена:</span>
+                                {this.renderPrice()}
+                            </div>
+                        </Col>
+                        <Col xs={6} className="d-flex align-items-center">
+                            <div className={styles.name}>
+                                <span>Название:</span>
+                                <span>{name}</span>
+                            </div>
+                        </Col>
+                        <Col xs={6} className="d-flex align-items-center">
+                            <div className={styles.name}>
+                                <span>Цвет:</span>
+                                <span>{color}</span>
+                            </div>
+                        </Col>
+                        <Col xs={6} className="d-flex align-items-center">
+                            <div className={styles.name}>
+                                <span>Размер:</span>
+                                <span>{size}</span>
+                            </div>
+                        </Col>
+                        <Col xs={6} className="d-flex align-items-center">
+                            <div className={styles.name}>
+                                <span>Количество:</span>
+                                <input type="number" value={count} onChange={this.onChangeCount}/>
+                            </div>
+                        </Col>
+                        <Col xs={12} className="d-flex align-items-center">
+                            <div className={styles.delete}>
+                                <button onClick={() =>  this.props.setConfirmation(true)}>Удалить</button>
+                            </div>
+                        </Col>
+                    </Row>
+                </Container>
                 </div>
-                <div className={styles.content}>
-                    <div className={styles.name}>
-                        <span>Название:</span>
-                        <span>{name}</span>
-                        <div className={styles.bord}/>
-                    </div>
-                    <div className={styles.name}>
-                        <span>Цвет:</span>
-                        <span>{color}</span>
-                        <div className={styles.bord}/>
-                    </div>
-                    <div className={styles.name}>
-                        <span>Размер:</span>
-                        <span>{size}</span>
-                        <div className={styles.bord}/>
-                    </div>
-                    <div className={styles.name}>
-                        <span>Количество:</span>
-                        {count}
-                        <div className={styles.bord}/>
-                    </div>
-                    <div className={styles.name}>
-                        <span>Цена:</span>
-                        {this.renderPrice()}
-                        <div className={styles.bord}/>
-                    </div>
-                </div>
-                <div className={styles.delete}>
-                    <button onClick={() => this.setState({isOpen: true})}>Удалить</button>
-                </div>
-            </div>
             </>
         );
+    }
+    componentDidMount() {
+        this.props.isBasketSubmit();
     }
 }
 
@@ -100,8 +115,16 @@ BasketProduct.propTypes = {
     mainImage: PropTypes.string,
 };
 
+const mapStateToProps = state => {
+    const {confirmation} = state.basketReducer;
+    return {confirmation};
+};
+
 const mapDispatchToProps = (dispatch) => ({
-    removeInBasket: (id, size) => dispatch(removeInBasket(id, size))
+    removeInBasket: (id, size) => dispatch(removeInBasket(id, size)),
+    updateBasketItemCount: (count, id, size) => dispatch(updateBasketItemCount(count, id, size)),
+    isBasketSubmit: () => dispatch(isBasketSubmit()),
+    setConfirmation: (value) => dispatch(setConfirmation(value)),
 });
 
-export default connect(null, mapDispatchToProps)(BasketProduct);
+export default connect(mapStateToProps, mapDispatchToProps)(BasketProduct);

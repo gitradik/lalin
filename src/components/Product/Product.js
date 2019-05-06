@@ -10,7 +10,6 @@ import Modal from "react-responsive-modal";
 import Thanks from "../Thanks/Thanks";
 import {pushInBasket} from "../../actions/actionCreator";
 import connect from "react-redux/es/connect/connect";
-import {isValidCount} from '../../utils/validationForm';
 
 class Product extends React.Component {
 
@@ -22,7 +21,6 @@ class Product extends React.Component {
             titleForm: '',
             sizeKey: props.sizes[0],
             count: 1,
-            isValidCount: true
         };
     }
 
@@ -84,20 +82,12 @@ class Product extends React.Component {
 
     renderPrice() {
         const {discount, price} = this.props;
-        return discount ? <div className={styles.old}><strike>{price}</strike> <span style={{color: 'red'}}>{price - (price * (discount / 100))}</span></div> : <span>{price}</span>
+        return discount ? <div className={styles.innerPrice}><strike>{price}</strike><span style={{color: 'red'}}>{price - (price * (discount / 100))}</span></div> : <span>{price}</span>
     }
 
-    onChangeCounter = (e) => {
-        const {length} = this.props;
-        this.setState({
-            count: e.target.value,
-            isValidCount: isValidCount(e.target.value, length)
-        });
-    };
-
     render() {
-        const {mainImage, name, className, length} = this.props;
-        const {isValidCount, count} = this.state;
+        const {mainImage, name, className} = this.props;
+        const {count} = this.state;
         return (
             <>{this.renderModals()}
                 <div className={styles[className]}>
@@ -116,11 +106,14 @@ class Product extends React.Component {
                             <div className={styles.counter}>
                                 <div className={styles.titleCount}>
                                     <span className={styles.tit}>Количество: </span>
-                                    {count > length && <span>{"максимум: " + this.props.length}</span>}
-                                    {count < 1 && <span>{"минимум: 1"}</span>}
+                                    {count <= 0 && <span>1 шт. минимум</span>}
                                 </div>
-                                <input className={!isValidCount ? styles.invalid : ""} value={this.state.count}
-                                       onChange={this.onChangeCounter} type="number"
+                                <input className={count <= 0 ? styles.invalid : ""} value={count}
+                                       onChange={e => {
+                                           const {value} = e.target;
+                                           if(value >= 0) this.setState({count: e.target.value});
+                                           else this.setState({count: 1});
+                                       }} type="number"
                                 />
                             </div>
                             <div className={styles.price}>
@@ -131,7 +124,7 @@ class Product extends React.Component {
                             <div className={styles.buttons}>
                                 <button onClick={this.onClickImg}><i className="far fa-image"/><span>Фото</span>
                                 </button>
-                                <button disabled={!isValidCount} onClick={() => this.onClickForm(name)}>
+                                <button disabled={!(count > 0)} onClick={() => this.onClickForm()}>
                                     <i className="fas fa-shopping-cart"/>
                                     <span>В корзину</span>
                                 </button>
