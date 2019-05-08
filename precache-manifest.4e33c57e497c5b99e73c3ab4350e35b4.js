@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "01dd0668c13fbd21a0a21b7f3bbd227a",
+    "revision": "530b5ea371c6d365f025cef6f635b520",
     "url": "/lalin/index.html"
   },
   {
-    "revision": "a9623b97fc136d484121",
+    "revision": "f54b37eb306345c310db",
     "url": "/lalin/static/css/2.df59263a.chunk.css"
   },
   {
-    "revision": "c994aee96ab56ac628a1",
-    "url": "/lalin/static/css/main.5cc2e27b.chunk.css"
+    "revision": "24575cb2affa16824f06",
+    "url": "/lalin/static/css/main.73fe7c66.chunk.css"
   },
   {
-    "revision": "a9623b97fc136d484121",
-    "url": "/lalin/static/js/2.4e611931.chunk.js"
+    "revision": "f54b37eb306345c310db",
+    "url": "/lalin/static/js/2.548fb68f.chunk.js"
   },
   {
-    "revision": "c994aee96ab56ac628a1",
-    "url": "/lalin/static/js/main.9a72bde4.chunk.js"
+    "revision": "24575cb2affa16824f06",
+    "url": "/lalin/static/js/main.fcc05105.chunk.js"
   },
   {
     "revision": "4414672a97511678aeb9",
@@ -132,20 +132,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lalin/static/media/add-to-cart.479dcf2a.png"
   },
   {
-    "revision": "0ae5f0c670ac5b5396e38053e7339f06",
-    "url": "/lalin/static/media/backPromotions.0ae5f0c6.png"
-  },
-  {
-    "revision": "c1d367791f3a503f2cc823ae143b857c",
-    "url": "/lalin/static/media/backPromotions2.c1d36779.png"
-  },
-  {
     "revision": "943e687a6bcba92a7efb2055a663b3b9",
     "url": "/lalin/static/media/backTitleScroll2.943e687a.jpg"
-  },
-  {
-    "revision": "da1fbebeadb2a43e276a234b8598538e",
-    "url": "/lalin/static/media/backTitleScrollMobile4.da1fbebe.png"
   },
   {
     "revision": "b83c150c54501be14c8dc81d8306e556",
@@ -228,10 +216,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lalin/static/media/fa-solid-900.ff8d9f8a.ttf"
   },
   {
-    "revision": "bdf0531743e6cc04a8ef172e48aa0c4a",
-    "url": "/lalin/static/media/flower-with-board.bdf05317.jpg"
-  },
-  {
     "revision": "f898fc1492c70462b928ad3e920e3ea8",
     "url": "/lalin/static/media/flower.f898fc14.jpg"
   },
@@ -244,20 +228,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lalin/static/media/form.ca51b791.png"
   },
   {
+    "revision": "7e0ee8e2b223f6f94ac670af3dc4928d",
+    "url": "/lalin/static/media/heart-sketch.7e0ee8e2.png"
+  },
+  {
     "revision": "c340cb243adf271e00a96f79b1a7fe5e",
     "url": "/lalin/static/media/logo.c340cb24.jpg"
   },
   {
     "revision": "afde4184add09ae5c1bf13d32480ccb1",
     "url": "/lalin/static/media/payment-method.afde4184.png"
-  },
-  {
-    "revision": "48d57678ce5cbf468b8434485abf85d4",
-    "url": "/lalin/static/media/rose.48d57678.jpg"
-  },
-  {
-    "revision": "4786f9f4199f88e7e162cadd723d3f59",
-    "url": "/lalin/static/media/rose2.4786f9f4.jpg"
   },
   {
     "revision": "0e759e7d8eed5ef3cf235644a1786d54",
