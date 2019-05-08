@@ -80,6 +80,7 @@ class ContactForm extends React.Component {
                     <div className={styles.container}>
                         <div className={styles.title}>
                             {this.props.title}
+                            <img src={require('../../public/images/heart-sketch.png')} alt="heart"/>
                         </div>
                         <div className={styles.inputs}>
                             <div className={styles.inputContainer}>
