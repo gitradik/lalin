@@ -23,7 +23,8 @@ class Products extends React.Component {
                    <Row className="justify-content-start">
                 {
                     tab.products.map(p =>
-                        <Col key={p.id + "prod"} xs={6} sm={4} lg={2} md={3} className="col d-flex justify-content-center my-2">
+                        <Col key={p.id + "prod"}
+                             xs={6} sm={4} lg={2} md={3} className={"col d-flex justify-content-center my-2 " + styles.col}>
                             <Product
                                 id={p.id}
                                 name={p.name}

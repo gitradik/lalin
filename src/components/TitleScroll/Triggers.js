@@ -9,10 +9,10 @@ class Triggers extends React.Component {
         return triggers.map((t, i) =>
             <React.Fragment key={i + "trigger"}>
                 <div className={styles.trigger}>
-                    <i className="fas fa-pepper-hot"/>
+                    <i className="fas fa-asterisk"/>
                     <p>{t}</p>
+                    {i === triggers.length - 1 && <img src={require('../../public/images/gift-box.png')} alt="git-box"/>}
                 </div>
-                <hr/>
             </React.Fragment>
         );
     }

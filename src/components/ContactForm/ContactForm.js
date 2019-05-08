@@ -9,7 +9,7 @@ import Loader from "../Loader/Loader";
 import { sendMessage } from '../../api/telegramController';
 import cookie from 'react-cookies';
 import DATA_COOKIES from '../../utils/dataCookies';
-import {clearBasket, thanksOn, fetchingOn, fetchingOff} from "../../actions/actionCreator";
+import {clearBasket, thanksOn, fetchingOn, fetchingOff, isBasketSubmit} from "../../actions/actionCreator";
 import connect from "react-redux/es/connect/connect";
 
 class ContactForm extends React.Component {
@@ -62,6 +62,7 @@ class ContactForm extends React.Component {
                 this.props.clearBasket();
                 this.props.fetchingOff();
                 this.props.thanksOn();
+                this.props.isBasketSubmit();
             })
             .catch(() => {
                 this.props.fetchingOff();
@@ -148,6 +149,7 @@ const mapDispatchToProps = (dispatch) => ({
     thanksOn: () => dispatch(thanksOn()),
     fetchingOn: () => dispatch(fetchingOn()),
     fetchingOff: () => dispatch(fetchingOff()),
+    isBasketSubmit: () => dispatch(isBasketSubmit())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContactForm);

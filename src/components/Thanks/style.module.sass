@@ -1,18 +1,23 @@
+@import "../../utils/dataStyle.module"
+
 .thanks
   padding-top: 30px
   max-width: 80%
   margin-left: 10%
-  font-family: 'El Messiri', sans-serif
 
   .container
-    padding: 5px
-    border: 3px solid #ff54b0
+    border: 3px solid $hard
     position: relative
 
     .text
       color: white
       font-weight: 600
       text-align: center
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      padding: 20px 30px
 
       h4
         font-size: 26px
@@ -23,7 +28,7 @@
     .heard, .heard1, .heard2, .heard3
       position: absolute
       content: ''
-      color: #ff54b0
+      color: $hard
       font-size: 30px
 
     .heard

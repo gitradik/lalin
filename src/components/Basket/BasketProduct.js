@@ -70,25 +70,25 @@ class BasketProduct extends React.Component {
                                 {this.renderPrice()}
                             </div>
                         </Col>
-                        <Col xs={6} className="d-flex align-items-center">
+                        <Col xs={6} className="d-flex align-items-center mt-1">
                             <div className={styles.name}>
                                 <span>Название:</span>
                                 <span>{name}</span>
                             </div>
                         </Col>
-                        <Col xs={6} className="d-flex align-items-center">
+                        <Col xs={6} className="d-flex align-items-center mt-1">
                             <div className={styles.name}>
                                 <span>Цвет:</span>
                                 <span>{color}</span>
                             </div>
                         </Col>
-                        <Col xs={6} className="d-flex align-items-center">
+                        <Col xs={6} className="d-flex align-items-center mt-1">
                             <div className={styles.name}>
                                 <span>Размер:</span>
                                 <span>{size}</span>
                             </div>
                         </Col>
-                        <Col xs={6} className="d-flex align-items-center">
+                        <Col xs={6} className="d-flex align-items-center mt-1">
                             <div className={styles.name}>
                                 <span>Количество:</span>
                                 <input type="number" value={count} onChange={this.onChangeCount}/>

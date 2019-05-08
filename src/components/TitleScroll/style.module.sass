@@ -14,7 +14,6 @@ $boxShadowTrigger: 0 1px 5px rgba(0,0,0,.4)
   background-repeat: no-repeat
   background-position: bottom
   background-size: cover
-  font-family: 'El Messiri', sans-serif
   position: relative
 
   .triggers
@@ -22,18 +21,29 @@ $boxShadowTrigger: 0 1px 5px rgba(0,0,0,.4)
     .trigger
       display: flex
       align-items: start
-      padding: 3px 0
+      padding: 3px
+      margin: 3px 0
+      box-shadow: $boxShadowLight
 
       p
-        font-size: 24px
+        font-size: 18px
         color: white
         text-shadow: $textShadow
         margin: 0
 
       i
         color: #ff497d
-        margin-right: 15px
-        font-size: 28px
+        margin-right: 5px
+        margin-top: 3px
+        font-size: 20px
+        transform: skewX(20deg)
+        text-shadow: $textShadow
+
+      img
+        margin-left: 5px
+        height: 50px
+        width: 50px
+        box-shadow: $bsBasket
 
     hr
       height: 1px
@@ -48,7 +58,7 @@ $boxShadowTrigger: 0 1px 5px rgba(0,0,0,.4)
     left: 0
     right: 0
     bottom: 0
-    background-color: rgba(0,0,0,.1)
+    background-color: rgba(0,0,0,.3)
 
   .title
     margin-top: 15px

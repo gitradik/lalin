@@ -64,16 +64,16 @@ class HamMenu extends React.Component {
             <div className={[styles.navBarBox, (isScroll && styles.navBarBoxScroll)].join(' ')}>
                 <Navbar className={styles.navBar} expand="lg">
                     <Navbar.Toggle ref={this.ham} aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse className={styles.navBarCollapse} id="basic-navbar-nav" ref={this.hamList}>
-                       <Nav className={["mr-auto", styles.navBarNav].join(' ')}>
-                            {this.renderLinks()}
-                        </Nav>
-                    </Navbar.Collapse>
                     <div className={styles.social}>
                         <Telegram/>
                         <WhatsApp/>
                         <Viber/>
                     </div>
+                    <Navbar.Collapse className={styles.navBarCollapse} id="basic-navbar-nav" ref={this.hamList}>
+                       <Nav className={["mr-auto", styles.navBarNav].join(' ')}>
+                            {this.renderLinks()}
+                        </Nav>
+                    </Navbar.Collapse>
                 </Navbar>
             </div>
         );

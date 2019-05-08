@@ -70,9 +70,10 @@ const numberPhones = {
 const title = "Кружевное нежное бельё";
 const subTitle = "которое Вам даст +100% к уверенности в себе";
 const triggers = [
-    'trigger 1 lalalalalalal alalalalala',
-    'trigger 2 lalalala alalalalala dsadasfas',
-    'trigger 3 lalalala vcxvs',
+    'Стильное бельё для девушек со вкусом',
+    'Лучшее соотношение цены и качества',
+    'Индивидуальный подход к каждому клиенту',
+    'Приятные акции и подарки',
 ];
 
 

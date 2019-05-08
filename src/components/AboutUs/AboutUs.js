@@ -19,19 +19,16 @@ class AboutUs extends React.Component {
                             <p className={styles.first}>
                                 {aboutUs.firstTitle}
                             </p>
-                            <hr/>
                         </Col>
                         <Col md={12}>
                             <p className={styles.second}>
                                 {aboutUs.secondTitle}
                             </p>
-                            <hr/>
                         </Col>
                         <Col md={12}>
                             <p className={styles.third}>
                                 {aboutUs.thirdTitle}
                             </p>
-                            <hr/>
                         </Col>
                     </Row>
                 </Container>

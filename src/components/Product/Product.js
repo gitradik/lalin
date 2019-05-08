@@ -63,17 +63,13 @@ class Product extends React.Component {
     }
 
     getThanksTitle() {
-        const {isRepeat, name} = this.props;
-        const {sizeKey} = this.state;
-        if(isRepeat) {
-            return `(Название: ${name}, размер: ${sizeKey}) уже в корзине.`;
-        } else {
-            return `(Название: ${name}, размер: ${sizeKey}) добавлен в корзину!`;
-        }
+        const {isRepeat} = this.props;
+        return isRepeat ? "Уже в корзине!" : "Добавлен в корзину!"
     };
 
     renderModals() {
-        const {isOpenPhoto, isBasketPush} = this.state;
+        const {name, color} = this.props;
+        const {isOpenPhoto, isBasketPush, sizeKey} = this.state;
         if (isOpenPhoto) {
             return <Modal
                 closeIconSize={38} styles={modalStyle} open={isOpenPhoto} onClose={this.closeModal} centered>
@@ -84,7 +80,12 @@ class Product extends React.Component {
         } else if (isBasketPush) {
             return <Modal
                 closeIconSize={38} styles={modalStyle} open={isBasketPush} onClose={this.closeModal} centered>
-                    <Thanks title={this.getThanksTitle()}/>
+                    <Thanks title={<div className={styles.dataProdContactForm}>
+                        <span>Название: {name},</span>
+                        <span>Размер: {sizeKey}</span>
+                        <span>Цвет: {color}</span>
+                        <span>{this.getThanksTitle()}</span>
+                    </div>}/>
             </Modal>;
         }
     }
@@ -123,7 +124,7 @@ class Product extends React.Component {
                             <div className={styles.counter}>
                                 <div className={styles.titleCount}>
                                     <span className={styles.tit}>Кол-во: </span>
-                                    {count <= 0 && <span>1 шт. минимум</span>}
+                                    {count <= 0 && <span className={styles.error}>1 шт. минимум</span>}
                                 </div>
                                 <input className={count <= 0 ? styles.invalid : ""} value={count}
                                        onChange={e => {

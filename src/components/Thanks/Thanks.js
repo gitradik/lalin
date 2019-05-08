@@ -10,7 +10,7 @@ class Thanks extends React.Component {
             <div className={styles.thanks}>
                 <div className={styles.container}>
                     <div className={styles.text}>
-                        <h4>{title}</h4>
+                        {title}
                         <p>{subTitle}</p>
                     </div>
                     <i className={["far fa-heart", styles.heard].join(' ')}/>
