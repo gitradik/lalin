@@ -5,14 +5,11 @@ import {isValidPhone} from '../../utils/validationForm';
 import PropTypes from 'prop-types';
 import {botToken, chatId} from "../../utils/dataTelegram";
 import axios from 'axios';
-import Thanks from "../Thanks/Thanks";
 import Loader from "../Loader/Loader";
 import { sendMessage } from '../../api/telegramController';
 import cookie from 'react-cookies';
 import DATA_COOKIES from '../../utils/dataCookies';
-import Modal from "react-responsive-modal";
-import {modalStyle} from "../../utils/modalStyle";
-import {clearBasket, thanksOn, thanksOff, fetchingOn, fetchingOff} from "../../actions/actionCreator";
+import {clearBasket, thanksOn, fetchingOn, fetchingOff} from "../../actions/actionCreator";
 import connect from "react-redux/es/connect/connect";
 
 class ContactForm extends React.Component {
@@ -42,10 +39,6 @@ class ContactForm extends React.Component {
         });
     };
 
-    closeModal = () => {
-       this.props.thanksOff();
-    };
-
     getDiscount(price, discount) {
         return price - (price * (discount / 100));
     }
@@ -64,7 +57,6 @@ class ContactForm extends React.Component {
                 return (<></>);
             });
         }
-
         axios.post(sendMessage(botToken, chatId, msg))
             .then(() => {
                 this.props.clearBasket();
@@ -77,14 +69,11 @@ class ContactForm extends React.Component {
     };
 
     render() {
-        const {textButton, isThanks, isFetching} = this.props;
+        const {textButton, isFetching} = this.props;
         const {name, phone, isValidName, isValidPhone} = this.state;
         return (
             <>
-                <Modal
-                    closeIconSize={38} styles={modalStyle} open={isThanks} onClose={this.closeModal} centered>
-                    <Thanks title="Спасибо за покупку!" subTitle="Вам позвонят в ближайшее время"/>
-                </Modal>
+
                 {isFetching && <Loader/>}
                 <div className={styles.contactForm}>
                     <div className={styles.container}>
@@ -150,14 +139,13 @@ ContactForm.defaultProps = {
 
 const mapStateToProps = (state) => {
     const {basket} = state.basketReducer;
-    const {isThanks, isFetching} = state.contactFormReducer;
-    return {basket, isThanks, isFetching};
+    const {isFetching} = state.contactFormReducer;
+    return {basket, isFetching};
 };
 
 const mapDispatchToProps = (dispatch) => ({
     clearBasket: () => dispatch(clearBasket()),
     thanksOn: () => dispatch(thanksOn()),
-    thanksOff: () => dispatch(thanksOff()),
     fetchingOn: () => dispatch(fetchingOn()),
     fetchingOff: () => dispatch(fetchingOff()),
 });

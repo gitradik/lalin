@@ -6,8 +6,9 @@ import BasketProduct from "./BasketProduct";
 import Modal from "react-responsive-modal";
 import {modalStyle} from "../../utils/modalStyle";
 import ContactForm from "../ContactForm/ContactForm";
-import {updateBasket} from "../../actions/actionCreator";
+import {thanksOff, thanksOn, updateBasket} from "../../actions/actionCreator";
 import connect from "react-redux/es/connect/connect";
+import Thanks from "../Thanks/Thanks";
 
 class Basket extends React.Component {
     constructor(props) {
@@ -69,9 +70,15 @@ class Basket extends React.Component {
     }
 
     render() {
-        const {isSubmit} = this.props;
+        const {isSubmit, isThanks} = this.props;
         return (
             <div className={styles.basket}>
+
+                <Modal
+                    closeIconSize={38} styles={modalStyle} open={isThanks} onClose={() => this.props.thanksOff()} centered>
+                    <Thanks title="Спасибо за покупку!" subTitle="Вам позвонят в ближайшее время"/>
+                </Modal>
+
                 {this.renderContactForm()}
                 <Title name="Корзина"/>
                 <div className={styles.content}>
@@ -102,12 +109,14 @@ class Basket extends React.Component {
 }
 
 const mapStateToProps = (state) => {
+    const {isThanks} = state.contactFormReducer;
     const {basket, isFetching, isSubmit} = state.basketReducer;
-    return {basket, isFetching, isSubmit};
+    return {basket, isFetching, isSubmit, isThanks};
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    updateBasket: () => dispatch(updateBasket())
+    updateBasket: () => dispatch(updateBasket()),
+    thanksOff: () => dispatch(thanksOff()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Basket);

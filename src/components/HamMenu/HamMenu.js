@@ -1,12 +1,12 @@
 import React from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import styles from './style.module.sass';
 import PropTypes from 'prop-types';
 import Viber from "../SocialLink/Viber";
 import Telegram from "../SocialLink/Telegram";
 import WhatsApp from "../SocialLink/WhatsApp";
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import {Nav, Navbar} from "react-bootstrap";
+import styles from './style.module.sass';
 
 class HamMenu extends React.Component {
     constructor(props) {
@@ -64,16 +64,16 @@ class HamMenu extends React.Component {
             <div className={[styles.navBarBox, (isScroll && styles.navBarBoxScroll)].join(' ')}>
                 <Navbar className={styles.navBar} expand="lg">
                     <Navbar.Toggle ref={this.ham} aria-controls="basic-navbar-nav" />
-                    <div className={styles.social}>
-                        <Telegram/>
-                        <WhatsApp/>
-                        <Viber/>
-                    </div>
                     <Navbar.Collapse className={styles.navBarCollapse} id="basic-navbar-nav" ref={this.hamList}>
                        <Nav className={["mr-auto", styles.navBarNav].join(' ')}>
                             {this.renderLinks()}
                         </Nav>
                     </Navbar.Collapse>
+                    <div className={styles.social}>
+                        <Telegram/>
+                        <WhatsApp/>
+                        <Viber/>
+                    </div>
                 </Navbar>
             </div>
         );
