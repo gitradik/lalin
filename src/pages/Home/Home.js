@@ -10,11 +10,18 @@ import Footer from "../../components/Footer/Footer";
 import BasketLink from "../../components/Basket/BasketLink";
 import AboutUs from "../../components/AboutUs/AboutUs";
 import Reviews from "../../components/Reviews/Reviews";
+import MessengerCustomerChat from "react-messenger-customer-chat";
 
 class Home extends React.Component {
     render() {
         return (
             <div className={styles.home}>
+
+                <MessengerCustomerChat
+                    pageId="1043135292538153"
+                    appId="636172186846677"
+                />
+
                 <BasketLink/>
                 <HamMenu
                     links={dataContent.links}

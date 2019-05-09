@@ -14,7 +14,6 @@ class Product extends React.Component {
 }
 
 function App() {
-
   return (
         <div className={styles.app}>
             <Switch>
