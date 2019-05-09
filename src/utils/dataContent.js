@@ -85,10 +85,26 @@ const titleStock = <span>Закажи этот прекрасный компле
 const priceStockBefore = 350;
 const priceStockAfter = 315;
 
-const stockImages = ['stock.jpg', 'stock1.jpg'];
+
 
 const data = {
     titleScroll: {},
+    stock: {
+        id: 1,
+        name: 'beige',
+        color: 'beige',
+        sizes: ['M', 'S', 'Xl'],
+        mainImage: 'beige/1.jpg',
+        imgSale: 'sale.png',
+        discount: 25,
+        price: 190,
+        images: ['promotions/beige/1.jpg', 'promotions/beige/2.jpg'],
+        imagesCarousel: ['promotions/beige/1.jpg',
+            'promotions/beige/2.jpg',
+            'promotions/beige/3.jpg',
+            'promotions/beige/4.jpg',
+            'promotions/beige/5.jpg']
+    },
     promotions: {
         title: "Акции этой недели",
         promotionProduct: {
@@ -559,6 +575,5 @@ const data = {
 export default {
     links, socialLinks, title, titleContactForm,
     titleStock, priceStockBefore, priceStockAfter,
-    stockImages, textButton, data, numberPhones,
-    subTitle, triggers
+    textButton, data, numberPhones, subTitle, triggers,
 };

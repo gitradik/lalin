@@ -6,7 +6,7 @@ import BasketProduct from "./BasketProduct";
 import Modal from "react-responsive-modal";
 import {modalStyle} from "../../utils/modalStyle";
 import ContactForm from "../ContactForm/ContactForm";
-import {thanksOff, thanksOn, updateBasket} from "../../actions/actionCreator";
+import {thanksOff, updateBasket} from "../../actions/actionCreator";
 import connect from "react-redux/es/connect/connect";
 import Thanks from "../Thanks/Thanks";
 

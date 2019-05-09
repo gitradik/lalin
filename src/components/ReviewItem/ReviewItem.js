@@ -3,6 +3,8 @@ import styles from './style.module.sass';
 import PropTypes from 'prop-types';
 import Modal from "react-responsive-modal";
 import {modalStyle} from "../../utils/modalStyle";
+import Loader from "react-loader-spinner";
+import {ImgLoader} from "../ImgLoader/ImgLoader";
 
 class ReviewItem extends React.Component {
     constructor(props) {
@@ -18,10 +20,12 @@ class ReviewItem extends React.Component {
                 <Modal
                     closeIconSize={38} styles={modalStyle} open={isOpen} onClose={() => this.setState({isOpen: false})} centered>
                     <div className={styles.imgBoxModal}>
+                        <ImgLoader/>
                         <img src={require('../../public/images/' + imgName)} alt={imgName + "modal"}/>
                     </div>
                 </Modal>
-                <div onClick={() => this.setState({isOpen: true})}>
+                <div className="position-relative" onClick={() => this.setState({isOpen: true})}>
+                    <ImgLoader/>
                     <img src={require('../../public/images/' + imgName)} alt={imgName}/>
                 </div>
             </div>

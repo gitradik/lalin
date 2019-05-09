@@ -10,6 +10,8 @@ import Modal from "react-responsive-modal";
 import Thanks from "../Thanks/Thanks";
 import {pushInBasket} from "../../actions/actionCreator";
 import connect from "react-redux/es/connect/connect";
+import Loader from 'react-loader-spinner'
+import {ImgLoader} from "../ImgLoader/ImgLoader";
 
 class Product extends React.Component {
     constructor(props) {
@@ -48,7 +50,7 @@ class Product extends React.Component {
         return sizes.map((el, i) =>
             <React.Fragment key={el}>
                 <div onClick={() => this.onClickSize(el)}
-                      className={[styles.size, (sizeKey === el && styles.activeSize)].join(' ')} key={i}>{el}</div>
+                     className={[styles.size, (sizeKey === el && styles.activeSize)].join(' ')} key={i}>{el}</div>
             </React.Fragment>
         );
     }
@@ -56,7 +58,8 @@ class Product extends React.Component {
     renderImagesForSlider() {
         const {images} = this.props;
         return images.map((el, i) =>
-            <div key={i}>
+            <div key={i} className="position-relative">
+                <ImgLoader/>
                 <img src={require('../../public/images/promotions/' + el)} alt={el}/>
             </div>
         );
@@ -80,23 +83,24 @@ class Product extends React.Component {
         } else if (isBasketPush) {
             return <Modal
                 closeIconSize={38} styles={modalStyle} open={isBasketPush} onClose={this.closeModal} centered>
-                    <Thanks title={<div className={styles.dataProdContactForm}>
-                        <span>Название: {name},</span>
-                        <span>Размер: {sizeKey}</span>
-                        <span>Цвет: {color}</span>
-                        <span>{this.getThanksTitle()}</span>
-                    </div>}/>
+                <Thanks title={<div className={styles.dataProdContactForm}>
+                    <span>Название: {name},</span>
+                    <span>Размер: {sizeKey}</span>
+                    <span>Цвет: {color}</span>
+                    <span>{this.getThanksTitle()}</span>
+                </div>}/>
             </Modal>;
         }
     }
 
     renderPrice() {
         const {discount, price} = this.props;
-        return discount ? <div className={styles.innerPrice}><strike>{price}</strike><span style={{color: 'red'}}>{price - (price * (discount / 100))}</span></div> : <span>{price}</span>
+        return discount ? <div className={styles.innerPrice}><strike>{price}</strike><span
+            style={{color: 'red'}}>{price - (price * (discount / 100))}</span></div> : <span>{price}</span>
     }
 
     render() {
-        const {mainImage, name, className, color} = this.props;
+        const {mainImage, name, className, color, discount} = this.props;
         const {count} = this.state;
         return (
             <>{this.renderModals()}
@@ -104,8 +108,15 @@ class Product extends React.Component {
                     <div className={styles.box}>
                         <div className={styles.subBox}>
                             <div className={styles.imgBox} onClick={this.onClickImg}>
+                                <ImgLoader/>
                                 <img src={require("../../public/images/promotions/" + mainImage)} alt={mainImage}/>
                             </div>
+                            {discount && <div className={styles.discount} onClick={this.onClickImg}>
+                                <img src={require('../../public/images/sale.png')} alt="sale"/>
+                                <span>
+                                    -{discount}%
+                                </span>
+                            </div>}
                             <div className={styles.descr}>
                                 <h5 className={styles.name}>{name}</h5>
                                 <div className={styles.color}>
@@ -117,7 +128,7 @@ class Product extends React.Component {
                                     <span> грн.</span>
                                 </div>
                                 <div className={styles.sizes}>
-                                    <span className={styles.titleSize}>Размеры: </span>
+                                    <div className={styles.titleSize}>Размеры:</div>
                                     {this.renderSize()}
                                 </div>
                             </div>
@@ -129,7 +140,7 @@ class Product extends React.Component {
                                 <input className={count <= 0 ? styles.invalid : ""} value={count}
                                        onChange={e => {
                                            const {value} = e.target;
-                                           if(value >= 0) this.setState({count: e.target.value});
+                                           if (value >= 0) this.setState({count: e.target.value});
                                            else this.setState({count: 1});
                                        }} type="number"
                                 />

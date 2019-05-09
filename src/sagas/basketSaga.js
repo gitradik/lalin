@@ -66,6 +66,8 @@ export function * pushInBasketSaga({product}) {
     }
 }
 
+
+
 export function * clearBasketSaga() {
     yield put({type: ACTION.BASKET_REQUEST});
     try {

@@ -24,12 +24,10 @@ class Thanks extends React.Component {
 }
 
 Thanks.propTypes = {
-    title: PropTypes.string,
     subTitle: PropTypes.string,
 };
 
 Thanks.defaultProps = {
-    title: '',
     subTitle: '',
 };
 

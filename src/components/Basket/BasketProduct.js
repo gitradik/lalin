@@ -6,6 +6,7 @@ import Modal from "react-responsive-modal";
 import {removeInBasket, updateBasketItemCount, isBasketSubmit, setConfirmation} from "../../actions/actionCreator";
 import connect from "react-redux/es/connect/connect";
 import {Container, Row, Col} from 'react-bootstrap';
+import {ImgLoader} from "../ImgLoader/ImgLoader";
 
 class BasketProduct extends React.Component {
     constructor(props) {
@@ -61,6 +62,7 @@ class BasketProduct extends React.Component {
                         </Col>
                         <Col xs={5} className="d-flex align-items-center">
                             <div className={styles.imgBox}>
+                                <ImgLoader/>
                                 <img src={require(`../../public/images/promotions/${mainImage}`)} alt={name}/>
                             </div>
                         </Col>

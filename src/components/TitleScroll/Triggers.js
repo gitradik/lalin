@@ -6,12 +6,13 @@ class Triggers extends React.Component {
 
     renderTriggers() {
         const {triggers} = dataContent;
+        const lastIndex = triggers.length - 1;
         return triggers.map((t, i) =>
             <React.Fragment key={i + "trigger"}>
-                <div className={styles.trigger}>
-                    <i className="fas fa-asterisk"/>
+                <div className={[styles.trigger, lastIndex === i ? "justify-content-center" : ""].join(' ')}>
+                    {i !== lastIndex && <i className="fas fa-asterisk"/>}
+                    {i === lastIndex && <img src={require('../../public/images/gift-box.png')} alt="git-box"/>}
                     <p>{t}</p>
-                    {i === triggers.length - 1 && <img src={require('../../public/images/gift-box.png')} alt="git-box"/>}
                 </div>
             </React.Fragment>
         );
