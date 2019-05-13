@@ -31,18 +31,26 @@ class Footer extends React.Component {
                 <Title name="Контакты"/>
                 <Container>
                     <Row className="justify-content-center">
-                        <Col className="d-flex justify-content-center" md={3}>
-                           <div className={styles.content}>
-                               <h5 className={styles.title}>INSTAGRAM</h5>
-                               <div className={styles.links}>
-                                   <a href={instagram.hrefMobile} target="_blank">
-                                       <img src={require('../../public/images/instagram.png')} alt="inst"/>
-                                       {instagram.title}
-                                   </a>
-                               </div>
-                           </div>
+                        <Col className="d-flex justify-content-center" md={6}>
+                            <div className={styles.content}>
+                                <h5 className={styles.title}>INSTAGRAM</h5>
+                                <div className={styles.links}>
+                                    <a href={instagram.hrefMobile} target="_blank">
+                                        <img src={require('../../public/images/instagram.png')} alt="inst"/>
+                                        {instagram.title}
+                                    </a>
+                                </div>
+                            </div>
                         </Col>
-                        <Col className="d-flex justify-content-center" md={3}>
+                        <Col className="d-flex justify-content-center" md={6}>
+                            <div className={styles.content}>
+                                <h5 className={styles.title}>ТЕЛЕФОНЫ</h5>
+                                <div className={styles.links}>
+                                    {this.renderPhones()}
+                                </div>
+                            </div>
+                        </Col>
+                        <Col className="d-flex justify-content-center" md={4}>
                             <div className={styles.content}>
                                 <h5 className={styles.title}>TELEGRAM</h5>
                                 <div className={styles.links}>
@@ -50,11 +58,10 @@ class Footer extends React.Component {
                                         <i style={{color: telegram.color}} className={telegram.classIconSecond}/>
                                         {telegram.title}
                                     </a>
-                                    {this.renderPhones()}
                                 </div>
                             </div>
                         </Col>
-                        <Col className="d-flex justify-content-center" md={3}>
+                        <Col className="d-flex justify-content-center" md={4}>
                             <div className={styles.content}>
                                 <h5 className={styles.title}>WHATSAPP</h5>
                                 <div className={styles.links}>
@@ -62,11 +69,10 @@ class Footer extends React.Component {
                                         <i style={{color: whatsApp.color}} className={whatsApp.classIconSecond}/>
                                         {whatsApp.title}
                                     </a>
-                                    {this.renderPhones()}
                                 </div>
                             </div>
                         </Col>
-                        <Col className="d-flex justify-content-center" md={3}>
+                        <Col className="d-flex justify-content-center" md={4}>
                             <div className={styles.content}>
                                 <h5 className={styles.title}>VIBER</h5>
                                 <div className={styles.links}>
@@ -74,7 +80,6 @@ class Footer extends React.Component {
                                         <i style={{color: viber.color}} className={viber.classIcon}/>
                                         {viber.title}
                                     </a>
-                                    {this.renderPhones()}
                                 </div>
                             </div>
                         </Col>

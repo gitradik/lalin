@@ -7,10 +7,9 @@ import Slider from "react-slick/lib";
 import {slickSettingsStock} from "../../utils/slickImagesGallery/slickSettings";
 import '../../utils/slickImagesGallery/slickStyles.sass';
 import Modal from "react-responsive-modal";
-import Thanks from "../Thanks/Thanks";
 import {pushInBasket} from "../../actions/actionCreator";
 import connect from "react-redux/es/connect/connect";
-import Loader from 'react-loader-spinner'
+import Thanks from "../Thanks/Thanks";
 import {ImgLoader} from "../ImgLoader/ImgLoader";
 
 class Product extends React.Component {
@@ -22,14 +21,15 @@ class Product extends React.Component {
             titleForm: '',
             sizeKey: props.sizes[0],
             count: 1,
+            imageStatus: true
         };
     }
 
     onClickForm() {
-        const {count} = this.state;
+        const {count, sizeKey} = this.state;
         const {id, name, mainImage, discount, color, price, images, pushInBasket} = this.props;
-        pushInBasket({id, name, mainImage, discount, color, size: this.state.sizeKey, price, images, count});
-        this.setState({isBasketPush: true});
+        pushInBasket({id, name, mainImage, discount, color, size: sizeKey, price, images, count});
+        this.setState({isBasketPush: true})
     }
 
     onClickImg = () => {
@@ -57,40 +57,19 @@ class Product extends React.Component {
 
     renderImagesForSlider() {
         const {images} = this.props;
-        return images.map((el, i) =>
-            <div key={i} className="position-relative">
-                <ImgLoader/>
-                <img src={require('../../public/images/promotions/' + el)} alt={el}/>
-            </div>
+        return images.map((el, i) => {
+            let status = true;
+            const handleImageLoadedSlider = () => {
+                status = false;
+            };
+            return <div key={i} className="position-relative">
+                    <img
+                        onLoad={handleImageLoadedSlider}
+                        src={require('../../public/images/promotions/' + el)} alt={el}/>
+                    {status && <ImgLoader/>}
+                </div>
+            }
         );
-    }
-
-    getThanksTitle() {
-        const {isRepeat} = this.props;
-        return isRepeat ? "Уже в корзине!" : "Добавлен в корзину!"
-    };
-
-    renderModals() {
-        const {name, color} = this.props;
-        const {isOpenPhoto, isBasketPush, sizeKey} = this.state;
-        if (isOpenPhoto) {
-            return <Modal
-                closeIconSize={38} styles={modalStyle} open={isOpenPhoto} onClose={this.closeModal} centered>
-                <Slider {...slickSettingsStock}>
-                    {this.renderImagesForSlider()}
-                </Slider>
-            </Modal>;
-        } else if (isBasketPush) {
-            return <Modal
-                closeIconSize={38} styles={modalStyle} open={isBasketPush} onClose={this.closeModal} centered>
-                <Thanks title={<div className={styles.dataProdContactForm}>
-                    <span>Название: {name},</span>
-                    <span>Размер: {sizeKey}</span>
-                    <span>Цвет: {color}</span>
-                    <span>{this.getThanksTitle()}</span>
-                </div>}/>
-            </Modal>;
-        }
     }
 
     renderPrice() {
@@ -99,17 +78,51 @@ class Product extends React.Component {
             style={{color: 'red'}}>{price - (price * (discount / 100))}</span></div> : <span>{price}</span>
     }
 
+    getThanksTitle() {
+        return this.props.isRepeat ? "уже в корзине!" : "добавлен в корзину!"
+    };
+
+    handleImageLoaded = () => {
+        this.setState({ imageStatus: false });
+    };
+
+    handleImageErrored = () => {
+        this.setState({ imageStatus: "failed to load" });
+    };
+
     render() {
         const {mainImage, name, className, color, discount} = this.props;
-        const {count} = this.state;
+        const {count, isOpenPhoto, isBasketPush, imageStatus, sizeKey} = this.state;
         return (
-            <>{this.renderModals()}
+            <>
+
+                <Modal
+                    closeIconSize={38} styles={modalStyle} open={isOpenPhoto} onClose={this.closeModal} centered>
+                    <Slider {...slickSettingsStock}>
+                        {this.renderImagesForSlider()}
+                    </Slider>
+                </Modal>
+
+                <Modal
+                    closeIconSize={38} styles={modalStyle} open={isBasketPush} onClose={this.closeModal} centered>
+                    <Thanks title={<div className={styles.dataProdContactForm}>
+                        <span>Название: {name}</span>
+                        <span>Размер: {sizeKey}</span>
+                        <span>Цвет: {color}</span>
+                        <span>{this.getThanksTitle()}</span>
+                    </div>}/>
+                </Modal>
+
                 <div className={styles[className]}>
                     <div className={styles.box}>
                         <div className={styles.subBox}>
                             <div className={styles.imgBox} onClick={this.onClickImg}>
-                                <ImgLoader/>
-                                <img src={require("../../public/images/promotions/" + mainImage)} alt={mainImage}/>
+                                <img
+                                    onLoad={this.handleImageLoaded}
+                                    onError={this.handleImageErrored}
+                                    src={require("../../public/images/promotions/" + mainImage)} alt={mainImage}
+                                />
+                                {imageStatus && <ImgLoader/>}
                             </div>
                             {discount && <div className={styles.discount} onClick={this.onClickImg}>
                                 <img src={require('../../public/images/sale.png')} alt="sale"/>

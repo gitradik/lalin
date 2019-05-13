@@ -7,53 +7,42 @@
     display: flex
     justify-content: center
 
-    .card
-      background-image: url("../../public/images/rose3.jpg")
-      background-repeat: no-repeat
-      background-size: cover
-      background-position: bottom left
+    hr
+      border: 0
+      margin: 10px 0
+      height: 1px
       width: 100%
-      padding: 5px
-      min-height: 200px
-      border-radius: 4px
+      background: linear-gradient(to right, $hard, $hardRgba, $hard)
+
+    .card
       display: flex
       flex-direction: column
       align-items: center
-      position: relative
-      box-shadow: $boxShadowLight
-      z-index: 5
 
-      &:before
-        position: absolute
-        content: ''
-        top: 0
-        right: 0
-        left: 0
-        bottom: 0
-        background-color: rgba(255,255,255,.7)
-        z-index: -2
+      .icon
+        background-color: white
+        box-shadow: $boxShadowLight
+        padding: 15px
+        border-radius: 100%
 
-      .index
-        color: $hard
-        font-size: 20px
-        z-index: 6
+        img
+          height: auto
+          max-width: 30px
 
-      img
-        position: absolute
-        bottom: 3px
-        right: 50%
-        transform: translateX(50%)
-        height: auto
-        max-width: 70px
-        z-index: -3
+    .name
+      color: $txt
+      text-align: center
+      margin-top: 5px
+      display: flex
+      justify-content: center
+      align-items: center
+      font-weight: 500
+      font-size: 14px
+      min-height: 42px
 
-      .name
-        text-transform: uppercase
-        font-weight: 600
-        font-size: 16px
-        text-align: center
-
-        span
-          color: $txt
+    .subName
+      color: $txt
+      font-size: 12px
+      text-align: center
 
 @import "./media"

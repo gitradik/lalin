@@ -88,7 +88,6 @@ export function * isBasketSubmitSaga() {
                 break;
             }
         }
-
         if(check && basket.length !== 0) {
             yield put({type: ACTION.BASKET_SUBMIT_RESPONSE_ON});
         } else {

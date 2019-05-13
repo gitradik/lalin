@@ -11,24 +11,23 @@ class AboutUs extends React.Component {
         const {aboutUs} = dataContent.data;
         return (
             <div id="aboutUs" className={styles.aboutUs}>
-                <Title name="La Lingerie"/>
+                <div className={styles.back}/>
+                <Title name={aboutUs.title}/>
                 <Logo/>
                 <Container>
                     <Row>
                         <Col md={12}>
-                            <p className={styles.first}>
+                            <div className={styles.content}>
+                            <p>
                                 {aboutUs.firstTitle}
                             </p>
-                        </Col>
-                        <Col md={12}>
-                            <p className={styles.second}>
+                            <p>
                                 {aboutUs.secondTitle}
                             </p>
-                        </Col>
-                        <Col md={12}>
-                            <p className={styles.third}>
+                            <p>
                                 {aboutUs.thirdTitle}
                             </p>
+                            </div>
                         </Col>
                     </Row>
                 </Container>

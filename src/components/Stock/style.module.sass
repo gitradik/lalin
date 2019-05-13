@@ -117,7 +117,7 @@
 
     .viewChoiceSize
       z-index: 25
-      transition: .2s
+      transition: .1s
       opacity: 1
 
     .pushBasket
@@ -136,25 +136,31 @@
       .basketIcon
         width: 100%
         text-align: center
-        color: white
-        text-shadow: $textShadow
         font-size: 22px
         position: relative
-        padding-top: 10px
+        padding: 0 10px
+        display: flex
+        border-radius: 4px
+        color: white
+        align-items: center
+        background-color: $hard
+        transition: .1s
+        box-shadow: $boxShadowMiddle
+
+        &:hover
+          transition: .2s
+          box-shadow: $boxShadowLight
 
         i
           margin-right: 3px
 
-        &:before
-          position: absolute
-          content: ''
-          top: -2px
-          left: 50%
-          height: 10px
-          width: 10px
-          border-left: 2px solid white
-          border-bottom: 2px solid white
-          transform: translateX(-50%) rotateZ(-45deg)
+        span
+          font-size: 16px
+          font-weight: 600
+
+        .plus
+          font-size: 24px
+          font-weight: bold
 
       img
         margin-top: 4px

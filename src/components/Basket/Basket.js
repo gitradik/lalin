@@ -81,7 +81,6 @@ class Basket extends React.Component {
 
                 {this.renderContactForm()}
                 <Title name="Корзина"/>
-                <div className={styles.content}>
                     <Container fluid>
                         <Row className="justify-content-start">
                             {this.renderProducts()}
@@ -98,7 +97,7 @@ class Basket extends React.Component {
                             </Col>
                         </Row>
                     </Container>
-                </div>
+
             </div>
         );
     }

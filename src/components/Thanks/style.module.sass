@@ -1,55 +1,21 @@
 @import "../../utils/dataStyle.module"
 
 .thanks
-  padding-top: 30px
-  max-width: 80%
-  margin-left: 10%
+  background-color: $hard
+  padding: 15px
+  border-radius: 4px
   font-family: 'Montserrat', sans-serif!important
 
   .container
     border: 3px solid $hard
-    position: relative
+    color: white
+    font-weight: 600
+    text-align: center
 
-    .text
-      color: white
-      font-weight: 600
-      text-align: center
-      display: flex
-      flex-direction: column
-      justify-content: center
-      align-items: center
-      padding: 20px 30px
+    h4
+      font-size: 26px
 
-      h4
-        font-size: 26px
-
-      p
-        font-size: 18px
-
-    .heard, .heard1, .heard2, .heard3
-      position: absolute
-      content: ''
-      color: $hard
-      font-size: 30px
-
-    .heard
-      top: -25px
-      left: -25px
-      transform: rotateZ(-45deg)
-
-    .heard1
-      top: -25px
-      right: -25px
-      transform: rotateZ(45deg)
-
-    .heard2
-      bottom: -25px
-      right: -25px
-      transform: rotateZ(135deg)
-
-    .heard3
-      bottom: -25px
-      left: -25px
-      transform: rotateZ(-135deg)
+    p
+      font-size: 18px
 
 

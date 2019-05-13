@@ -64,9 +64,10 @@ class PushBasket extends React.Component {
                     <button className={styles.submit} onClick={this.onClickChoice}>Выбрать</button>
                 </div>
                 <div className={styles.pushBasket} onClick={this.onClickForm}>
-                    <img ref={this.form} src={require('../../public/images/add.png')} alt="add"/>
                     <div className={styles.basketIcon}>
+                        <span className={styles.plus}>+</span>
                         <i className="fas fa-shopping-cart"/>
+                        <span ref={this.form}>Добавить в корзину</span>
                     </div>
                 </div>
             </>

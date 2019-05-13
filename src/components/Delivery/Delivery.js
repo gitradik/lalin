@@ -10,10 +10,11 @@ class Delivery extends React.Component {
     renderCards() {
         const {cards} = dataContent.data.delivery;
         return cards.map((card, i) =>
-            <Col key={card.name} xl={2} lg={3} md={4} sm={6} className="d-flex justify-content-center my-2">
+            <Col key={card.name} xs={6} xl={2} lg={3} md={4} sm={6} className="d-flex justify-content-center my-2">
                 <Card key={card.name}
                       name={card.name}
                       photo={card.photo}
+                      subName={card.subName}
                       index={i + 1}
                 />
             </Col>
@@ -23,7 +24,7 @@ class Delivery extends React.Component {
     render() {
         return (
             <div id="order" className={styles.delivery}>
-                <Title name="Порядок заказа и получения"/>
+                <Title name="Как заказать?"/>
                 <div className={styles.cards}>
                     <Container>
                         <Row className="justify-content-center">

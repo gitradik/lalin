@@ -3,7 +3,7 @@ import basketReducer from './basketReducer';
 import contactFormReducer from './contactFormReducer';
 
 const appReducer = combineReducers({
-    basketReducer, contactFormReducer
+    basketReducer, contactFormReducer,
 });
 
 const rootReducer = (state, action) => appReducer(state, action);

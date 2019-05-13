@@ -6,13 +6,13 @@ import Modal from "react-responsive-modal";
 import {removeInBasket, updateBasketItemCount, isBasketSubmit, setConfirmation} from "../../actions/actionCreator";
 import connect from "react-redux/es/connect/connect";
 import {Container, Row, Col} from 'react-bootstrap';
-import {ImgLoader} from "../ImgLoader/ImgLoader";
 
 class BasketProduct extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            isOpen: false
+            isOpen: false,
+            isMore: false,
         };
     }
 
@@ -28,7 +28,10 @@ class BasketProduct extends React.Component {
 
     renderPrice() {
         const {price, discount} = this.props;
-        return <span className={styles.priceSpan} style={{color: (discount ? 'red' : 'black')}}>{price - (price * (discount / 100))} грн</span>;
+        return <span className={styles.priceSpan}
+                     style={{color: (discount ? 'red' : 'black')}}>
+            {price - (price * (discount / 100))} грн
+        </span>;
     }
 
     onChangeCount = (e) => {
@@ -39,6 +42,7 @@ class BasketProduct extends React.Component {
 
     render() {
         const {index, name, color, size, mainImage, count} = this.props;
+        const {isMore} = this.state;
         return (
             <>
                 <Modal
@@ -52,55 +56,61 @@ class BasketProduct extends React.Component {
                     </div>
                     </div>
                 </Modal>
-            <div className={styles.product}>
+            <div className={[styles.product, (isMore && styles.isMore)].join(' ')}
+
+            >
                 <Container fluid>
                     <Row className="justify-content-between">
-                        <Col xs={2} className="d-flex align-items-center">
+                        <Col xs={2} className="d-flex align-items-center" onClick={() => this.setState( {isMore: true})}>
                             <div className={styles.index}>
                                 <span>#{index + 1}</span>
                             </div>
                         </Col>
-                        <Col xs={5} className="d-flex align-items-center">
+                        <Col xs={4} className="d-flex align-items-center" onClick={() => this.setState( {isMore: true})}>
                             <div className={styles.imgBox}>
-                                <ImgLoader/>
                                 <img src={require(`../../public/images/promotions/${mainImage}`)} alt={name}/>
                             </div>
                         </Col>
-                        <Col xs={5} className="d-flex align-items-center">
+                        <Col xs={4} className="d-flex align-items-center" onClick={() => this.setState( {isMore: true})}>
                             <div className={styles.price}>
                                 <span>Цена:</span>
                                 {this.renderPrice()}
                             </div>
                         </Col>
-                        <Col xs={6} className="d-flex align-items-center mt-1">
+                        <Col xs={2}>
+                            <label className={styles.more} htmlFor="three_dots" onClick={() => this.setState( {isMore: !isMore})}>
+                                <i className="fas fa-ellipsis-v"/>
+                            </label>
+                        </Col>
+                        {isMore && <Col xs={6} className="d-flex align-items-center mt-1">
                             <div className={styles.name}>
                                 <span>Название:</span>
                                 <span>{name}</span>
                             </div>
-                        </Col>
-                        <Col xs={6} className="d-flex align-items-center mt-1">
+                        </Col>}
+                        {isMore && <Col xs={6} className="d-flex align-items-center mt-1">
                             <div className={styles.name}>
                                 <span>Цвет:</span>
                                 <span>{color}</span>
                             </div>
-                        </Col>
-                        <Col xs={6} className="d-flex align-items-center mt-1">
+                        </Col>}
+                        {isMore && <Col xs={6} className="d-flex align-items-center mt-1">
                             <div className={styles.name}>
                                 <span>Размер:</span>
                                 <span>{size}</span>
                             </div>
-                        </Col>
-                        <Col xs={6} className="d-flex align-items-center mt-1">
+                        </Col>}
+                        {isMore && <Col xs={6} className="d-flex align-items-center mt-1">
                             <div className={styles.name}>
                                 <span>Количество:</span>
                                 <input type="number" value={count} onChange={this.onChangeCount}/>
                             </div>
-                        </Col>
-                        <Col xs={12} className="d-flex align-items-center">
+                        </Col>}
+                        {isMore && <Col xs={12} className="d-flex align-items-center">
                             <div className={styles.delete}>
-                                <button onClick={() =>  this.setState({isOpen: true})}>Удалить</button>
+                                <button onClick={() => this.setState({isOpen: true})}>Удалить</button>
                             </div>
-                        </Col>
+                        </Col>}
                     </Row>
                 </Container>
                 </div>

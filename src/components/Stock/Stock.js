@@ -10,7 +10,6 @@ import {slickSettingsStock} from '../../utils/slickImagesGallery/slickSettings';
 import PushBasket from "./PushBasket";
 import Thanks from "../Thanks/Thanks";
 import connect from "react-redux/es/connect/connect";
-import Loader from "react-loader-spinner";
 import {ImgLoader} from "../ImgLoader/ImgLoader";
 
 class Stock extends React.Component {
@@ -32,24 +31,34 @@ class Stock extends React.Component {
 
     renderImagesForSlider() {
         const {stock} = dataContent.data;
-        return stock.imagesCarousel.map((el, i) =>
-            <div key={i + "imagesForSlider"} className="position-relative">
-                <ImgLoader/>
-                <img src={require('../../public/images/' + el)} alt={el}/>
+        return stock.imagesCarousel.map((el, i) => {
+            let status = true;
+            const handleImageLoadedSlider = () => {
+                status = false;
+            };
+            return <div key={i + "imagesForSlider"} className="position-relative">
+                <img onLoad={handleImageLoadedSlider}
+                    src={require('../../public/images/' + el)} alt={el}/>
+                {status && <ImgLoader/>}
             </div>
-        );
+        });
     }
 
     renderStockImages() {
         const {stock} = dataContent.data;
-        return stock.images.map((el, i) =>
-            <div key={i + "stockImages"} className={styles.imgContainer}>
-                <ImgLoader/>
+        return stock.images.map((el, i) => {
+            let status = true;
+            const handleImageLoadedSlider = () => {
+                status = false;
+            };
+            return <div key={i + "stockImages"} className={styles.imgContainer}>
                 <img onClick={this.onClickImg}
+                     onLoad={handleImageLoadedSlider}
                      src={require("../../public/images/" + el)}
                      alt={el}/>
+                {status && <ImgLoader/>}
             </div>
-        );
+        });
     }
 
     getThanksTitle = () => {
@@ -74,7 +83,7 @@ class Stock extends React.Component {
                     closeIconSize={38} styles={modalStyle} open={isPush} onClose={this.closeModal}
                     centered>
                     <Thanks title={<div className={styles.dataProdContactForm}>
-                        <span>Название: {name},</span>
+                        <span>Название: {name}</span>
                         <span>Размер: {sizes[0]}</span>
                         <span>Цвет: {color}</span>
                         <span>{this.getThanksTitle()}</span>

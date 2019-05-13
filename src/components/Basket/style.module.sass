@@ -1,6 +1,7 @@
 @import "../../utils/dataStyle.module"
 
 .basket
+  width: 100%
   font-family: 'Montserrat', sans-serif!important
   background-color: white
   padding: 5px
@@ -12,128 +13,151 @@
   .content
     width: 98%
 
-    .allPrice
-      font-weight: 700
-      font-size: 22px
+  .allPrice
+    font-weight: 700
+    font-size: 22px
 
-    .inactive
+  .inactive
+
+    span
+      transition: .2s
+      color: #c8c8c8
+
+  .submit
+    padding-top: 15px
+    padding-bottom: 15px
+
+    button
+      padding: 10px 25px
+      border-radius: 4px
+      border: none
+      color: white
+      font-weight: 700
+      background: $hard
+      transition: .1s
+      box-shadow: 0 0 10px 0 $hard
+
+      &:hover
+        transition: .2s
+        box-shadow: 0 0 5px 0 $hard
+
+  .disabled
+
+    button
+      transition: .2s
+      border-color: #c8c8c8
+      color: #c8c8c8
+
+  .product
+    display: flex
+    align-items: center
+    justify-content: space-between
+    box-shadow: $boxShadowLight
+    border-radius: 4px
+    padding: 3px 0
+    margin: 5px 0
+
+    .more
+      height: 100%
+      display: flex
+      align-items: center
+      justify-content: center
+      margin: 0
+      padding: 5px
+      min-width: 50px
+      text-align: center
+      cursor: pointer
+
+      i
+        color: $txt
+        font-size: 18px
+
+    .price
+      display: flex
+      flex-direction: column
 
       span
+        font-size: 16px
+        font-weight: 500
         transition: .2s
-        color: #c8c8c8
+        color: $txt
 
-    .submit
-      padding-top: 15px
-      padding-bottom: 15px
+      .priceSpan
+        margin-left: 3px
+
+    .index
+      padding: 10px
+
+      span
+        color: $txt
+
+        &:first-child
+          align-self: flex-start
+
+    .imgBox
+      position: relative
+
+      img
+        height: auto
+        position: relative
+        z-index: 25
+        transition: .1s
+        max-width: 50px
+
+    .name
+      width: 100%
+      padding: 3px 0
+      text-align: center
+      position: relative
+      border: 1px solid rgba(0,0,0,.1)
+      border-radius: 4px
+      height: 100%
+      font-size: 14px
+
+      span
+        display: block
+        color: $txt
+
+      input
+        width: 80px
+        border-radius: 4px
+        padding: 5px 3px
+        color: $txt
+        transition: .2s
+        border: 1px solid #eee
+
+        &::-webkit-inner-spin-button
+          display: none
+
+        &:focus
+          transition: .2s
+          border-color: $hard
+
+    .delete
+      margin-top: 5px
+      padding: 5px
+      margin-right: 10px
 
       button
-        padding: 10px 25px
-        border-radius: 4px
+        padding: 5px 10px
         border: none
-        color: white
-        font-weight: 700
-        background: $hard
-        transition: .1s
-        box-shadow: 0 0 10px 0 $hard
+        color: $txt
+        background: none
+        border-radius: 4px
+        transition: .2s
+        box-shadow: $bsBasket
 
         &:hover
           transition: .2s
-          box-shadow: 0 0 5px 0 $hard
+          box-shadow: 0 1px 10px 0 rgba(255,0,0,.2)
 
-    .disabled
+  .isMore
 
-      button
-        transition: .2s
-        border-color: #c8c8c8
-        color: #c8c8c8
+    .imgBox
 
-    .product
-      display: flex
-      align-items: center
-      justify-content: space-between
-      box-shadow: $boxShadowLight
-      border-radius: 4px
-      padding: 3px 0
-      margin: 5px 0
+      img
+        max-width: 80px
 
-      .price
-        display: flex
-        flex-direction: column
-
-        span
-          font-size: 16px
-          font-weight: 500
-          transition: .2s
-          color: $txt
-
-        .priceSpan
-          margin-left: 3px
-
-      .index
-        padding: 10px
-
-        span
-          color: $txt
-
-          &:first-child
-            align-self: flex-start
-
-      .imgBox
-        max-width: 110px
-        position: relative
-
-        img
-          height: auto
-          max-width: 100%
-          position: relative
-          z-index: 25
-
-      .name
-        width: 100%
-        padding: 3px 0
-        text-align: center
-        position: relative
-        border: 1px solid rgba(0,0,0,.1)
-        border-radius: 4px
-        height: 100%
-        font-size: 14px
-
-        span
-          display: block
-          color: $txt
-
-        input
-          width: 80px
-          border-radius: 4px
-          padding: 5px 3px
-          color: $txt
-          transition: .2s
-          border: 1px solid #eee
-
-          &::-webkit-inner-spin-button
-            display: none
-
-          &:focus
-            transition: .2s
-            border-color: $hard
-
-      .delete
-        margin-top: 5px
-        padding: 5px
-        margin-right: 10px
-
-        button
-          padding: 5px 10px
-          border: none
-          color: $txt
-          background: none
-          border-radius: 4px
-          transition: .2s
-          box-shadow: $bsBasket
-
-          &:hover
-            transition: .2s
-            box-shadow: 0 1px 10px 0 rgba(255,0,0,.2)
 
 .bord
   position: absolute
@@ -186,8 +210,8 @@
   display: flex
   align-items: center
   justify-content: center
-  background-color: $hardRgba
   box-shadow: $bsBasket
+  border: 2px solid $hard
   top: 100px
   border-radius: 100%
   right: 10px
@@ -195,9 +219,9 @@
   position: fixed
 
   i
-    font-size: 24px
-    color: white
-    text-shadow: $textShadow
+    font-size: 22px
+    color: $hard
+    margin-left: -2px
 
   &:hover
 
@@ -205,16 +229,19 @@
       transition: .2s
 
   .counter
-    position: relative
-    top: -25px
-    left: 10px
+    position: absolute
     z-index: 1001
-
-    p
-      position: absolute
-      margin: 0
-      text-align: center
-      color: white
-      text-shadow: $textShadow
+    color: white
+    font-weight: 500
+    top: -15px
+    height: 20px
+    width: 20px
+    box-shadow: $bsBasket
+    display: flex
+    align-items: center
+    justify-content: center
+    background-color: $hard
+    border-radius: 100%
+    border: 2px solid $hard
 
 @import "./media"

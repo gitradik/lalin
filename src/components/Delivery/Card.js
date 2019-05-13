@@ -4,14 +4,19 @@ import PropTypes from 'prop-types';
 
 class Card extends React.Component {
     render() {
-        const {name, photo, index} = this.props;
+        const {name, photo, subName} = this.props;
         return (
             <div className={styles.card}>
-                <span className={styles.index}>{index}</span>
-                <span className={styles.name}>
-                    <span>{name}</span>
-                </span>
+                <div className={styles.icon}>
                <img src={require(`../../public/images/${photo}`)} alt={photo}/>
+                </div>
+               <div className={styles.name}>
+                   <span>{name}</span>
+               </div>
+                <hr/>
+                <div className={styles.subName}>
+                    <span>{subName}</span>
+                </div>
             </div>
         );
     }
@@ -21,6 +26,7 @@ Card.propTypes = {
     name: PropTypes.string,
     photo: PropTypes.string,
     index: PropTypes.number,
+    subName: PropTypes.string,
 };
 
 export default Card;
