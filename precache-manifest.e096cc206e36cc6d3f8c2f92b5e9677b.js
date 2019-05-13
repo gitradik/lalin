@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e8ab39bd4f635932eea22f32a74ab06f",
+    "revision": "53e4fbc8b41531c3526512bff1554df5",
     "url": "/lalin/index.html"
   },
   {
-    "revision": "5682bced490845e8c554",
+    "revision": "bbe2116029c5cae00c4b",
     "url": "/lalin/static/css/2.e3bb2072.chunk.css"
   },
   {
-    "revision": "406665a6415f4ef5af85",
-    "url": "/lalin/static/css/main.529fded3.chunk.css"
+    "revision": "b6d449bfcc48e5a1b68a",
+    "url": "/lalin/static/css/main.74706f3f.chunk.css"
   },
   {
-    "revision": "5682bced490845e8c554",
-    "url": "/lalin/static/js/2.3a95e335.chunk.js"
+    "revision": "bbe2116029c5cae00c4b",
+    "url": "/lalin/static/js/2.06d8d278.chunk.js"
   },
   {
-    "revision": "406665a6415f4ef5af85",
-    "url": "/lalin/static/js/main.0508a830.chunk.js"
+    "revision": "b6d449bfcc48e5a1b68a",
+    "url": "/lalin/static/js/main.0049b390.chunk.js"
   },
   {
     "revision": "4414672a97511678aeb9",
@@ -128,32 +128,28 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lalin/static/media/6.5bf3bdb1.jpg"
   },
   {
-    "revision": "479dcf2ad16597779aab66a1a605dcb9",
-    "url": "/lalin/static/media/add-to-cart.479dcf2a.png"
-  },
-  {
     "revision": "943e687a6bcba92a7efb2055a663b3b9",
     "url": "/lalin/static/media/backTitleScroll2.943e687a.jpg"
-  },
-  {
-    "revision": "b83c150c54501be14c8dc81d8306e556",
-    "url": "/lalin/static/media/choices.b83c150c.png"
   },
   {
     "revision": "2e30b9885a4867804e8cbad0285e4e8f",
     "url": "/lalin/static/media/direct1.2e30b988.jpg"
   },
   {
-    "revision": "4897ac086090d0330dc4e14eb7606fcc",
-    "url": "/lalin/static/media/direct2.4897ac08.jpg"
+    "revision": "f220822bf5d0b5a38f916b1553ecd3b4",
+    "url": "/lalin/static/media/direct2.f220822b.jpg"
   },
   {
-    "revision": "ff28c3df460c180f6b0839fee36857c3",
-    "url": "/lalin/static/media/direct3.ff28c3df.jpg"
+    "revision": "26e01c374b0e02611e0d15d398efd735",
+    "url": "/lalin/static/media/direct3.26e01c37.jpg"
   },
   {
     "revision": "871564733842d27eec863c325660c39f",
     "url": "/lalin/static/media/direct4.87156473.jpg"
+  },
+  {
+    "revision": "92d9a5fb081210dedbf57b57c548fa8a",
+    "url": "/lalin/static/media/direct5.92d9a5fb.jpg"
   },
   {
     "revision": "2ef8ba3410dcc71578a880e7064acd7a",
@@ -224,10 +220,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lalin/static/media/flower2.184739fe.jpg"
   },
   {
-    "revision": "ca51b7910fca23318640a427950dd8ed",
-    "url": "/lalin/static/media/form.ca51b791.png"
-  },
-  {
     "revision": "7e0ee8e2b223f6f94ac670af3dc4928d",
     "url": "/lalin/static/media/heart-sketch.7e0ee8e2.png"
   },
@@ -236,16 +228,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lalin/static/media/logo.c340cb24.jpg"
   },
   {
-    "revision": "afde4184add09ae5c1bf13d32480ccb1",
-    "url": "/lalin/static/media/payment-method.afde4184.png"
-  },
-  {
     "revision": "0e759e7d8eed5ef3cf235644a1786d54",
     "url": "/lalin/static/media/rose3.0e759e7d.jpg"
   },
   {
-    "revision": "e9360fef10d362d30097ff6c5995cc67",
-    "url": "/lalin/static/media/smartphone.e9360fef.png"
+    "revision": "4ecdc3b1aee77ae509213bf0a3439b1e",
+    "url": "/lalin/static/media/rozes.4ecdc3b1.jpg"
   },
   {
     "revision": "2f30ef29c84f1dfd466b28825f37de0b",
