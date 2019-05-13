@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/lalin/static/css/main.74706f3f.chunk.css",
+    "main.css": "/lalin/static/css/main.cc1a5172.chunk.css",
     "main.js": "/lalin/static/js/main.0049b390.chunk.js",
     "main.js.map": "/lalin/static/js/main.0049b390.chunk.js.map",
     "runtime~main.js": "/lalin/static/js/runtime~main.909a04ef.js",
@@ -9,10 +9,10 @@
     "static/js/2.06d8d278.chunk.js": "/lalin/static/js/2.06d8d278.chunk.js",
     "static/js/2.06d8d278.chunk.js.map": "/lalin/static/js/2.06d8d278.chunk.js.map",
     "index.html": "/lalin/index.html",
-    "precache-manifest.e096cc206e36cc6d3f8c2f92b5e9677b.js": "/lalin/precache-manifest.e096cc206e36cc6d3f8c2f92b5e9677b.js",
+    "precache-manifest.69376af2781005a1a07a6eb562cbf514.js": "/lalin/precache-manifest.69376af2781005a1a07a6eb562cbf514.js",
     "service-worker.js": "/lalin/service-worker.js",
     "static/css/2.e3bb2072.chunk.css.map": "/lalin/static/css/2.e3bb2072.chunk.css.map",
-    "static/css/main.74706f3f.chunk.css.map": "/lalin/static/css/main.74706f3f.chunk.css.map",
+    "static/css/main.cc1a5172.chunk.css.map": "/lalin/static/css/main.cc1a5172.chunk.css.map",
     "static/media/1.jpg": "/lalin/static/media/1.f2bcdd9a.jpg",
     "static/media/2.jpg": "/lalin/static/media/2.eaae6e12.jpg",
     "static/media/3.jpg": "/lalin/static/media/3.d36fa9e4.jpg",
