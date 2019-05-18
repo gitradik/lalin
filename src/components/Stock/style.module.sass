@@ -121,13 +121,18 @@
       opacity: 1
 
     .pushBasket
+      background-color: $hard
+      box-shadow: $boxShadowMiddle
+      border-radius: 4px
       cursor: pointer
       position: absolute
+      padding: 3px 0
       z-index: 21
       bottom: 0
 
       &:hover
-        border: none
+        transition: .2s
+        box-shadow: $boxShadowLight
 
         img
           transition: .2s
@@ -140,16 +145,8 @@
         position: relative
         padding: 0 10px
         display: flex
-        border-radius: 4px
         color: white
         align-items: center
-        background-color: $hard
-        transition: .1s
-        box-shadow: $boxShadowMiddle
-
-        &:hover
-          transition: .2s
-          box-shadow: $boxShadowLight
 
         i
           margin-right: 3px

@@ -125,6 +125,7 @@ const data = {
             'direct/direct3.jpg',
             'direct/direct4.jpg',
             'direct/direct5.jpg',
+            'direct/direct6.jpg',
         ],
     },
     products: {
